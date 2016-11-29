@@ -25,6 +25,10 @@ http.createServer(function (req, res) {
             res.end();
         });
     }
+    /////////
+
+
+
     else if (req.url = '/test') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write('<b>Response /test</b>');
@@ -39,7 +43,7 @@ http.createServer(function (req, res) {
     }
 
 
-  //  console.log(`${req.url}\n\r${req.method}`);
+    console.log(`${req.url}\n\r${req.method}`);
  
    // res.writeHead(200, { 'Content-Type': 'text/html' });   
    // res.write(`${req.url}\n\r${req.method}`);
