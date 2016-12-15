@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+   window.onload = function () {
+
+       var btn = document.getElementById('btn');
+
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function () { alert('111'); });
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/test');
+    xhr.onload = function () {
+
+
+
+
+
+
+    };
+   }
+
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="Send" />
+    <label id="container"></label>
+</body>
+</html>
