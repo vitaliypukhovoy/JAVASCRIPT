@@ -14,7 +14,7 @@
         this.a =a;
         this.arr =arr,
         this.array = [],
-        this.sortArray = function() {
+        this.addArray = function() {
             self = this;
             a.forEach(function (el, i, ar) {
                 self.array.push(el);
@@ -36,7 +36,7 @@
         };
 
     var un = new union(a,arr);
-    un.sortArray();
+    un.addArray();
     un.sort();
     un.array.map(function(el){return console.log(el)});
 
