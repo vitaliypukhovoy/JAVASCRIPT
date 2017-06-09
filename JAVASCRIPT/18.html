@@ -21,14 +21,9 @@
                 self.array.push(arr[i]);
             });
         }
-//        this.comparer = function(a, b) {
-//            if (a > b)
-//                return 1;
-//            else if (a < b)
-//                return -1;
-//            else
-//                return 0;
-//        }
+        this.sort = function() {
+            this.array.sort(this.comparer);
+        }
     };
 
     union.prototype.comparer = function(a, b) {
@@ -39,10 +34,10 @@
             else
                 return 0;
         };
-    
+
     var un = new union(a,arr);
     un.sortArray();
-    un.array.sort(un.comparer);
+    un.sort();
     un.array.map(function(el){return console.log(el)});
 
 </script>
