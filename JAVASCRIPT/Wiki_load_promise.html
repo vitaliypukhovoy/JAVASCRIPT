@@ -30,7 +30,7 @@
 
 <script>
 
-
+(function() {
     var  input = document.querySelector('.ipt');
     var result = document.createElement('div');
     result.setAttribute("class","result");
@@ -142,6 +142,7 @@
         }).join('&');
         window.url = 'https://en.wikipedia.org/w/api.php';
     }
+  })();
 
 </script>
 
