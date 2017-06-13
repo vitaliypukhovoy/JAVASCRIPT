@@ -84,6 +84,8 @@
 
 
 <script>
+
+(function() {
     /*============================= LocalStore ==========================================================*/
     var input = document.getElementsByTagName('input')[0];
   //  var array = ['name1','name2','name3','name4'];
@@ -187,6 +189,7 @@
     delay(3000).then(doStuff).catch(function(error){ console.log(error);})
     delay().then(doStuff).catch(function(error){ console.log(error);})
     delay("www").then(doStuff).catch(function(error){ console.log(error);})
+  })();
 
 </script>
 
