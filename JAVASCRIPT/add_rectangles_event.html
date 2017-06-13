@@ -3,127 +3,90 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
+<style>
 
+    .cl0{
+    //  display: block;
+        width: 500px;
+        height: 500px;
+        background: palegoldenrod;
+    }
+    #i1{
+        background: red;
+    }
 
-<style type="text/css">
-    #modal {
-        width: 300px;
+    #i2{
+        background: green;
+    }
+    #i3{
+        background: yellow;
+    }
+
+    #i4{
+        background: blue;
+    }
+    .cl1
+    {
+        display: inline-block;
+        width: 100px;
         height: 100px;
-        border-radius: 5px;
-        border: 1px #000 solid;
-        background: #fff;
-        z-index: 5;
-        padding: 20px 10px;
-    }
-    #email, #emai1,#emai2,#emai3 {
-        display: inline-block;
-        margin: 10px 2px 5px 22px;
-        padding: 9px;
-    }
-
-    #password {
-        display: inline-block;
-        margin: 3px;
-        padding: 10px;
-    }
-    button
-    {
-       // position: absolute;
-        border: 0px;
-        background:white;
-        text-decoration: underline;
-    }
-
-    #btn{
-        position: absolute;
-
-    }
-
-
-    [data-popup]:after {
-     //   position : relative;
-        content : attr(data-popup);
-       // float: right;
-        cursor: help;
-        background-color: gainsboro;
-        border: 2px;
-        border-radius: 8px;
-        padding: 5px 0;
-        opacity : 0;
-
-    }
-
-    [data-popup]:hover:after {
-        opacity : 1;
-    };
- //   a, a:visited, a:focus, a:active, a:hover{
- //       outline:0 none !important;
- //   }
-    .cl1,.cl2,.cl3
-    {
-        display: table-cell;
+        margin: 5px;
     }
 
 </style>
 <body>
-<div class="cl1" data-tooltip-position="bottom" data-popup="This adress will be used for recover  your password">
-<input type="email" id="email1" data-popup-side="right" >
-</div>
-<div class="cl2" data-tooltip-position="bottom" data-popup="This adress will be used for recover  your password">
-    <input type="email" id="email2" data-popup-side="right" >
-</div>
-<div class="cl3" data-tooltip-position="bottom" data-popup="This adress will be used for recover  your password">
-    <input type="email" id="email3" data-popup-side="right" >
+
+
+
+
+<div id="list" class="cl0">
+    <div id="i1" class="cl1"> </div>
+    <div id="i2" class="cl1"> </div>
+    <div id="i3" class="cl1"> </div>
+    <div id="i4" class="cl1"> </div>
 </div>
 
-<div id="btn">
-    <button type="button"
-            data-popup-id="template-login-popup"
-            data-popup-side="below">войти на сайт</button>
-</div>
-
-<script type="text/x-template" id ="template-login-popup">
-<div id="modal">
-    <div id="email">
-    <label> E-mail</label>
-    <input type="text" name="email">
-    </div>
-    <div id="password">
-    <label >Password</label>
-    <input type="text" name="password">
-    </div>
-</div>
-
-</script>
 <script>
-   // var relX,relY;
-    var template= $('#template-login-popup').html();
-  (function() {
-        $('input').focus(function (e) {
-                var wrapper = $(this).parent();
-                var parentOffset = wrapper.offset();
-            //    relX = e.pageX - parentOffset.left ;//+ wrapper.scrollLeft();
-            //    relY = e.pageY - parentOffset.top ;//+ wrapper.scrollTop();
+    (function(){
+     var rec = document.getElementsByClassName('cl1');
+      //  var par = document.getElementsByClassName('cl0');
+//        for(var i=0;i<=rec.length;i++)
+//        {
+//            rec[i].addEventListener('dblclick', function (e) {
+//                if (e.target) {
+//
+//                    var newDiv = document.createElement('div');
+//                    newDiv.setAttribute('class', 'cl1');
+//                    var attr = e.target.getAttribute('id');
+//                    newDiv.setAttribute('id', attr);
+//                    list.appendChild(newDiv)
+//                }
+//              //  alert('zxczxcx');
+//            })
+//        };
 
-            var left= $(e.target).position().left+ wrapper.scrollLeft() ;//- parentOffset.left;
-            var top = $(e.target).position().top + wrapper.scrollTop();// - parentOffset.top;
-            console.log(left);
-            console.log(top);
-                $('#btn').css({
-                    left: left,
-                    top: top+50
-                });
-                $('#btn').append(template);
-            return false;
-        });
-      $('input').blur(function(){
-          $('#btn').children().remove();
-          return false;
-      });
+        list.addEventListener('click', function (e) {
+
+                if (e.target.getAttribute('class')=="cl0") {
+                    var newDiv = document.createElement('div');
+                    newDiv.setAttribute('class', 'cl1');
+                    newDiv.setAttribute('id', 'i3');
+                    list.appendChild(newDiv)
+                }
+            else
+                    for(var i=0;i<=rec.length;i++)
+                    {
+                        rec[i].addEventListener('click', function (e) {
+                            if (e.target.getAttribute('class')=="cl1") {
+                                e.target.remove();
+                            }
+                        })
+                    };
+            })
+
     })();
+
 
 </script>
 
