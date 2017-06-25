@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+
+
+
+
+    var baseObj = {
+        firstName : 'Default',
+        lastName : 'Default',
+        fullName :function()
+        {
+            console.log(this.firstName +'  '+this.lastName);
+        }
+    };
+
+    var derivedObj ={
+
+        firstName : 'Vasya',
+        lastName  : 'Pavlichemko'
+    };
+
+    derivedObj.__proto__ = baseObj
+    console.log(derivedObj.fullName());
+
+    var derivedObj2 ={
+
+        firstName : 'Max'
+    };
+
+    derivedObj2.__proto__  = baseObj;
+    console.log(derivedObj2.fullName());
+
+    var func = function()
+    {}
+
+    console.log(typeof(func) )
+    console.log(typeof(baseObj))
+</script>
+
+</body>
+</html>
