@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+    var obj = {a: 'Custom'};
+
+    // This property is set on the global object
+    var a = 'Global';
+
+    function whatsThis() {
+        return this.a;
+    }
+
+    console.log(whatsThis());          // Returns 'Global'
+    console.log(whatsThis.call(obj));
+    console.log(whatsThis.apply(obj));
+
+</script>
+
+
+</body>
+</html>
