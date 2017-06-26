@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/Static_Value.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5825545">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -57,8 +57,8 @@
       <file leaf-file-name="Privileged_Method.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Privileged_Method.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="24" column="29" selection-start-line="11" selection-start-column="6" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -343,7 +343,13 @@
       <option name="project" value="LOCAL" />
       <updated>1498502792553</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1">
+      <created>1498502919138</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1498502919138</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -526,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Privileged_Method.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="24" column="29" selection-start-line="11" selection-start-column="6" selection-end-line="24" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -535,7 +541,7 @@
     <entry file="file://$PROJECT_DIR$/Static_Value.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5825545">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
           <folding />
         </state>
       </provider>

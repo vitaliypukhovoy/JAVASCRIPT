@@ -8,6 +8,7 @@
 
 <script>
     (function(){
+        // Static value
         var privateValue = 10;
 
         function pivateFunction(){
@@ -22,9 +23,18 @@
         {
             privateValue++;
             pivateFunction();
+            console.log(privateValue);
         }
 
     })();
+
+
+    var obj1 = new MyObject();
+    obj1.publicMethod();
+
+    var obj2 = new MyObject();
+    obj2.publicMethod();
+
 
     (function(){
         // Static value
