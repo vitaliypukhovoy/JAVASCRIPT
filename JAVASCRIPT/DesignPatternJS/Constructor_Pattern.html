@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    var newObject = {};
+
+    // or
+    var newObject = Object.create( Object.prototype );
+
+    // or
+    var newObject = new Object();
+
+    // Set properties
+    newObject.someKey = "Hello World";
+
+    // Get properties
+    var value = newObject.someKey;
+
+    // Set properties
+    newObject["someKey"] = "Hello World";
+
+    // Get properties
+    var value = newObject["someKey"];
+
+//===============================================================
+    // ECMAScript 5
+    Object.defineProperty( newObject, "someKey", {
+        value: "for more control of the property's behavior",
+        writable: true,
+        enumerable: true,
+        configurable: true
+    });
+
+//================================================================
+    var defineProp = function ( obj, key, value ){
+        var config = {
+            value: value,
+            writable: true,
+            enumerable: true,
+            configurable: true
+        };
+        Object.defineProperty( obj, key, config );
+    };
+
+    var person = Object.create( Object.prototype );
+
+    // Populate the object with properties
+    defineProp( person, "car", "Delorean" );
+    defineProp( person, "dateOfBirth", "1981" );
+    defineProp( person, "hasBeard", false );
+
+    console.log(person);
+    //===============================================================
+    Object.defineProperties( newObject, {
+
+        "someKey": {
+            value: "Hello World",
+            writable: true
+        },
+
+        "anotherKey": {
+            value: "Foo bar",
+            writable: false
+        }
+
+    });
+    //====================================================================
+    var driver = Object.create( person );
+
+    // Set some properties for the driver
+    defineProp(driver, "topSpeed", "100mph");
+
+    // Get an inherited property (1981)
+    console.log( driver.dateOfBirth );
+
+    // Get the property we set (100mph)
+    console.log( driver.topSpeed );
+    //====================================================================
+
+    function Car( model, year, miles ) {
+
+        this.model = model;
+        this.year = year;
+        this.miles = miles;
+
+        this.toString = function () {
+            return this.model + " has done " + this.miles + " miles";
+        };
+    }
+
+    var civic = new Car( "Honda Civic", 2009, 20000 );
+    var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
+
+
+    console.log( civic.toString() );
+    console.log( mondeo.toString() );
+
+
+    //====================================================================
+    function Car( model, year, miles ) {
+
+        this.model = model;
+        this.year = year;
+        this.miles = miles;
+
+    }
+
+    Car.prototype.toString = function () {
+        return this.model + " has done " + this.miles + " miles";
+    };
+
+    var civic = new Car( "Honda Civic", 2009, 20000 );
+    var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
+
+    console.log( civic.toString() );
+    console.log( mondeo.toString() );
+
+
+
+</script>
+
+</body>
+</html>
