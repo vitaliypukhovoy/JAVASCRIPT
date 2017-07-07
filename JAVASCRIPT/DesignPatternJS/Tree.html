@@ -49,11 +49,12 @@
 
     tree._root.children[0].children.push(new Node('five'));
     tree._root.children[0].children[0].parent = tree._root.children[0];
-
     tree._root.children[0].children.push(new Node('six'));
     tree._root.children[0].children[1].parent = tree._root.children[0];
+    tree._root.children[0].children.push(new Node('seven'));
+    tree._root.children[0].children[1].parent = tree._root.children[0];
 
-    tree._root.children[2].children.push(new Node('seven'));
+    tree._root.children[2].children.push(new Node('eight'));
     tree._root.children[2].children[0].parent = tree._root.children[2];
 
     tree.traverseDF(function(node) {
