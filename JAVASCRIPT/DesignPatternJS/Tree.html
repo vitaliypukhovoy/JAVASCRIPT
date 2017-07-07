@@ -55,8 +55,57 @@
     tree._root.children[2].children.push(new Node('eight'));
     tree._root.children[2].children[0].parent = tree._root.children[2];
 
+
+   // { "name":"John", "age":31, "city":"New York" }'
+//
+//  var tree1 =  [{
+//
+//      one : [{
+//          two:[{
+//              parent : 'one',
+//              date  : 'two',
+//              five : {
+//                  parent : 'two',
+//                  date :'five'
+//              },
+//              six :{
+//                  parent : 'two',
+//                  date :'six'
+//              },
+//              seven :{
+//                  parent : 'two',
+//                  date :'seven'
+//              }
+//          }],
+//          three:{
+//              parent : 'one',
+//              date  : 'three'
+//          },
+//          four :[{
+//              parent : 'one',
+//              date  : 'four',
+//              eight :{
+//                  parent :  'four',
+//                  date :'eight'
+//              }
+//          }]
+//      }]
+//    }];
+
+//    "players": [
+//        { "name": "Player 1" },
+//        { "name": "Player 2" },
+//        { "name": "Player 3" },
+//        { "name": "Player 4" }
+//    ],
+//            "teams": [
+//        {
+//            "name": "Team 1",
+//            "players": [ player1, player2 ],
+
     tree.traverseDF(function(node) {
         console.log(node.data)
+        console.log(node.parent)
     });
 
 //
