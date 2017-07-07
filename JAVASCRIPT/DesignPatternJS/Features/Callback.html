@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var param = '777';
+
+    function method(callback)
+    {
+        callback(param)
+
+    };
+
+    method(function(param)
+            {
+                console.log('ha - ha -ha');
+                console.log(param);
+            }
+    );
+
+
+</script>
+
+</body>
+</html>
