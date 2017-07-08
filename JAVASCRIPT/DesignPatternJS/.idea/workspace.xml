@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Features/Callback.html" afterPath="$PROJECT_DIR$/Features/Callback.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree2.html" afterPath="$PROJECT_DIR$/Tree2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -78,8 +77,8 @@
       <file leaf-file-name="Tree2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tree2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44392523">
-              <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+            <state vertical-scroll-proportion="1.271028">
+              <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -522,7 +521,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499524506242</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="tree2">
+      <created>1499542083707</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1499542083707</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -766,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tree2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44392523">
-          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+        <state vertical-scroll-proportion="1.271028">
+          <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
           <folding />
         </state>
       </provider>
