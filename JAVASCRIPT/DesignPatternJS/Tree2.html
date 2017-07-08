@@ -41,7 +41,6 @@
         };
     }
 
-
     var tree = new Tree("CEO");
 
     tree.addChild( new Tree('Child 1'));
@@ -67,15 +66,30 @@
     }
     console.log(tree);
 
-    for (var i = 0; i < children.length ;i++)
+//    for (var i = 0; i < children.length ;i++)
+//    {
+//        console.log(children[i].data);
+//        for (var j = 0; j <   children[i].children.length ; j++) {
+//
+//              console.log(children[i].children[j].data);
+//        }
+//    }
+
+
+    function method(tree)
     {
-        console.log(children[i].data);
-        for (var j = 0; j <   children[i].children.length ; j++) {
+        (function recurse(currentNode) {
 
-              console.log(children[i].children[j].data);
-        }
-    }
+            for(var i = 0, length = currentNode.children.length ; i<length ; i++ )
+            {
+                recurse(currentNode.children[i])
+            }
+            console.log(currentNode.data)
 
+        })(tree);
+    };
+
+    method(tree);
 
 </script>
 
