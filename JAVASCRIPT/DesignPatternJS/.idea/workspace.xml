@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tree2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree2.html" afterPath="$PROJECT_DIR$/Tree2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DesignPatternJS.iws" />
@@ -107,8 +107,8 @@
       <file leaf-file-name="Tree2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tree2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4299065">
-              <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.8676013">
+              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -503,7 +503,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499517545287</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="tree2">
+      <created>1499522021160</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1499522021160</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -575,7 +581,8 @@
     <MESSAGE value="tree" />
     <MESSAGE value="1" />
     <MESSAGE value="callback" />
-    <option name="LAST_COMMIT_MESSAGE" value="callback" />
+    <MESSAGE value="tree2" />
+    <option name="LAST_COMMIT_MESSAGE" value="tree2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -746,8 +753,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tree2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4299065">
-          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.8676013">
+          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
           <folding />
         </state>
       </provider>
