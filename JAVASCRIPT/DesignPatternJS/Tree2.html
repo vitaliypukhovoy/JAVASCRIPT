@@ -6,7 +6,55 @@
 </head>
 <body>
 
+<style>
+    .first{
+     color: aqua;
+
+
+     }
+
+    .second{
+        color: blue;
+
+
+    }
+
+    .third{
+        color: brown;
+
+    }
+    .forth
+    {
+        color: chartreuse;
+    }
+
+
+</style>
+
+
 <script>
+
+    var div = document.createElement('div');
+    div.setAttribute('id','tree');
+    document.body.appendChild(div);
+
+    function addLeaf(item,level)
+    {
+        var leaf = document.createElement('div');
+        leaf.innerText  = item;
+        if(level==0)
+            leaf.setAttribute('class','first');
+        else if(level==1)
+            leaf.setAttribute('class','second');
+        else if(level==2)
+            leaf.setAttribute('class','third');
+        else if(level==3)
+            leaf.setAttribute('class','forth');
+
+        document.getElementById('tree').appendChild(leaf)
+    }
+
+
 
     function Tree(value)
     {
@@ -52,10 +100,15 @@
      var children = tree.getChildren();
 
     children[0].addChild(new Tree('level 2 0'));
+    children[0].children[0].addChild(new Tree('level 3 0'));
 
     children[1].addChild(new Tree('level 2 0'));
 
+    children[1].children[0].addChild(new Tree('level 3 0'));
+
     children[2].addChild(new Tree('level 2 0'));
+
+    children[2].children[0].addChild(new Tree('level 3 0'));
 
     for (var i = 0; i < children.length ;i++)
     {
@@ -76,20 +129,48 @@
 //    }
 
 
-    function method(tree)
-    {
-        (function recurse(currentNode) {
+//    function traverse(tree)
+//    {
+//        (function recurse(currentNode) {
+//
+//            for(var i = 0, length = currentNode.children.length ; i<length ; i++ )
+//            {
+//                recurse(currentNode.children[i])
+//            }
+//            console.log(currentNode.data)
+//
+//        })(tree);
+//    };
+//       traverse(tree);
+
+
+     Tree.prototype.traverse = function(callback){
+
+         (function recurse(currentNode) {
+
+             if (typeof recurse.level == 'undefined')
+                 recurse.level = 0;
+             else
+                 recurse.level++;
 
             for(var i = 0, length = currentNode.children.length ; i<length ; i++ )
             {
-                recurse(currentNode.children[i])
-            }
-            console.log(currentNode.data)
+                recurse(currentNode.children[i] )
+            };
+
+             callback(currentNode, recurse.level);
+
+             recurse.level -- ;
 
         })(tree);
-    };
+     };
 
-    method(tree);
+    tree.traverse(function(node, level){
+
+
+        console.log(node.data+'   ' + level);
+        addLeaf(node.data,level)
+    })
 
 </script>
 
