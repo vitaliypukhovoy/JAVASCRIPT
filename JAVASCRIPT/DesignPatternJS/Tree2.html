@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    function Tree(value)
+    {
+        this.data = value;
+        this.children = [];
+        this.parent = null;
+
+        this.getParent = function(){
+
+            return this.parent;
+        };
+
+        this.setParent = function(node){
+
+            this.parent = node;
+        };
+
+        this.getChildren = function(){
+
+            return this.children;
+        };
+
+        this.removeChildren = function(){
+
+           this.children = [];
+        };
+
+        this.addChild  = function(node)
+        {
+            this.setParent(this);
+            this.children[this.children.length] = node;
+        };
+    }
+
+
+    var tree = new Tree("CEO");
+
+   tree.addChild( new Tree('Child 1'));
+
+
+
+    tree.addChild( new Tree('Child 2'));
+
+    tree.addChild( new Tree('Child 3'));
+
+     var children = tree.getChildren();
+
+    children[0].addChild(new Tree('level 2 0'));
+
+    children[1].addChild(new Tree('level 2 0'));
+
+    children[2].addChild(new Tree('level 2 0'));
+
+    for (var i = 0; i < children.length ;i++)
+    {
+        for (var j = 0; j <   5; j++) {
+
+            children[i].addChild(new Tree('level 2 ' + (j+1)))
+        }
+    }
+    console.log(tree);
+
+    for (var i = 0; i < children.length ;i++)
+    {
+        console.log(children[i].data);
+        for (var j = 0; j <   children[i].children.length ; j++) {
+
+              console.log(children[i].children[j].data);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
