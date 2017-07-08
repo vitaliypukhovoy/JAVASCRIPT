@@ -34,6 +34,29 @@
 
     };
 
+
+    Tree.prototype.traverseBF = function(callback) {
+       // var queue = new Queue();
+
+         var queue = [];
+
+        //queue.enqueue(this._root);
+        queue.push(this._root);
+
+        //currentTree = queue.dequeue();
+        currentTree = queue.shift();
+
+
+        while(currentTree){
+            for (var i = 0, length = currentTree.children.length; i < length; i++) {
+                queue.push(currentTree.children[i]);
+            }
+
+            callback(currentTree);
+            currentTree = queue.shift();
+        }
+    };
+
     var tree = new Tree('one');
 
     tree._root.children.push(new Node('two'));
@@ -55,57 +78,45 @@
     tree._root.children[2].children.push(new Node('eight'));
     tree._root.children[2].children[0].parent = tree._root.children[2];
 
-
-   // { "name":"John", "age":31, "city":"New York" }'
+    // { "name":"John", "age":31, "city":"New York" }'
 //
-//  var tree1 =  [{
-//
-//      one : [{
-//          two:[{
-//              parent : 'one',
-//              date  : 'two',
-//              five : {
-//                  parent : 'two',
-//                  date :'five'
-//              },
-//              six :{
-//                  parent : 'two',
-//                  date :'six'
-//              },
-//              seven :{
-//                  parent : 'two',
-//                  date :'seven'
-//              }
-//          }],
-//          three:{
-//              parent : 'one',
-//              date  : 'three'
-//          },
-//          four :[{
-//              parent : 'one',
-//              date  : 'four',
-//              eight :{
-//                  parent :  'four',
-//                  date :'eight'
-//              }
-//          }]
-//      }]
-//    }];
+  var tree1 =  [{
 
-//    "players": [
-//        { "name": "Player 1" },
-//        { "name": "Player 2" },
-//        { "name": "Player 3" },
-//        { "name": "Player 4" }
-//    ],
-//            "teams": [
-//        {
-//            "name": "Team 1",
-//            "players": [ player1, player2 ],
+      one : [{
+          two:[{
+              parent : 'one',
+              date  : 'two',
+              five : {
+                  parent : 'two',
+                  date :'five'
+              },
+              six :{
+                  parent : 'two',
+                  date :'six'
+              },
+              seven :{
+                  parent : 'two',
+                  date :'seven'
+              }
+          }],
+          three:{
+              parent : 'one',
+              date  : 'three'
+          },
+          four :[{
+              parent : 'one',
+              date  : 'four',
+              eight :{
+                  parent :  'four',
+                  date :'eight'
+              }
+          }]
+      }]
+    }];
 
-    tree.traverseDF(function(node) {
+
+    tree.traverseBF(function(node) {
         console.log(node.data)
-        console.log(node.parent)
     });
 
 //
