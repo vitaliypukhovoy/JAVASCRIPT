@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" afterPath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -88,7 +87,7 @@
       <file leaf-file-name="Tree2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tree2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.50311524">
+            <state vertical-scroll-proportion="0.12616822">
               <caret line="134" column="26" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="26" />
               <folding />
             </state>
@@ -591,7 +590,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499620424392</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="tree2">
+      <created>1499620490266</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1499620490266</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -818,14 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Static_Value.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15384616">
@@ -834,9 +831,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tree2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.50311524">
+        <state vertical-scroll-proportion="0.12616822">
           <caret line="134" column="26" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="26" />
           <folding />
         </state>
