@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Git\JAVASCRIPT\JAVASCRIPT\If_else_js.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" afterPath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -88,8 +88,8 @@
       <file leaf-file-name="Tree2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tree2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.317757">
-              <caret line="111" column="28" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.29127726">
+              <caret line="134" column="26" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -573,7 +573,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499614702891</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="tree2">
+      <created>1499614779490</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1499614779490</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -818,8 +824,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tree2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.317757">
-          <caret line="111" column="28" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.29127726">
+          <caret line="134" column="26" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="26" />
           <folding />
         </state>
       </provider>

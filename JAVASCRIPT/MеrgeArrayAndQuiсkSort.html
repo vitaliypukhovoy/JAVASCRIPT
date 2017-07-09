@@ -6,32 +6,56 @@
 </head>
 <body>
 
+<style>
+
+    div{
+     display: inline-block;
+     margin-left: 10px;
+     color:brown;
+     margin-bottom: 20px;
+    }
+    span
+    {
+        display: block;
+        color: blueviolet;
+    }
+
+</style>
+
 <script>
 
     var a = [9, 2, 1, 5, 122, 152, 34, 55, 67, 100, 234];
     var arr = [155, 7, 4, 6, 3, 45, 68, 87, 35, 22];
-    var array1 = [];
-    var union = function (a, arr) {
-        this.a = a;
-        this.arr = arr,
-                this.array = [],
-                this.addArray = function () {
-                    self = this;
-                    a.forEach(function (el, i, ar) {
-                        el != undefined ? self.array.push(el) : '';
-                        arr[i] != undefined ? self.array.push(arr[i]) : '';
-                    });
-                }
-        this.sort = function () {
-            this.array.sort(this.comparer);
+
+    var div = document.createElement('div');
+    div.setAttribute('id','array')
+    document.body.appendChild(div);
+
+
+    var quickSortModule = (function () {
+
+        var MergeArray = function (a, arr) {
+            this.a = a;
+            this.arr = arr,
+                    this.array = [],
+                    this.addArray = function () {
+                        self = this;
+                        a.forEach(function (el, i, ar) {
+                            el != undefined ? self.array.push(el) : '';
+                            arr[i] != undefined ? self.array.push(arr[i]) : '';
+                        });
+                    }
+            this.sort = function () {
+                this.array.sort(this.comparer);
+            };
+            MergeArray.prototype.comparer = function (a, b) {
+
+                return a - b;
+            };
+            //    Array.prototype.sort.call(mergeArray.array, function (a, b) {
+            //        return a - b;
+            //    });
         };
-    };
-
-    function isInteger(num) {
-        return (num ^ 0) === num;
-    }
-    ;
-
 
     var quickSort = function (array, left, right) {
 
@@ -51,41 +75,55 @@
                 j--;
             }
         }
-
-
         if (left < j)
             quickSort(array, i, right)
         if (j < right)
             quickSort(array, left, j)
-
         return array;
-
-
     }
-    union.prototype.comparer = function (a, b) {
 
-        return a - b;
+    return {
+        MergeArrayM : MergeArray,
+        quickSortM  : quickSort
     };
+   })();
 
-    //    Array.prototype.sort.call(un.array, function (a, b) {
-    //        return a - b;
-    //    });
+    var MergeArray =  quickSortModule.MergeArrayM;
 
-    var un = new union(a, arr);
-    un.addArray();
-    var len = un.array.length;
-    //un.sort();
-    un.array.map(function (el) {
+    var merge = new MergeArray(a, arr);
+    merge.addArray();
+    var len = merge.array.length;
+    //merge.sort();
+
+    var span = document.createElement('span');
+    span.innerText = 'merge array';
+    document.getElementById('array').appendChild(span);
+
+    merge.array.map(function (el) {
+        var div = document.createElement('div');
+        div.innerText = el;
+        document.getElementsByTagName('span')[0].appendChild(div);
         return console.log(el)
     });
-    console.log('==================================')
-    quickSort(un.array, 0, un.array.length);
+
+    quickSortModule.quickSortM(merge.array, 0, merge.array.length)
+
+    var span = document.createElement('span');
+    span.innerText = 'quit sort';
+    document.getElementById('array').appendChild(span);
+
+    merge.array.map(function (el) {
 
 
-    un.array.map(function (el) {
-        return console.log(el)
+
+        if( typeof el ===  'number') {
+            var div = document.createElement('div');
+            div.innerText = el;
+            document.getElementsByTagName('span')[1].appendChild(div);
+        }
+
+        return  console.log(el)
     });
-
 
 </script>
 
