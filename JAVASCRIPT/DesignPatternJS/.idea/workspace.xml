@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Git\JAVASCRIPT\JAVASCRIPT\Cat-Dog-Cow-Mouse.html" afterPath="$PROJECT_DIR$/../InheritJS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" afterPath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pagination.html" afterPath="$PROJECT_DIR$/../pagination.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../position_login.html" afterPath="$PROJECT_DIR$/../position_login.html" />
+      <change type="DELETED" beforePath="C:\Git\JAVASCRIPT\JAVASCRIPT\If_else_js.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -91,8 +88,8 @@
       <file leaf-file-name="Tree2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tree2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1588785">
-              <caret line="105" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="209" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.317757">
+              <caret line="111" column="28" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -570,7 +567,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499614141405</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="tree2">
+      <created>1499614702891</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1499614702891</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -815,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tree2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1588785">
-          <caret line="105" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="209" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.317757">
+          <caret line="111" column="28" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
           <folding />
         </state>
       </provider>
