@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<style>
+
+    .first{
+        color: aqua;
+        position: relative;
+        left: 10px;
+        top: -10px;
+    }
+
+    .second{
+        color: blue;
+        position: relative;
+        left: 30px;
+    }
+
+    .third{
+        color: brown;
+        position: relative;
+        left: 50px;
+
+    }
+    .forth
+    {
+        color: chartreuse;
+        position: relative;
+        left: 80px;
+    }
+
+    a {
+        display: block;
+    }
+
+</style>
+
+
+<script>
+
+    var div = document.createElement('div');
+    div.setAttribute('id', 'tree');
+    document.body.appendChild(div);
+
+
+    var ModuleTree = (function () {
+
+        var queue = [];
+        var tree;
+        var leaf;
+
+        var Tree = function (value) {
+            this.data = value;
+            this.children = [];
+            this.parent = null;
+
+            this.getParent = function () {
+
+                return this.parent;
+            };
+
+            this.setParent = function (node) {
+
+                this.parent = node;
+            };
+
+            this.getChildren = function () {
+
+                return this.children;
+            };
+
+            this.removeChildren = function () {
+
+                this.children = [];
+            };
+
+            this.addChild = function (node) {
+                this.setParent(this);
+                this.children[this.children.length] = node;
+            };
+
+            Tree.prototype.traverse = function (callback) {
+
+                (function recurse(currentNode) {
+
+                    if (typeof recurse.level == 'undefined')
+                        recurse.level = 0;
+                    else
+                        recurse.level++;
+
+                    for (var i = 0, length = currentNode.children.length; i < length; i++) {
+                        recurse(currentNode.children[i])
+                    };
+
+                    callback(currentNode, recurse.level);
+
+                    recurse.level--;
+
+                })(tree);
+            };
+
+        }
+
+        var comparer = function (a, b) {
+            if (a.level > b.level)
+                return 1;
+            else if (a.level < b.level)
+                return -1;
+            else
+                return 0;
+        }
+
+        var addNode = function (node) {
+            tree = new Tree(node);
+            // console.log(tree);
+            return tree;
+
+
+        }
+
+        var append = function(value){
+            leaf.setAttribute('class', value);
+            document.getElementById('tree').appendChild(leaf);
+        }
+
+        var addLeaf = function (item, level) {
+            leaf = document.createElement('a'); //target="_blank"
+            leaf.setAttribute('href', '#');
+            leaf.setAttribute('id', 'leaf');
+            leaf.innerText = item;
+            if (level == 0) {
+                leaf.setAttribute('class', 'first');
+                var tree = document.getElementById('tree');
+                tree.insertBefore(leaf, document.getElementById('tree').firstChild);
+            }
+            else if (level == 1) {
+                append('second');
+            }
+            else if (level == 2) {
+                append('third');
+            }
+            else if (level == 3) {
+                append('forth');
+            }
+        }
+
+        var traverseT = function () {
+
+            tree.traverse(function (node, level) {
+                if (level == 0) {
+                    addLeaf(node.data, level);
+                }
+                else if (level != 1)
+                    queue.push({data: node.data, level: level});
+
+                else {
+                    queue.push({data: node.data, level: level});
+                    queue.sort(comparer);
+                    queue.map(function (el) {
+                        return addLeaf(el.data, el.level);
+                    });
+                    queue = [];
+                }
+                console.log(node.data + '   ' + level);
+            })
+        }
+        return {
+            instanceTree: addNode,
+            traverseTree: traverseT,
+            Tree: Tree
+        };
+    })();
+
+    var tree = ModuleTree.instanceTree("CEO");
+    var Tree = ModuleTree.Tree;
+
+    tree.addChild(new Tree('Child 1'));
+    tree.addChild(new Tree('Child 2'));
+    tree.addChild(new Tree('Child 3'));
+
+    var children = tree.getChildren();
+    children[0].addChild(new Tree('level 2 0'));
+    children[0].children[0].addChild(new Tree('level 3 0'));
+    children[1].addChild(new Tree('level 2 0'));
+    children[1].children[0].addChild(new Tree('level 3 0'));
+    children[2].addChild(new Tree('level 2 0'));
+    children[2].children[0].addChild(new Tree('level 3 0'));
+
+    for (var i = 0; i < children.length; i++) {
+        for (var j = 0; j < 5; j++) {
+
+            children[i].addChild(new Tree('level 2 ' + (j + 1)))
+        }
+    }
+    ;
+    console.log(tree);
+
+
+    ModuleTree.traverseTree();
+
+
+</script>
+
+</body>
+</html>
