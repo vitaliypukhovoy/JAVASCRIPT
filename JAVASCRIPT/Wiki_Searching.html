@@ -31,15 +31,11 @@
 <script>
 
 (function() {
-    //  var form = document.querySelector('.form-search');
-    //  var body = new FormData(form);
-    //  body.append("<b>Appended text</b>",true);//'antispam', true);
 
     var  input = document.querySelector('.ipt');
     var result = document.createElement('div');
     result.setAttribute("class","result");
     document.body.appendChild(result);
-
 
     var search = '';
 
@@ -131,8 +127,7 @@
                         a.setAttribute("target","_blank");
                     })
                 }
-            }
-            ;
+            };
         });
         xhr.send(body);
     };
