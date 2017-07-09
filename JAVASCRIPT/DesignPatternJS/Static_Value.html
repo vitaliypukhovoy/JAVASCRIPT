@@ -7,20 +7,19 @@
 <body>
 
 <script>
-    (function(){
+    (function () {
         // Static value
         var privateValue = 10;
 
-        function pivateFunction(){
-        return false;
+        function pivateFunction() {
+            return false;
         };
 
-        MyObject = function(){
+        MyObject = function () {
 
         };
 
-        MyObject.prototype.publicMethod =  function()
-        {
+        MyObject.prototype.publicMethod = function () {
             privateValue++;
             pivateFunction();
             console.log(privateValue);
@@ -36,24 +35,21 @@
     obj2.publicMethod();
 
 
-    (function(){
+    (function () {
         // Static value
         var name = "";
-        Person = function( value){
-           name= value;
+        Person = function (value) {
+            name = value;
         };
 
-        Person.prototype.getName =  function()
-        {
+        Person.prototype.getName = function () {
             return name;
         };
 
-        Person.prototype.setName =  function(value)
-        {
-              name = value;
+        Person.prototype.setName = function (value) {
+            name = value;
         }
     })();
-
 
     var person1 = new Person('Max');
     console.log(person1.getName());

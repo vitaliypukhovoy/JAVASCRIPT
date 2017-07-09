@@ -3,44 +3,39 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .first {
+            color: aqua;
+            position: relative;
+            left: 10px;
+            top: -10px;
+        }
+
+        .second {
+            color: blue;
+            position: relative;
+            left: 30px;
+        }
+
+        .third {
+            color: brown;
+            position: relative;
+            left: 50px;
+
+        }
+
+        .forth {
+            color: chartreuse;
+            position: relative;
+            left: 80px;
+        }
+
+        a {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-
-<style>
-
-    .first{
-        color: aqua;
-        position: relative;
-        left: 10px;
-        top: -10px;
-     }
-
-    .second{
-        color: blue;
-        position: relative;
-        left: 30px;
-    }
-
-    .third{
-        color: brown;
-        position: relative;
-        left: 50px;
-
-    }
-    .forth
-    {
-        color: chartreuse;
-        position: relative;
-        left: 80px;
-    }
-
-    a {
-        display: block;
-    }
-
-</style>
-
-
 <script>
 
     var div = document.createElement('div');
@@ -95,7 +90,8 @@
 
                     for (var i = 0, length = currentNode.children.length; i < length; i++) {
                         recurse(currentNode.children[i])
-                    };
+                    }
+                    ;
 
                     callback(currentNode, recurse.level);
 
@@ -123,7 +119,7 @@
 
         }
 
-        var append = function(value){
+        var append = function (value) {
             leaf.setAttribute('class', value);
             document.getElementById('tree').appendChild(leaf);
         }
@@ -200,9 +196,7 @@
     ;
     console.log(tree);
 
-
     ModuleTree.traverseTree();
-
 
 </script>
 

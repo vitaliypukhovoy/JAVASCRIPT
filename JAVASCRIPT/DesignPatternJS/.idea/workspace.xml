@@ -2,6 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Constructor_Pattern.html" afterPath="$PROJECT_DIR$/Constructor_Pattern.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Function_inherit.html" afterPath="$PROJECT_DIR$/Function_inherit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../InheritJS.html" afterPath="$PROJECT_DIR$/../InheritJS.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mixin_Pattern.html" afterPath="$PROJECT_DIR$/Mixin_Pattern.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module_Design_Pattern.html" afterPath="$PROJECT_DIR$/Module_Design_Pattern.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" afterPath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object_inherit.html" afterPath="$PROJECT_DIR$/Object_inherit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Observer.html" afterPath="$PROJECT_DIR$/Observer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Privileged_Method.html" afterPath="$PROJECT_DIR$/Privileged_Method.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Select_LocalStorage.html" afterPath="$PROJECT_DIR$/../Select_LocalStorage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Singlton.html" afterPath="$PROJECT_DIR$/Singlton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Static_Value.html" afterPath="$PROJECT_DIR$/Static_Value.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tree.html" afterPath="$PROJECT_DIR$/../Tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree.html" afterPath="$PROJECT_DIR$/Tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree2.html" afterPath="$PROJECT_DIR$/Tree2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wiki_Searching.html" afterPath="$PROJECT_DIR$/../Wiki_Searching.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wiki_load.html" afterPath="$PROJECT_DIR$/../Wiki_load.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wiki_load_promise.html" afterPath="$PROJECT_DIR$/../Wiki_load_promise.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../add_rectangles_event.html" afterPath="$PROJECT_DIR$/../add_rectangles_event.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../menu.html" afterPath="$PROJECT_DIR$/../menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../position_login.html" afterPath="$PROJECT_DIR$/../position_login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../scroll.html" afterPath="$PROJECT_DIR$/../scroll.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,8 +49,8 @@
       <file leaf-file-name="Module_Design_Pattern.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Module_Design_Pattern.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307">
-              <caret line="38" column="22" selection-start-line="36" selection-start-column="9" selection-end-line="39" selection-end-column="12" />
+            <state vertical-scroll-proportion="-3.9230769">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="46" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -37,8 +59,8 @@
       <file leaf-file-name="Observer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Observer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.1538463">
-              <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+            <state vertical-scroll-proportion="18.461538">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,8 +69,18 @@
       <file leaf-file-name="Privileged_Method.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Privileged_Method.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.538462">
-              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state vertical-scroll-proportion="-22.884615">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Singlton.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Singlton.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -57,8 +89,8 @@
       <file leaf-file-name="Mixin_Pattern.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mixin_Pattern.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.961538">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="44" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -67,48 +99,18 @@
       <file leaf-file-name="Function_inherit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Function_inherit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constructor_Pattern.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Constructor_Pattern.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Constructor_Pattern.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tree2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tree2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12616822">
-              <caret line="134" column="26" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Static_Value.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Static_Value.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15384616">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tree.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tree.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.2040498">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -117,8 +119,28 @@
       <file leaf-file-name="Object_inherit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Object_inherit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.615385">
-              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+            <state vertical-scroll-proportion="2.7692308">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Static_Value.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Static_Value.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="14.384615">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="3" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tree.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tree.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="75" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -149,21 +171,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Module_Design_Pattern.html" />
-        <option value="$PROJECT_DIR$/Observer.html" />
-        <option value="$PROJECT_DIR$/Object_inherit.html" />
-        <option value="$PROJECT_DIR$/Mixin_Pattern.html" />
-        <option value="$PROJECT_DIR$/Function_inherit.html" />
-        <option value="$PROJECT_DIR$/Privileged_Method.html" />
-        <option value="$PROJECT_DIR$/Singlton.html" />
-        <option value="$PROJECT_DIR$/Static_Value.html" />
         <option value="$PROJECT_DIR$/this.html" />
         <option value="$PROJECT_DIR$/This.html" />
         <option value="$PROJECT_DIR$/Features/slice.html" />
-        <option value="$PROJECT_DIR$/Constructor_Pattern.html" />
-        <option value="$PROJECT_DIR$/Tree.html" />
         <option value="$PROJECT_DIR$/Features/Callback.html" />
         <option value="$PROJECT_DIR$/Tree2.html" />
+        <option value="$PROJECT_DIR$/Tree.html" />
+        <option value="$PROJECT_DIR$/Static_Value.html" />
+        <option value="$PROJECT_DIR$/Singlton.html" />
+        <option value="$PROJECT_DIR$/Privileged_Method.html" />
+        <option value="$PROJECT_DIR$/Observer.html" />
+        <option value="$PROJECT_DIR$/Object_inherit.html" />
+        <option value="$PROJECT_DIR$/Module_Design_Pattern.html" />
+        <option value="$PROJECT_DIR$/Mixin_Pattern.html" />
+        <option value="$PROJECT_DIR$/Function_inherit.html" />
+        <option value="$PROJECT_DIR$/Constructor_Pattern.html" />
       </list>
     </option>
   </component>
@@ -596,7 +618,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499620490266</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="tree2">
+      <created>1499623132652</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1499623132652</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -759,90 +787,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Singlton.html">
+    <entry file="file://$PROJECT_DIR$/Tree2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Privileged_Method.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.538462">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1538463">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Object_inherit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.615385">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mixin_Pattern.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.961538">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Function_inherit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Constructor_Pattern.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Module_Design_Pattern.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
-          <caret line="38" column="22" selection-start-line="36" selection-start-column="9" selection-end-line="39" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Static_Value.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15384616">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="35" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tree.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="75" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tree2.html">
+    <entry file="file://$PROJECT_DIR$/Static_Value.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12616822">
-          <caret line="134" column="26" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="26" />
+        <state vertical-scroll-proportion="14.384615">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Singlton.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Privileged_Method.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.884615">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="18.461538">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Object_inherit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7692308">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Module_Design_Pattern.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mixin_Pattern.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function_inherit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Constructor_Pattern.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2040498">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>

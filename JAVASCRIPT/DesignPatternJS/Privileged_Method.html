@@ -7,19 +7,16 @@
 <body>
 <script>
 
-    function MyObject()
-    {
-       var privateVariable = 20;
+    function MyObject() {
+        var privateVariable = 20;
 
-       function privateFunction()
-        {
+        function privateFunction() {
             return false;
         }
 
-        this.publicMethod = function()
-        {
-          return  privateVariable++;
-           // privateFunction();
+        this.publicMethod = function () {
+            return privateVariable++;
+            privateFunction();
         }
     }
     var obj = new MyObject();
@@ -36,13 +33,10 @@
         }
     }
 
-        var person = new Person("Elly");
-        console.log(person.getName());
-        person.setName('Max');
-        console.log(person.getName());
-
-
-
+    var person = new Person("Elly");
+    console.log(person.getName());
+    person.setName('Max');
+    console.log(person.getName());
 
 </script>
 

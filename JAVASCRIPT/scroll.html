@@ -8,6 +8,7 @@
 
 <div>
     <h2 id="h1">Lorem ipsum dolor sit amet.</h2>
+
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, corporis cum dolor ea earum eos
         exercitationem quis repellendus saepe tempora! Aliquam aliquid in itaque suscipit! Adipisci aspernatur commodi
         doloribus eaque error exercitationem, molestiae possimus! A commodi cumque dicta dolorem eos harum, laborum
@@ -18,7 +19,8 @@
         optio voluptatibus.</p>
     <button id="btn1">btn1</button>
 
-    <h2  id="h2">Lorem ipsum dolor sit amet.</h2>
+    <h2 id="h2">Lorem ipsum dolor sit amet.</h2>
+
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, corporis cum dolor ea earum eos
         exercitationem quis repellendus saepe tempora! Aliquam aliquid in itaque suscipit! Adipisci aspernatur commodi
         doloribus eaque error exercitationem, molestiae possimus! A commodi cumque dicta dolorem eos harum, laborum
@@ -29,7 +31,8 @@
         optio voluptatibus.</p>
     <button id="btn2">btn2</button>
 
-    <h2  id="h3">Lorem ipsum dolor sit amet.</h2>
+    <h2 id="h3">Lorem ipsum dolor sit amet.</h2>
+
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, corporis cum dolor ea earum eos
         exercitationem quis repellendus saepe tempora! Aliquam aliquid in itaque suscipit! Adipisci aspernatur commodi
         doloribus eaque error exercitationem, molestiae possimus! A commodi cumque dicta dolorem eos harum, laborum
@@ -40,7 +43,8 @@
         optio voluptatibus.</p>
     <button id="btn3">btn3</button>
 
-    <h2  id="h4">Lorem ipsum dolor sit amet.</h2>
+    <h2 id="h4">Lorem ipsum dolor sit amet.</h2>
+
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, corporis cum dolor ea earum eos
         exercitationem quis repellendus saepe tempora! Aliquam aliquid in itaque suscipit! Adipisci aspernatur commodi
         doloribus eaque error exercitationem, molestiae possimus! A commodi cumque dicta dolorem eos harum, laborum
@@ -51,7 +55,8 @@
         optio voluptatibus.</p>
     <button id="btn4">btn4</button>
 
-    <h2  id="h5">Lorem ipsum dolor sit amet.</h2>
+    <h2 id="h5">Lorem ipsum dolor sit amet.</h2>
+
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, corporis cum dolor ea earum eos
         exercitationem quis repellendus saepe tempora! Aliquam aliquid in itaque suscipit! Adipisci aspernatur commodi
         doloribus eaque error exercitationem, molestiae possimus! A commodi cumque dicta dolorem eos harum, laborum
@@ -111,28 +116,38 @@
 
     <script>
 
-        btn5.onclick= function(){
-            setTimeout(function(){ window.scrollTo(0,0)},1000)
+        btn5.onclick = function () {
+            setTimeout(function () {
+                window.scrollTo(0, 0)
+            }, 1000)
         };
-        btn1.onclick = function(){
-            var h2  =document.getElementById('h2');
-            var point= h2.getBoundingClientRect();
-            setTimeout(function(){ window.scrollTo(point.left,point.top)},1000)
+        btn1.onclick = function () {
+            var h2 = document.getElementById('h2');
+            var point = h2.getBoundingClientRect();
+            setTimeout(function () {
+                window.scrollTo(point.left, point.top)
+            }, 1000)
         };
-        btn2.onclick = function(){
-            var h3  =document.getElementById('h3');
-            var point= h3.getBoundingClientRect();
-            setTimeout(function(){ window.scrollTo(point.left,point.top)},1000)
+        btn2.onclick = function () {
+            var h3 = document.getElementById('h3');
+            var point = h3.getBoundingClientRect();
+            setTimeout(function () {
+                window.scrollTo(point.left, point.top)
+            }, 1000)
         };
-        btn3.onclick = function(){
-            var h4  =document.getElementById('h4');
-            var point= h4.getBoundingClientRect();
-            setTimeout(function(){ window.scrollTo(point.left,point.top)},1000)
+        btn3.onclick = function () {
+            var h4 = document.getElementById('h4');
+            var point = h4.getBoundingClientRect();
+            setTimeout(function () {
+                window.scrollTo(point.left, point.top)
+            }, 1000)
         };
-        btn4.onclick = function(){
-            var h5  =document.getElementById('h5');
-            var point= h5.getBoundingClientRect();
-            setTimeout(function(){ window.scrollTo(point.left,point.top)},1000)
+        btn4.onclick = function () {
+            var h5 = document.getElementById('h5');
+            var point = h5.getBoundingClientRect();
+            setTimeout(function () {
+                window.scrollTo(point.left, point.top)
+            }, 1000)
         };
 
     </script>

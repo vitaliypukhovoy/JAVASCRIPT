@@ -6,39 +6,37 @@
 </head>
 <body>
 
-
 <script>
 
     var baseObj = {
-        firstName : 'Default',
-        lastName : 'Default',
-        fullName :function()
-        {
-            console.log(this.firstName +'  '+this.lastName);
+        firstName: 'Default',
+        lastName: 'Default',
+        fullName: function () {
+            console.log(this.firstName + '  ' + this.lastName);
         }
     };
 
-    var derivedObj ={
+    var derivedObj = {
 
-        firstName : 'Vasya',
-        lastName  : 'Pavlichemko'
+        firstName: 'Vasya',
+        lastName: 'Pavlichemko'
     };
 
     derivedObj.__proto__ = baseObj
     console.log(derivedObj.fullName());
 
-    var derivedObj2 ={
+    var derivedObj2 = {
 
-        firstName : 'Max'
+        firstName: 'Max'
     };
 
-    derivedObj2.__proto__  = baseObj;
+    derivedObj2.__proto__ = baseObj;
     console.log(derivedObj2.fullName());
 
-    var func = function()
-    {}
+    var func = function () {
+    }
 
-    console.log(typeof(func) )
+    console.log(typeof(func))
     console.log(typeof(baseObj))
 </script>
 

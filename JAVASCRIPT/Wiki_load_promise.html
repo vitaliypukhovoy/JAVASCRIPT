@@ -5,144 +5,142 @@
     <title></title>
 
     <style>
-        div{
-            float:left;
+        div {
+            float: left;
             margin: 10px;
             width: 960px;
-        //  white-space: nowrap;
-        //  overflow: hidden;
             text-overflow: ellipsis;
         }
-        div > a{
+
+        div > a {
             color: blue;
             display: table-header-group;
         }
     </style>
 </head>
 <body>
-<form class="form-search" ></form>
+<form class="form-search"></form>
 <br>
 <br>
-<input  list="list_letter" class="ipt" type="text" placeholder="Enter text for searching">
+<input list="list_letter" class="ipt" type="text" placeholder="Enter text for searching">
 <datalist id="list_letter"></datalist>
 <br>
 <br>
 
 <script>
 
-(function() {
-    var  input = document.querySelector('.ipt');
-    var result = document.createElement('div');
-    result.setAttribute("class","result");
-    document.body.appendChild(result);
+    (function () {
+        var input = document.querySelector('.ipt');
+        var result = document.createElement('div');
+        result.setAttribute("class", "result");
+        document.body.appendChild(result);
 
-    input.addEventListener('keydown',function(){
-        var url = 'https://en.wikipedia.org/w/api.php';
-        var wiki = {
-            action: 'opensearch',
-            origin: '*',
-            format: 'json',
-            search: input.value
-        };
+        input.addEventListener('keydown', function () {
+            var url = 'https://en.wikipedia.org/w/api.php';
+            var wiki = {
+                action: 'opensearch',
+                origin: '*',
+                format: 'json',
+                search: input.value
+            };
 
-        var body = Object.keys(wiki).map(function (el) {
-            return el + '=' + wiki[el]
-        }).join('&');
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST',url);
-        xhr.onload = function()
-        {
-            if(xhr.status >=200 && xhr.status < 400)
-            {
-                var response = JSON.parse(xhr.responseText)[1];
-                response.forEach(function(el,i){
-                    addList(el);
-                });
-            }
-        }
-        xhr.send(body);
-    });
-
-    function addList(item)
-    {
-        var option =  document.createElement('option');
-        option.value = item;
-        document.getElementById("list_letter").appendChild(option);
-    }
-    input.addEventListener('input', function(e) {
-
-        var val = e.target.value;
-        var list = input.getAttribute('list');
-        var options = document.getElementById(list).childNodes;
-
-        if (result.childNodes.length > 0 && result.parentNode != null) {
-            while (result.hasChildNodes()) {
-                result.removeChild(result.firstChild);
-                //result.normalize();
-            }
-        };
-
-        for(var i=0; i<options.length;i++)
-        {
-            if(options[i].value ===val)
-            {
-                /*============================= Promise ==========================================================*/
-                load(val).then(function(data){
-                    data.forEach(function(el,i,arr){
-                            if(i==3)
-                                return;
-                            var a  = document.createElement('div');
-                            a.innerText = el;
-                            result.appendChild(a);})
-
-                       data[3].forEach(function(el,i){
-                            var a  = document.createElement('a');
-                            a.innerText = el;
-                            result.appendChild(a);
-                            a.setAttribute("href",el);
-                            a.setAttribute("target","_blank");
-                        })
-
-                }).catch(function(error){
-
-                 console.log('occured error')
-                });
-                break;
-            }
-        };
-    });
-    /*============================= Promise ==========================================================*/
-        var load = function(val){
-            settingQuery(val);
-        var result = new Promise(function(resolve, reject){
+            var body = Object.keys(wiki).map(function (el) {
+                return el + '=' + wiki[el]
+            }).join('&');
             var xhr = new XMLHttpRequest();
             xhr.open('POST', url);
-            xhr.addEventListener('readystatechange', function () {
-                if (this.readyState == 4) {
-                    var data = JSON.parse(this.responseText)
-                    this.status == 200 ? resolve(data):reject(data)
-                };
-            });
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    var response = JSON.parse(xhr.responseText)[1];
+                    response.forEach(function (el, i) {
+                        addList(el);
+                    });
+                }
+            }
             xhr.send(body);
-
         });
-        return result;
-    };
 
-    function settingQuery(val)
-    {
-        var wiki = {
-            action: 'opensearch',
-            origin: '*',
-            format: 'json',
-            search: val
+        function addList(item) {
+            var option = document.createElement('option');
+            option.value = item;
+            document.getElementById("list_letter").appendChild(option);
+        }
+
+        input.addEventListener('input', function (e) {
+
+            var val = e.target.value;
+            var list = input.getAttribute('list');
+            var options = document.getElementById(list).childNodes;
+
+            if (result.childNodes.length > 0 && result.parentNode != null) {
+                while (result.hasChildNodes()) {
+                    result.removeChild(result.firstChild);
+                    //result.normalize();
+                }
+            }
+            ;
+
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].value === val) {
+                    /*============================= Promise ==========================================================*/
+                    load(val).then(function (data) {
+                        data.forEach(function (el, i, arr) {
+                            if (i == 3)
+                                return;
+                            var a = document.createElement('div');
+                            a.innerText = el;
+                            result.appendChild(a);
+                        })
+
+                        data[3].forEach(function (el, i) {
+                            var a = document.createElement('a');
+                            a.innerText = el;
+                            result.appendChild(a);
+                            a.setAttribute("href", el);
+                            a.setAttribute("target", "_blank");
+                        })
+
+                    }).catch(function (error) {
+
+                        console.log('occured error')
+                    });
+                    break;
+                }
+            }
+            ;
+        });
+        /*============================= Promise ==========================================================*/
+        var load = function (val) {
+            settingQuery(val);
+            var result = new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                xhr.addEventListener('readystatechange', function () {
+                    if (this.readyState == 4) {
+                        var data = JSON.parse(this.responseText)
+                        this.status == 200 ? resolve(data) : reject(data)
+                    }
+                    ;
+                });
+                xhr.send(body);
+
+            });
+            return result;
         };
-        window.body = Object.keys(wiki).map(function (el) {
-            return el + '=' + wiki[el]
-        }).join('&');
-        window.url = 'https://en.wikipedia.org/w/api.php';
-    }
-  })();
+
+        function settingQuery(val) {
+            var wiki = {
+                action: 'opensearch',
+                origin: '*',
+                format: 'json',
+                search: val
+            };
+            window.body = Object.keys(wiki).map(function (el) {
+                return el + '=' + wiki[el]
+            }).join('&');
+            window.url = 'https://en.wikipedia.org/w/api.php';
+        }
+    })();
 
 </script>
 

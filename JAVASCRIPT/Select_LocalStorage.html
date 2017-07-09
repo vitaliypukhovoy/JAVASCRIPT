@@ -36,160 +36,164 @@
 </head>
 <body>
 <div class="main">
-<form class="form-search" >
-<div class="name1" name="name1" >
-  <label>Andy</label>
-      <select>
-        <option value="1">Apple</option>
-        <option value="2">Orange</option>
-        <option value="3">Carrot</option>
-        <option value="4">Cherry</option>
-    </select>
-</div>
+    <form class="form-search">
+        <div class="name1" name="name1">
+            <label>Andy</label>
+            <select>
+                <option value="1">Apple</option>
+                <option value="2">Orange</option>
+                <option value="3">Carrot</option>
+                <option value="4">Cherry</option>
+            </select>
+        </div>
 
-    <div  class="name2" name="name2" >
-    <label>Harry  </label>
-        <select>
-    <option value="1">Apple</option>
-    <option value="2">Orange</option>
-    <option value="3">Carrot</option>
-    <option value="4">Cherry</option>
-</select>
-    </div>
+        <div class="name2" name="name2">
+            <label>Harry </label>
+            <select>
+                <option value="1">Apple</option>
+                <option value="2">Orange</option>
+                <option value="3">Carrot</option>
+                <option value="4">Cherry</option>
+            </select>
+        </div>
 
-    <div class="name3" name="name3" >
-    <label>Tom  </label>
-        <select>
-    <option value="1">Apple</option>
-    <option value="2">Orange</option>
-    <option value="3" >Carrot</option>
-    <option value="4">Cherry</option>
-</select>
-    </div>
+        <div class="name3" name="name3">
+            <label>Tom </label>
+            <select>
+                <option value="1">Apple</option>
+                <option value="2">Orange</option>
+                <option value="3">Carrot</option>
+                <option value="4">Cherry</option>
+            </select>
+        </div>
 
-    <div  class="name4" name="name4">
-    <label>Bill  </label>
-        <select>
-    <option value="1">Apple</option>
-    <option value="2">Orange</option>
-    <option value="3">Carrot</option>
-    <option value="4" >Cherry</option>
-</select>
-    </div>
-    <div>
-<input  type="submit" value="Save" name="save">
-    </div>
-</form>
+        <div class="name4" name="name4">
+            <label>Bill </label>
+            <select>
+                <option value="1">Apple</option>
+                <option value="2">Orange</option>
+                <option value="3">Carrot</option>
+                <option value="4">Cherry</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Save" name="save">
+        </div>
+    </form>
 </div>
 
 
 <script>
 
-(function() {
-    /*============================= LocalStore ==========================================================*/
-    var input = document.getElementsByTagName('input')[0];
-  //  var array = ['name1','name2','name3','name4'];
-    arr = [].slice.call(document.getElementsByTagName('div')).splice(1,5);
-    var array = arr.map(function(item){return item.className});
-    var saveNameOption = function(name) {
-        var opt = document.querySelector('.'+name).getElementsByTagName('option');
-        arr = [].slice.call(opt);
-        var result = arr.filter(function (option) {
-            return option.selected
-        })[0].getAttribute('value');
-        localStorage.setItem(name, result);
-    }
-
-    var saveOption = function() {
-        array.map(function (name) {
-            saveNameOption(name);
+    (function () {
+        /*============================= LocalStore ==========================================================*/
+        var input = document.getElementsByTagName('input')[0];
+        //  var array = ['name1','name2','name3','name4'];
+        arr = [].slice.call(document.getElementsByTagName('div')).splice(1, 5);
+        var array = arr.map(function (item) {
+            return item.className
         });
-    };
-
-    var etablishOption  = function()
-    {
-        array.map(function (name) {
-
-            changedOption(name);
-
-        });
-    };
-
-    var changedOption = function(name){
-        var key = localStorage.getItem(name);
-        var opt = document.querySelector('.'+name).getElementsByTagName('option')[key-1];
-        opt.setAttribute('selected','selected');
-    };
-
-    input.addEventListener('click',function(){
-        var i, len = localStorage.length;
-        var  excl= ['name1','name2','name3','name4'];
-        for(i=0; i<=len; i++)
-        {
-            var item = localStorage.key(i);
-            if(excl.indexOf(item)==1)
-            {
-                localStorage.removeItem(item);
-            }
+        var saveNameOption = function (name) {
+            var opt = document.querySelector('.' + name).getElementsByTagName('option');
+            arr = [].slice.call(opt);
+            var result = arr.filter(function (option) {
+                return option.selected
+            })[0].getAttribute('value');
+            localStorage.setItem(name, result);
         }
-        saveOption();
-    });
 
-    etablishOption();
+        var saveOption = function () {
+            array.map(function (name) {
+                saveNameOption(name);
+            });
+        };
 
-/*============================= Promise ==========================================================*/
-       function delay(ms){
-           var result = new Promise(function(resolve,reject){
-               try {
-                   if(typeof ms === "undefined"){
-                       throw new  NotPassNumberError();
-                   }
-                   else if(isNaN(ms)){
-                       throw new IsNotNumberError();
-                   }
-                   else{
-                   setTimeout(function(){
-                       resolve("It's all Ok");
-                   }, ms)
-                   }
-               }catch(error)
-               {
-                   if (error instanceof NotPassNumberError )
-                       reject("Please specify duration");
-                   else if(error instanceof IsNotNumberError )
-                   {
-                       reject("Duration is required to be a number");
-                   }
-               }
-           })
-           return result;
-       };
+        var etablishOption = function () {
+            array.map(function (name) {
 
-    function NotPassNumberError(message) {
-        this.name = 'NotPassNumberError';
-        this.message = message || 'Default Message';
-        this.stack = (new Error()).stack;
-    }
-    NotPassNumberError.prototype = Object.create(IsNotNumberError.prototype);
-    NotPassNumberError.prototype.constructor = NotPassNumberError;
+                changedOption(name);
 
-    function IsNotNumberError(message) {
-        this.name = 'IsNotNumberError';
-        this.message = message || 'Default Message';
-        this.stack = (new Error()).stack;
-    }
-    IsNotNumberError.prototype = Object.create(IsNotNumberError.prototype);
-    IsNotNumberError.prototype.constructor = IsNotNumberError;
+            });
+        };
 
-    function doStuff()
-        {
+        var changedOption = function (name) {
+            var key = localStorage.getItem(name);
+            var opt = document.querySelector('.' + name).getElementsByTagName('option')[key - 1];
+            opt.setAttribute('selected', 'selected');
+        };
+
+        input.addEventListener('click', function () {
+            var i, len = localStorage.length;
+            var excl = ['name1', 'name2', 'name3', 'name4'];
+            for (i = 0; i <= len; i++) {
+                var item = localStorage.key(i);
+                if (excl.indexOf(item) == 1) {
+                    localStorage.removeItem(item);
+                }
+            }
+            saveOption();
+        });
+
+        etablishOption();
+
+        /*============================= Promise ==========================================================*/
+        function delay(ms) {
+            var result = new Promise(function (resolve, reject) {
+                try {
+                    if (typeof ms === "undefined") {
+                        throw new NotPassNumberError();
+                    }
+                    else if (isNaN(ms)) {
+                        throw new IsNotNumberError();
+                    }
+                    else {
+                        setTimeout(function () {
+                            resolve("It's all Ok");
+                        }, ms)
+                    }
+                } catch (error) {
+                    if (error instanceof NotPassNumberError)
+                        reject("Please specify duration");
+                    else if (error instanceof IsNotNumberError) {
+                        reject("Duration is required to be a number");
+                    }
+                }
+            })
+            return result;
+        };
+
+        function NotPassNumberError(message) {
+            this.name = 'NotPassNumberError';
+            this.message = message || 'Default Message';
+            this.stack = (new Error()).stack;
+        }
+
+        NotPassNumberError.prototype = Object.create(IsNotNumberError.prototype);
+        NotPassNumberError.prototype.constructor = NotPassNumberError;
+
+        function IsNotNumberError(message) {
+            this.name = 'IsNotNumberError';
+            this.message = message || 'Default Message';
+            this.stack = (new Error()).stack;
+        }
+
+        IsNotNumberError.prototype = Object.create(IsNotNumberError.prototype);
+        IsNotNumberError.prototype.constructor = IsNotNumberError;
+
+        function doStuff() {
             console.log('I will arrive in 3 second');
         };
 
-    delay(3000).then(doStuff).catch(function(error){ console.log(error);})
-    delay().then(doStuff).catch(function(error){ console.log(error);})
-    delay("www").then(doStuff).catch(function(error){ console.log(error);})
-  })();
+        delay(3000).then(doStuff).catch(function (error) {
+            console.log(error);
+        })
+        delay().then(doStuff).catch(function (error) {
+            console.log(error);
+        })
+        delay("www").then(doStuff).catch(function (error) {
+            console.log(error);
+        })
+    })();
 
 </script>
 

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-
         #list {
             top: -16.5em;
             left: 7em;
@@ -15,11 +14,9 @@
             color: #fff;
             text-align: center;
         }
-
         #list:hover {
             top: 0;
         }
-
     </style>
 </head>
 <body>
@@ -34,7 +31,6 @@
     <br>
     <li id="li5">&darr;</li>
 </ul>
-
 
 <script>
     var str = "menu top green";
@@ -90,13 +86,11 @@
     li3.innerHTML = str;
     console.log(str); //menu green me
 
-
     toggleClass(str, 'green');
     toggleClass(str, 'red');
 
     li4.innerHTML = str;
     console.log(str); // "menu top me red"
-
 
     function toCamelCase(attr) {
 
@@ -154,8 +148,6 @@
             return 0;
     }
     ;
-
-
     var sorted = users.sort(comparer);
 
     console.log(names); // ["Alex", "John", "Carl", "Bill"]

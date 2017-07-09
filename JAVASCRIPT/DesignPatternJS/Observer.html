@@ -6,41 +6,40 @@
 </head>
 <body>
 
-
 <script>
 
-
-    var Subject = function() {
-        this.observers   = new Array();//[];
+    var Subject = function () {
+        this.observers = new Array();//[];
 
         return {
-            self : this,
-            subscribeObserver: function(observer) {
+            self: this,
+            subscribeObserver: function (observer) {
                 this.self.observers.push(observer);
             },
-            unsubscribeObserver: function(observer) {
+            unsubscribeObserver: function (observer) {
                 var index = this.self.observers.indexOf(observer);
-                if(index > -1) {
+                if (index > -1) {
                     this.self.observers.splice(index, 1);
                 }
             },
-            notifyObserver: function(observer) {
+            notifyObserver: function (observer) {
                 var index = this.self.observers.indexOf(observer);
-                if(index > -1) {
+                if (index > -1) {
                     this.self.observers[index].notify(index);
                 }
             },
-            notifyAllObservers: function() {
-                for(var i = 0; i < this.self.observers.length; i++){
+            notifyAllObservers: function () {
+                for (var i = 0; i < this.self.observers.length; i++) {
                     this.self.observers[i].notify(i);
-                };
+                }
+                ;
             }
         };
     };
 
-    var Observer = function() {
+    var Observer = function () {
         return {
-            notify: function(index) {
+            notify: function (index) {
                 console.log("Observer " + index + " is notified!");
             }
         }

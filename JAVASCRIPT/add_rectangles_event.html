@@ -6,28 +6,29 @@
 </head>
 <style>
 
-    .cl0{
-    //  display: block;
+    .cl0 {
         width: 500px;
         height: 500px;
         background: palegoldenrod;
     }
-    #i1{
+
+    #i1 {
         background: red;
     }
 
-    #i2{
+    #i2 {
         background: green;
     }
-    #i3{
+
+    #i3 {
         background: yellow;
     }
 
-    #i4{
+    #i4 {
         background: blue;
     }
-    .cl1
-    {
+
+    .cl1 {
         display: inline-block;
         width: 100px;
         height: 100px;
@@ -37,42 +38,35 @@
 </style>
 <body>
 
-
-
-
 <div id="list" class="cl0">
-    <div id="i1" class="cl1"> </div>
-    <div id="i2" class="cl1"> </div>
-    <div id="i3" class="cl1"> </div>
-    <div id="i4" class="cl1"> </div>
+    <div id="i1" class="cl1"></div>
+    <div id="i2" class="cl1"></div>
+    <div id="i3" class="cl1"></div>
+    <div id="i4" class="cl1"></div>
 </div>
 
 <script>
-    (function(){
-     var rec = document.getElementsByClassName('cl1');
+    (function () {
+        var rec = document.getElementsByClassName('cl1');
 
         list.addEventListener('click', function (e) {
-
-                if (e.target.getAttribute('class')=="cl0") {
-                    var newDiv = document.createElement('div');
-                    newDiv.setAttribute('class', 'cl1');
-                    newDiv.setAttribute('id', 'i3');
-                    list.appendChild(newDiv)
-                }
+            if (e.target.getAttribute('class') == "cl0") {
+                var newDiv = document.createElement('div');
+                newDiv.setAttribute('class', 'cl1');
+                newDiv.setAttribute('id', 'i3');
+                list.appendChild(newDiv)
+            }
             else
-                    for(var i=0;i<=rec.length;i++)
-                    {
-                        rec[i].addEventListener('click', function (e) {
-                            if (e.target.getAttribute('class')=="cl1") {
-                                e.target.remove();
-                            }
-                        })
-                    };
-            })
-
+                for (var i = 0; i <= rec.length; i++) {
+                    rec[i].addEventListener('click', function (e) {
+                        if (e.target.getAttribute('class') == "cl1") {
+                            e.target.remove();
+                        }
+                    })
+                }
+            ;
+        })
     })();
-
-
 </script>
 
 </body>

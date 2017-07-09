@@ -14,13 +14,12 @@
         this.children = [];
     }
 
-    function Tree(data)
-    {
+    function Tree(data) {
         var node = new Node(data);
         this._root = node;
     }
 
-    Tree.prototype.traverseDF = function(callback) {
+    Tree.prototype.traverseDF = function (callback) {
 
         (function recurse(currentNode) {
 
@@ -34,24 +33,16 @@
 
     };
 
+    Tree.prototype.traverseBF = function (callback) {
 
-    Tree.prototype.traverseBF = function(callback) {
-       // var queue = new Queue();
-
-         var queue = [];
-
-        //queue.enqueue(this._root);
+        var queue = [];
         queue.push(this._root);
-
-        //currentTree = queue.dequeue();
         currentTree = queue.shift();
 
-
-        while(currentTree){
+        while (currentTree) {
             for (var i = 0, length = currentTree.children.length; i < length; i++) {
                 queue.push(currentTree.children[i]);
             }
-
             callback(currentTree);
             currentTree = queue.shift();
         }
@@ -78,64 +69,9 @@
     tree._root.children[2].children.push(new Node('eight'));
     tree._root.children[2].children[0].parent = tree._root.children[2];
 
-    // { "name":"John", "age":31, "city":"New York" }'
-//
-  var tree1 =  [{
-
-      one : [{
-          two:[{
-              parent : 'one',
-              date  : 'two',
-              five : {
-                  parent : 'two',
-                  date :'five'
-              },
-              six :{
-                  parent : 'two',
-                  date :'six'
-              },
-              seven :{
-                  parent : 'two',
-                  date :'seven'
-              }
-          }],
-          three:{
-              parent : 'one',
-              date  : 'three'
-          },
-          four :[{
-              parent : 'one',
-              date  : 'four',
-              eight :{
-                  parent :  'four',
-                  date :'eight'
-              }
-          }]
-      }]
-    }];
-
-
-    tree.traverseDF(function(node) {
+    tree.traverseDF(function (node) {
         console.log(node.data)
     });
-
-//
-//    function BinarySearch() {
-//        var node = new Node();
-//        this.root = node;
-//    }
-//
-//    BinarySearch.prototype = {
-//
-//        add: function () {
-//
-//
-//        },
-//        search: function () {
-//        },
-//        remove: function () {
-//        }
-//    }
 
 </script>
 
