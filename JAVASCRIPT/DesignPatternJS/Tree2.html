@@ -95,8 +95,7 @@
 
                     for (var i = 0, length = currentNode.children.length; i < length; i++) {
                         recurse(currentNode.children[i])
-                    }
-                    ;
+                    };
 
                     callback(currentNode, recurse.level);
 
@@ -163,7 +162,6 @@
                     queue.push({data: node.data, level: level});
                     queue.sort(comparer);
                     queue.map(function (el) {
-
                         return addLeaf(el.data, el.level);
                     });
                     queue = [];
@@ -171,16 +169,13 @@
                 console.log(node.data + '   ' + level);
             })
         }
-
-
         return {
             instanceTree: addNode,
             traverseTree: traverseT,
             Tree: Tree
         };
-
-
     })();
+
     var tree = ModuleTree.instanceTree("CEO");
     var Tree = ModuleTree.Tree;
 
@@ -189,7 +184,6 @@
     tree.addChild(new Tree('Child 3'));
 
     var children = tree.getChildren();
-
     children[0].addChild(new Tree('level 2 0'));
     children[0].children[0].addChild(new Tree('level 3 0'));
     children[1].addChild(new Tree('level 2 0'));
