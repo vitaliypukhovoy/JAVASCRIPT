@@ -10,8 +10,9 @@
 
     .first{
         color: aqua;
-        position: absolute;
+        position: relative;
         left: 10px;
+        top: -10px;
      }
 
     .second{
@@ -50,17 +51,29 @@
     {
         var leaf = document.createElement('a'); //target="_blank"
         leaf.setAttribute('href','#');
+        leaf.setAttribute('id','leaf');
         leaf.innerText  = item;
         if(level==0)
-            leaf.setAttribute('class','first');
+        {
+            leaf.setAttribute('class', 'first');
+           document.getElementById('tree').insertBefore(leaf,document.getElementById('tree').firstChild);
+            //root.insertBefore(leaf);
+        }
         else if(level==1)
-            leaf.setAttribute('class','second');
-        else if(level==2)
-            leaf.setAttribute('class','third');
-        else if(level==3)
-            leaf.setAttribute('class','forth');
+        {
+            leaf.setAttribute('class', 'second');
+            document.getElementById('tree').appendChild(leaf);
+        }
+        else if(level==2) {
+            leaf.setAttribute('class', 'third');
+            document.getElementById('tree').appendChild(leaf);
+        }
+        else if(level==3) {
+            leaf.setAttribute('class', 'forth');
+            document.getElementById('tree').appendChild(leaf);
+        }
 
-        document.getElementById('tree').appendChild(leaf)
+
     }
 
     document.body.appendChild(div);
@@ -172,12 +185,13 @@
 
     var queue = [];
     tree.traverse(function(node, level){
-       if(level !=1)
+        if(level==0)
+        {
+            addLeaf(node.data,level);
+        }
+        else if(level !=1)
         queue.push({data:node.data,level:level});
-       else if(level==0)
-       {
-          addLeaf(node.data,level);
-       }
+
         else {
            queue.push({data:node.data,level:level});
            queue.sort(comparer);
