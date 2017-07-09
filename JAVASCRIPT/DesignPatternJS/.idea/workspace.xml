@@ -2,28 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Constructor_Pattern.html" afterPath="$PROJECT_DIR$/Constructor_Pattern.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Function_inherit.html" afterPath="$PROJECT_DIR$/Function_inherit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../InheritJS.html" afterPath="$PROJECT_DIR$/../InheritJS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mixin_Pattern.html" afterPath="$PROJECT_DIR$/Mixin_Pattern.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module_Design_Pattern.html" afterPath="$PROJECT_DIR$/Module_Design_Pattern.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" afterPath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object_inherit.html" afterPath="$PROJECT_DIR$/Object_inherit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Observer.html" afterPath="$PROJECT_DIR$/Observer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Privileged_Method.html" afterPath="$PROJECT_DIR$/Privileged_Method.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Select_LocalStorage.html" afterPath="$PROJECT_DIR$/../Select_LocalStorage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Singlton.html" afterPath="$PROJECT_DIR$/Singlton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Static_Value.html" afterPath="$PROJECT_DIR$/Static_Value.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tree.html" afterPath="$PROJECT_DIR$/../Tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree.html" afterPath="$PROJECT_DIR$/Tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tree2.html" afterPath="$PROJECT_DIR$/Tree2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wiki_Searching.html" afterPath="$PROJECT_DIR$/../Wiki_Searching.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wiki_load.html" afterPath="$PROJECT_DIR$/../Wiki_load.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wiki_load_promise.html" afterPath="$PROJECT_DIR$/../Wiki_load_promise.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../add_rectangles_event.html" afterPath="$PROJECT_DIR$/../add_rectangles_event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../menu.html" afterPath="$PROJECT_DIR$/../menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../position_login.html" afterPath="$PROJECT_DIR$/../position_login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../scroll.html" afterPath="$PROJECT_DIR$/../scroll.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -109,7 +87,7 @@
       <file leaf-file-name="Constructor_Pattern.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Constructor_Pattern.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2040498">
+            <state vertical-scroll-proportion="-1.6417445">
               <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
@@ -329,12 +307,6 @@
       <created>1498234146687</created>
       <option name="number" value="Default" />
       <updated>1498234146687</updated>
-    </task>
-    <task id="LOCAL-00001" summary="1">
-      <created>1498412686053</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1498412686053</updated>
     </task>
     <task id="LOCAL-00002" summary="1">
       <created>1498412880836</created>
@@ -624,7 +596,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499623132652</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="tree2">
+      <created>1499624319433</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1499624319437</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -869,7 +847,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Constructor_Pattern.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2040498">
+        <state vertical-scroll-proportion="-1.6417445">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
