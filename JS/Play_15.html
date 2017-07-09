@@ -100,6 +100,16 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
+            for (var i = 1; i <= 16; i++) {
+                var div = document.createElement('div');
+                div.setAttribute('id', i);
+                i != 16 ? div.innerText = i : div.innerText = '';
+                div.setAttribute('class', 'el');
+                document.getElementById('container').appendChild(div);
+            }
+            ;
+
             $('#16').css('border-width', '1px 1px 1px 1px');
             $("div .box").mousedown(function (e) {
                 e.preventDefault();
@@ -109,7 +119,7 @@
                             left: '100px',
                             top: '100px',
                             width: '100px',
-                            height: '100px',
+                            height: '100px'
                         }, 1000
                 );
             });
@@ -165,22 +175,6 @@
 <body>
 
 <div id="container" class="container">
-    <div id="1" class="el">1</div>
-    <div id="2" class="el">2</div>
-    <div id="3" class="el">3</div>
-    <div id="4" class="el">4</div>
-    <div id="5" class="el">5</div>
-    <div id="6" class="el">6</div>
-    <div id="7" class="el">7</div>
-    <div id="8" class="el">8</div>
-    <div id="9" class="el">9</div>
-    <div id="10" class="el">10</div>
-    <div id="11" class="el">11</div>
-    <div id="12" class="el">12</div>
-    <div id="13" class="el">13</div>
-    <div id="14" class="el">14</div>
-    <div id="15" class="el">15</div>
-    <div id="16" class="el"></div>
 </div>
 
 
