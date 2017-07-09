@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+    </title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+
+    <style type="text/css">
+        div .el {
+            width: 55px;
+            height: 55px;
+            background-color: #9ACD32;
+            margin: 5px;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: Tahoma;
+            color: #556B2F;
+            float: left;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        div .ell {
+            width: 55px;
+            height: 55px;
+            margin: 5px;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #FFE4C4;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: Tahoma;
+            color: #556B2F;
+            float: left;
+            /*   cursor: pointer; */
+            border-radius: 5px;
+            border-width: 1px 1px 1px 1px;
+            border-style: dashed dashed dashed dashed;
+            background-color: #FFE4C4;
+        }
+
+        .container {
+            float: left;
+            width: 290px;
+            height: 280px;
+            padding-top: 10px;
+            background-color: #FFE4C4;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 20px;
+        }
+
+        #drage {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: dodgerblue;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: Tahoma;
+            color: #556B2F;
+            float: left;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .test {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 150px;
+            height: 140px;
+            background-color: red;
+            float: left;
+        }
+
+        .btn {
+            position: relative;
+            left: 30px;
+            top: 20px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#16').css('border-width', '1px 1px 1px 1px');
+            $("div .box").mousedown(function (e) {
+                e.preventDefault();
+                $('.box').animate({width: '+=100px'}, 1000);
+                $(this).animate(
+                        {
+                            left: '100px',
+                            top: '100px',
+                            width: '100px',
+                            height: '100px',
+                        }, 1000
+                );
+            });
+
+            $("#drage").mousedown(function () {
+                $(this).animate({left: '+=100px'});
+            });
+            $('#ramdom').mousedown(function (e) {
+                        $('div .el').each(function (index, elem) {
+                            e.preventDefault();
+                            var namId = (Math.floor(Math.random() * 15 + 1));
+                            replaceElem(e, $('#' + namId));
+                        });
+                    }
+            );
+
+            $('div .el').mousedown(function (e) {
+                e.preventDefault();
+                var pos1 = $("#16").position();
+                p = $(this).offset();
+                var pos2 = $(this).position();
+                var dist = Math.sqrt(Math.pow(pos2.left - pos1.left, 2) + Math.pow(pos2.top - pos1.top, 2));
+                if (dist <= 65)
+                    replaceElem(e, this);
+            });
+            function replaceElem(e, _this) {
+                var ell = $('#16').prev();
+                var ell16 = $('#16').clone();
+                var thisPrev = $(_this).prev();
+                var clone = $(_this).clone();
+                if ($('#16').prev().text() == $(_this).text()) {
+                    $(_this).replaceWith($('#16'));
+                    $('#16').after(clone);
+                }
+                else if ($('#16').text() != $('div .el:first').text()) {
+                    $(_this).replaceWith($('#16'));
+                    $(ell).after(clone);
+                }
+                else if ($('#16').text() == $('div .el:first').text() & $('div .el:eq(1)').text() != $(_this).text()) {
+                    $($('div .el:first')).replaceWith(_this);
+                    $($(thisPrev)).after(ell16);
+                }
+                else if ($('#16').text() == $('div .el:first').text() & $('div .el:eq(1)').text() == $(_this).text()) {
+                    $($('div .el:first')).replaceWith(_this);
+                    $($('div .el:first')).after(ell16);
+                }
+                $(_this).fadeIn("slow");
+            }
+        });
+
+    </script>
+</head>
+<body>
+
+<div id="container" class="container">
+    <div id="1" class="el">1</div>
+    <div id="2" class="el">2</div>
+    <div id="3" class="el">3</div>
+    <div id="4" class="el">4</div>
+    <div id="5" class="el">5</div>
+    <div id="6" class="el">6</div>
+    <div id="7" class="el">7</div>
+    <div id="8" class="el">8</div>
+    <div id="9" class="el">9</div>
+    <div id="10" class="el">10</div>
+    <div id="11" class="el">11</div>
+    <div id="12" class="el">12</div>
+    <div id="13" class="el">13</div>
+    <div id="14" class="el">14</div>
+    <div id="15" class="el">15</div>
+    <div id="16" class="el"></div>
+</div>
+
+
+<button class="btn btn-default" type="button" id="ramdom">
+    <span class="glyphicon glyphicon-asterisk"></span>
+</button>
+<br/>
+<br/>
+
+<p id="position1"></p>
+
+<p id="position2"></p>
+
+<p id="position3"></p>
+
+
+</body>
+</html>
