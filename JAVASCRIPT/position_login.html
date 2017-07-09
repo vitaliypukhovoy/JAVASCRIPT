@@ -99,30 +99,28 @@
 
 </script>
 <script>
-   // var relX,relY;
-    var template= $('#template-login-popup').html();
-  (function() {
-        $('input').focus(function (e) {
-                var wrapper = $(this).parent();
-                var parentOffset = wrapper.offset();
-            //    relX = e.pageX - parentOffset.left ;//+ wrapper.scrollLeft();
-            //    relY = e.pageY - parentOffset.top ;//+ wrapper.scrollTop();
 
-            var left= $(e.target).position().left+ wrapper.scrollLeft() ;//- parentOffset.left;
+    var template = $('#template-login-popup').html();
+    (function () {
+        $('input').focus(function (e) {
+            var wrapper = $(this).parent();
+            var parentOffset = wrapper.offset();
+
+            var left = $(e.target).position().left + wrapper.scrollLeft();//- parentOffset.left;
             var top = $(e.target).position().top + wrapper.scrollTop();// - parentOffset.top;
             console.log(left);
             console.log(top);
-                $('#btn').css({
-                    left: left,
-                    top: top+50
-                });
-                $('#btn').append(template);
+            $('#btn').css({
+                left: left,
+                top: top + 50
+            });
+            $('#btn').append(template);
             return false;
         });
-      $('input').blur(function(){
-          $('#btn').children().remove();
-          return false;
-      });
+        $('input').blur(function () {
+            $('#btn').children().remove();
+            return false;
+        });
     })();
 
 </script>

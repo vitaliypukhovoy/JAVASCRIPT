@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ab8539-e534-4961-af50-200ed5a2ffaa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/JAVASCRIPT.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MOVED" beforePath="C:\Git\JAVASCRIPT\JAVASCRIPT\Wiki.html" afterPath="$PROJECT_DIR$/../Wiki_Searching.html" />
+      <change type="MOVED" beforePath="C:\Git\JAVASCRIPT\JAVASCRIPT\Cat-Dog-Cow-Mouse.html" afterPath="$PROJECT_DIR$/../InheritJS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" afterPath="$PROJECT_DIR$/../MеrgeArrayAndQuiсkSort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pagination.html" afterPath="$PROJECT_DIR$/../pagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../position_login.html" afterPath="$PROJECT_DIR$/../position_login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DesignPatternJS.iws" />
@@ -566,7 +564,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499610779903</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="tree2">
+      <created>1499614141405</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1499614141405</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">

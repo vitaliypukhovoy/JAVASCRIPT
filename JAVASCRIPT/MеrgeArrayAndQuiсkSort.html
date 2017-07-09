@@ -8,38 +8,39 @@
 
 <script>
 
-    var a = [9,2,1,5,122,152,34,55,67,100,234];
-    var arr = [155,7,4,6,3,45,68,87,35,22];
-    var array1 =[];
-    var union = function(a, arr) {
-        this.a =a;
-        this.arr =arr,
-        this.array = [],
-        this.addArray = function() {
-            self = this;
-            a.forEach(function (el, i, ar) {
-                el!= undefined? self.array.push(el):'';
-                arr[i]!=undefined ? self.array.push(arr[i]):'';
-            });
-        }
-        this.sort = function() {
+    var a = [9, 2, 1, 5, 122, 152, 34, 55, 67, 100, 234];
+    var arr = [155, 7, 4, 6, 3, 45, 68, 87, 35, 22];
+    var array1 = [];
+    var union = function (a, arr) {
+        this.a = a;
+        this.arr = arr,
+                this.array = [],
+                this.addArray = function () {
+                    self = this;
+                    a.forEach(function (el, i, ar) {
+                        el != undefined ? self.array.push(el) : '';
+                        arr[i] != undefined ? self.array.push(arr[i]) : '';
+                    });
+                }
+        this.sort = function () {
             this.array.sort(this.comparer);
         };
     };
 
     function isInteger(num) {
         return (num ^ 0) === num;
-    };
+    }
+    ;
 
 
-    var quickSort = function(array,left,right) {
+    var quickSort = function (array, left, right) {
 
         pivot = (left + right) / 2
         var p = array[parseInt(pivot.toFixed())]
         var i = left;
         var j = right;
         var tmp;
-        while(i<=j) {
+        while (i <= j) {
             while (parseInt(array[i]) < p) i++;
             while (parseInt(array[j]) > p) j--;
             if (i <= j) {
@@ -52,34 +53,38 @@
         }
 
 
-        if(left<j)
-            quickSort(array,i,right)
-        if(j<right)
-            quickSort(array,left,j)
+        if (left < j)
+            quickSort(array, i, right)
+        if (j < right)
+            quickSort(array, left, j)
 
-         return array;
+        return array;
 
 
     }
-    union.prototype.comparer = function(a, b) {
+    union.prototype.comparer = function (a, b) {
 
-          return a - b;
-        };
+        return a - b;
+    };
 
     //    Array.prototype.sort.call(un.array, function (a, b) {
     //        return a - b;
     //    });
 
-    var un = new union(a,arr);
+    var un = new union(a, arr);
     un.addArray();
     var len = un.array.length;
     //un.sort();
-    un.array.map(function(el){return console.log(el)});
+    un.array.map(function (el) {
+        return console.log(el)
+    });
     console.log('==================================')
-    quickSort(un.array,0,un.array.length);
+    quickSort(un.array, 0, un.array.length);
 
 
-    un.array.map(function(el){return console.log(el)});
+    un.array.map(function (el) {
+        return console.log(el)
+    });
 
 
 </script>

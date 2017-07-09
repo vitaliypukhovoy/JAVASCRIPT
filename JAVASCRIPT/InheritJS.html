@@ -25,11 +25,11 @@
 
     function Vegan(name)
     {
-      //  Animals.call(this);
+        Animals.call(this);
         this.name = name;
     }
      Vegan.prototype = new Animals();
-     //Vegan.prototype.constructor = Vegan
+     Vegan.prototype.constructor = Vegan
      Vegan.prototype.TryEat = function() {
          if (this.food instanceof Cow || this.food instanceof Mouse) {
              return " Animals don't eat it";
@@ -41,11 +41,11 @@
      
      function Predator(name)
      {
-        //Animals.call(this);
+        Animals.call(this);
          this.name = name;
      }
      Predator.prototype = new Animals();
-     //Predator.prototype.constructor = Predator;
+     Predator.prototype.constructor = Predator;
      Predator.prototype.TryEat = function() {
          if (this.food instanceof Cow || this.food instanceof Mouse) {
              return " Predator eat it";
@@ -57,41 +57,41 @@
 
      function Cat(food)
      {
-         //Predator.call(this,name);
+         Predator.call(this,name);
          this.food = food;
      }
 
 
      function Dog(food)
      {
-         //Predator.call(this,name);
+         Predator.call(this,name);
          this.food = food;
      }
 
 
      function Cow(food)
      {
-         //Vegan.call(this,name);
+         Vegan.call(this,name);
          this.food = food;
      }
 
      function Mouse(food)
      {
-         //Vegan.call(this,name);
+         Vegan.call(this,name);
          this.food = food;
      }
 
      Cat.prototype = new Predator();
-    // Cat.prototype.constructor = Cat
+     Cat.prototype.constructor = Cat
 
      Dog.prototype = new Predator();
-    // Dog.prototype.constructor = Dog;
+     Dog.prototype.constructor = Dog;
 
      Cow.prototype = new Vegan();
-     //Cow.prototype.constructor = Cow
+     Cow.prototype.constructor = Cow
 
      Mouse.prototype = new Vegan();
-     //Mouse.prototype.constructor = Mouse;
+     Mouse.prototype.constructor = Mouse;
 
      var instansCow = new Cow();
      var instansMouse = new Mouse();
