@@ -11,9 +11,12 @@
 
 
     var array  = [8,5,7,4,9,3,2,1];
+    var  mid  = array.length/2;
+    var arr1= [];  var arr2 =[];
 
     var i = 0;
     var megreSort  = function(array) {
+
         var _left = [], _right = [], result = [];
 
         var middle =    parseInt((array.length/2).toFixed());
@@ -22,15 +25,11 @@
 
             for (var i = 0; i < middle; i++) {
                 _left.push(array[i]);
-
             }
-
 
             for (var j = middle; j < array.length; j++) {
                 _right.push(array[j]);
-
             }
-
 
             _left = megreSort(_left);
             _right = megreSort(_right);
@@ -38,10 +37,46 @@
 
         if(array.length==2)
         {
-            console.log(array);
+            if(array[0] > array[1])
+            {
+                var tmp = array[0];
+                array[0] = array[1];
+                array[1] = tmp;
+            }
+            if(arr1.length < mid/2)
+                arr1.push(array);
+            else
+                arr2.push(array)
         }
-
+        console.log(arr1);
+        console.log(arr2);
     };
+
+
+    megreSort.prototype.comparer = function(a,b)
+    {
+        return a-b;
+    };
+
+
+    var sortArray = function(arr)
+    {
+
+
+
+
+    }
+
+    var sortArr = function(arr)
+    {
+        if(arr[0] > arr[1])
+        {
+            var tmp = arr[0];
+            arr[0] = arr[1];
+            arr[1] = tmp;
+        }
+        return arr;
+    }
 
     megreSort(array);
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa26d00e-c201-46fd-8617-5b3f16c74f78" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MergeSort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MergeSort.html" afterPath="$PROJECT_DIR$/MergeSort.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JAVASCRIPT.iws" />
@@ -51,8 +51,8 @@
       <file leaf-file-name="MergeSort.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MergeSort.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1915888">
-              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            <state vertical-scroll-proportion="1.9797508">
+              <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -310,7 +310,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499632936804</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="15">
+      <created>1499796993479</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1499796993480</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -569,8 +575,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MergeSort.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1915888">
-          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        <state vertical-scroll-proportion="1.9797508">
+          <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
           <folding />
         </state>
       </provider>
