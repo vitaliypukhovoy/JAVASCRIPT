@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+
+
+    var array  = [8,5,7,4,9,3,2,1];
+
+    var i = 0;
+    var megreSort  = function(array) {
+        var _left = [], _right = [], result = [];
+
+        var middle =    parseInt((array.length/2).toFixed());
+
+        if (middle > 1 ) {
+
+            for (var i = 0; i < middle; i++) {
+                _left.push(array[i]);
+
+            }
+
+
+            for (var j = middle; j < array.length; j++) {
+                _right.push(array[j]);
+
+            }
+
+
+            _left = megreSort(_left);
+            _right = megreSort(_right);
+        }
+
+        if(array.length==2)
+        {
+            console.log(array);
+        }
+
+    };
+
+    megreSort(array);
+
+
+</script>
+
+</body>
+</html>
