@@ -51,8 +51,8 @@
       <file leaf-file-name="MergeSort.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MergeSort.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25856698">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.9127727">
+              <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -322,7 +322,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499801574244</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="15">
+      <created>1499871386033</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1499871386033</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -581,8 +587,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MergeSort.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25856698">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.9127727">
+          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
           <folding />
         </state>
       </provider>

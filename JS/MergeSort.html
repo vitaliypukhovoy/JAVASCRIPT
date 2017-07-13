@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -11,6 +12,10 @@
 
 
     var array  = [8,5,7,4,9,3,2,1];
+    //[6,5,3,1,8,7,2,4];
+    //[8,5,7,4,9,3,2,1];
+
+
 
     var megreSort  = function(array) {
 
@@ -31,12 +36,12 @@
             };
         };
 
-        if(array.length==2)
+        if(array.length===2)
         {
             return array;
         }
-
-        return  merge(megreSort(sortArr(_left)), megreSort(sortArr(_right)));
+        if(_left !== undefined || _right !== undefined || array !== undefined)
+            return  merge(megreSort(sortArr(_left)),megreSort(sortArr(_right)));
 
     };
 
@@ -52,16 +57,55 @@
     };
 
 
+    var sortArray = function(arr1,arr2)
+    {
+        var array =[];
+        var arr = []
+        if(arr1[0]> arr2[0])
+        {
+            array.push(arr2);
+            array.push(arr1);
+            arr.push(array[0][0]);
+        }
+        else
+        {
+            array.push(arr1);
+            array.push(arr2);
+        }
+        if (array[0][1]< array[1][0])
+        {
+            arr.push(array[0][1]);
+            arr.push(array[1][0]);
+            arr.push(array[1][1]);
+        }
+
+        else if(array[0][1]< array[1][1])
+        {
+            arr.push(array[1][0])
+            arr.push(array[0][1]);
+            arr.push(array[1][1]);
+        }
+        else
+        {
+            arr.push(array[1][0]);
+            arr.push(array[1][1]);
+            arr.push(array[0][1]);
+        }
+        return arr;
+
+    };
+
     var merge  = function(arr1,arr2)
     {
-        console.log(arr1);
-        console.log(arr2);
+        arr = []
+        if(arr1 !== undefined || arr2 || undefined)
+            var sort= sortArray(arr1,arr2);
+        console.log(sort);
+
     };
+
 
     megreSort(array);
 
 
 </script>
-
-</body>
-</html>
