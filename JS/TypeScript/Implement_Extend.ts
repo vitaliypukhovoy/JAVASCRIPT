@@ -22,5 +22,8 @@ class ExecutiveWheelCleaning extends BasicWheelCleaning {
     }
 }
 
+
+
+
 var a = new ExecutiveWheelCleaning();
     a.cleanWheels();
