@@ -21,6 +21,10 @@
         // code
     };
 
+    // Bad
+    document.getElementByClassName("selected").each(doSomething);
+    //Native DOM methods use a specialized collection type called
+    //NodeList, and document.getElementsByClassname() returned a NodeList
     if (!document.getElementsByClassName) {
         document.getElementsByClassName = function(classes) {
             // non-native implementation
