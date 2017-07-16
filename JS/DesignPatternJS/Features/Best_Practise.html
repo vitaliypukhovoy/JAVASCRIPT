@@ -27,6 +27,56 @@
         };
     }
 
+    // Bad - eliminating a DOM method
+    document.getElementById = null;
+
+
+    //Object-Based Inheritance
+    var person = {
+        name: "Nicholas"
+    };
+    delete person.name;
+    console.log(person.name);       // undefined
+
+
+    // No effect
+    delete document.getElementById;
+    console.log(document.getElementById("myelement"));  // stil works
+
+
+    var person = {    //good
+        name: "Max",
+        sayName: function() {
+            alert(this.name);
+        }
+    };
+    var myPerson = Object.create(person);
+    myPerson.sayName();     // pops up
+
+    myPerson.sayName = function() {
+        alert("Anonymous");
+    };
+    myPerson.sayName();     // pops up "Anonymous"
+    person.sayName();       // pops up "Max"
+
+    var myPerson = Object.create(person, {
+        name: {
+            value: "Greg"
+        }
+    });
+    myPerson.sayName();     // pops up "Greg"
+    person.sayName();       // pops up "Max"
+
+   //Type-Based Inheritance
+    function MyError(message) {
+        this.message = message;
+    }
+    MyError.prototype = new Error();
+
+    var error = new MyError("Something bad happened.");
+    console.log(error instanceof Error);        // true
+    console.log(error instanceof MyError);      // true
+
 
 
 
