@@ -77,6 +77,74 @@
     console.log(error instanceof Error);        // true
     console.log(error instanceof MyError);      // true
 
+    function Person(name) {
+        this.name;
+    }
+    function Author(name) {
+        Person.call(this, name);    // inherit constructor
+    }
+    Author.prototype = new Person();
+
+
+    //The Facade Pattern
+    function DOMWrapper(element) {
+        this.element = element;
+    }
+    DOMWrapper.prototype.addClass = function(className) {
+        element.className += " " + className;
+    };
+
+    DOMWrapper.prototype.remove = function() {
+        this.element.parentNode.removeChild(this.element);
+    };
+    // Usage
+    var wrapper = new DOMWrapper(document.getElementById("my-div"));
+    // add a CSS class
+    wrapper.addClass("selected");
+    // remove the element
+    wrapper.remove();
+
+
+
+    //Preventing Modification
+    var person = {
+        name: "Nicholas"
+    };
+    // lock down the object
+    Object.preventExtension(person);
+    console.log(Object.isExtensible(person));
+    // false  No new properties or methods can be added to the object, but existing ones can
+    // be modified or deleted.
+
+    person.age = 25;    // fails silently unless in strict mode
+
+    // lock down the object
+    Object.seal(person);
+    console.log(Object.isExtensible(person));   // false
+    console.log(Object.isSealed(person));       // true
+    delete person.name; // fails silently unless in strict mode
+    person.age = 25;    // fails silently unless in strict mode
+    //Same as prevent extension, plus prevents existing properties and methods from
+    //being deleted
+
+    // lock down the object
+    Object.freeze(person);
+    console.log(Object.isExtensible(person));   // false
+    console.log(Object.isSealed(person));       // true
+    console.log(Object.isFrozen(person));       // true
+    person.name = "Greg";   // fails silently unless in strict mode
+    person.age = 25;        // fails silently unless in strict mode
+    delete person.name;     // fails silently unless in strict mode
+    //Same as seal, plus prevents existing properties methods from being modified (all
+    //fields are read-only).
+
+
+
+
+
+
+
+
 
 
 
