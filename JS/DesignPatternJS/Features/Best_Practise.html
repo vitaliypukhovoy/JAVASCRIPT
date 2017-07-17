@@ -8,6 +8,73 @@
 
 <script>
 
+
+    (function() {
+        var square;
+        square = function(x) {
+            return x * x;
+        };
+    }).call(this)
+
+    /* Anim class. */
+    var Anim = function() {
+        //...
+    };
+    Anim.prototype.start = function() {
+       // ...
+    };
+    Anim.prototype.stop = function() {
+       // ...
+    };
+    /* Usage. */
+    var myAnim = new Anim();
+    myAnim.start();
+    //...
+    myAnim.stop();
+
+    /* This version allows the calls to be chained. */
+    Function.prototype.method = function(name, fn) {
+        this.prototype[name] = fn;
+        return this;
+    };
+    var Anim = function() {
+      //  ...
+    };
+
+    Anim.
+            method('start', function() {
+              //  ...
+            }).
+            method('stop', function() {
+              //  ...
+            });
+
+
+    (function() {
+        var foo = 10;
+        var bar = 2;
+        alert(foo * bar);
+    })();
+
+    (function(foo, bar) {
+        alert(foo * bar);
+    })(10, 2);
+
+    /* An anonymous function that returns a value. */
+    var baz = (function(foo, bar) {
+        return foo * bar;
+    })(10, 2);
+
+    /* An anonymous function used as a closure. */
+    var baz;
+    (function() {
+        var foo = 10;
+        var bar = 2;
+        baz = function() {
+            return foo * bar;
+        };
+    })();
+
     //Bad
     var x;
     // Do stuff with x...
