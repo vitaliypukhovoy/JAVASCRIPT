@@ -8,9 +8,9 @@
 
 <script>
 
-   var a = function foo() {
+   var a = function method() {
         var a = 10;
-        function bar() {
+        function nested() {
             a *= 2;
         }
         bar();
@@ -18,22 +18,18 @@
     };
     a();
 
-   function foo() {
+   function method() {
        var a = 10;
-       function bar() {
+       function nested() {
            a *= 2;
            return a;
        }
-       return bar;
+       return nested;
    }
-   var a = foo();
+   var a = method();
    a(); // returns 20.
    a(); // returns 40.
    a(); // returns 80.
-
-
-
-
 
 </script>
 
