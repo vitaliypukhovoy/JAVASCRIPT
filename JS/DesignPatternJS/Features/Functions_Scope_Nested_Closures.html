@@ -31,6 +31,17 @@
    a(); // returns 40.
    a(); // returns 80.
 
+   function globalThis() {
+       return this; }
+
+   globalThis();
+   //=> some global object, probably Window
+   globalThis.call('barnabas');
+   //=> 'barnabas'
+   globalThis.apply('orsulak', [])
+   //=> 'orsulak'
+
+
 </script>
 
 </body>
