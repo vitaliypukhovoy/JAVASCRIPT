@@ -8,6 +8,16 @@
 
 <script>
 
+    //Bad
+    var x;
+    // Do stuff with x...
+
+    (function myScript() {
+        var x;
+        // Do stuff with x...
+    }());
+
+
     // Bad - adding method to DOM object
     document.sayImAwesome = function() {
         alert("You're awesome.");
@@ -141,15 +151,6 @@
     delete person.name;     // fails silently unless in strict mode
     //Same as seal, plus prevents existing properties methods from being modified (all
     //fields are read-only).
-
-
-
-
-
-
-
-
-
 
 
 </script>
