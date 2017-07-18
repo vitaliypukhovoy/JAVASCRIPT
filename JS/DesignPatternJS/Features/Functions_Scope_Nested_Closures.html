@@ -11,13 +11,14 @@
    var a = function method() {
         var a = 10;
         function nested() {
-            a *= 2;
+          return  a *= 2;
         }
-        bar();
+        nested();
         return a;
     };
     a();
-
+    a();
+    a();
    function method() {
        var a = 10;
        function nested() {
