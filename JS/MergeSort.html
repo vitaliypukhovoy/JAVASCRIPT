@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -10,102 +9,59 @@
 
 <script>
 
+    var array  = [19,8,5,11,7,15,4,9,3,2,1,10];
 
-    var array  = [8,5,7,4,9,3,2,1];
-    //[6,5,3,1,8,7,2,4];
-    //[8,5,7,4,9,3,2,1];
+    function mergesort1(array){
+        var helper = new Array(array.length)
+        mergesort(array, helper, 0, array.length - 1);
 
+    }
 
-
-    var megreSort  = function(array) {
-
-        var _left = [], _right = [], result = [];
-
-        var middle =    parseInt((array.length/2).toFixed());
-
-        if (middle > 1 ) {
-
-            for (var i = 0; i < middle; i++) {
-                _left.push(array[i]);
-
-            };
-
-            for (var j = middle; j < array.length; j++) {
-                _right.push(array[j]);
-
-            };
-        };
-
-        if(array.length===2)
-        {
-            return array;
+    function mergesort(array, helper, low, high) {
+        if (low < high) {
+            var middle = parseInt((low + high) / 2);
+            mergesort(array, helper, low, middle); // Sort left half
+            mergesort(array, helper, middle+1, high); // Sort right half
+            merge(array, helper, low, middle, high); // Merge them
         }
-        if(_left !== undefined || _right !== undefined || array !== undefined)
-            return  merge(megreSort(sortArr(_left)),megreSort(sortArr(_right)));
+    }
 
-    };
-
-    var sortArr = function(arr)
+    function merge( array,  helper,  low,  middle,  high)
     {
-        if(arr[0] > arr[1])
-        {
-            var tmp = arr[0];
-            arr[0] = arr[1];
-            arr[1] = tmp;
-        }
-        return arr;
-    };
 
-
-    var sortArray = function(arr1,arr2)
-    {
-        var array =[];
-        var arr = []
-        if(arr1[0]> arr2[0])
-        {
-            array.push(arr2);
-            array.push(arr1);
-            arr.push(array[0][0]);
-        }
-        else
-        {
-            array.push(arr1);
-            array.push(arr2);
-        }
-        if (array[0][1]< array[1][0])
-        {
-            arr.push(array[0][1]);
-            arr.push(array[1][0]);
-            arr.push(array[1][1]);
+        for (var i = low; i <= high; i++) {
+            helper[i] = array[i];
         }
 
-        else if(array[0][1]< array[1][1])
-        {
-            arr.push(array[1][0])
-            arr.push(array[0][1]);
-            arr.push(array[1][1]);
+        var  helperLeft = low;
+        var helperRight = middle + 1;
+        var current = low;
+
+        while (helperLeft <= middle && helperRight <= high) {
+            if (helper[helperLeft] <= helper[helperRight]) {
+                array[current] = helper[helperLeft];
+                helperLeft++;
+            } else { // If right element is smaller than left element
+                array[current] = helper[helperRight];
+                helperRight++;
+            }
+            current++;
         }
-        else
+
+
+        var remaining = middle - helperLeft;
+        for (var i = 0; i <= remaining; i++)
         {
-            arr.push(array[1][0]);
-            arr.push(array[1][1]);
-            arr.push(array[0][1]);
+            array [current + i] = helper[helperLeft + i]
         }
-        return arr;
+        console.log(array);
+    }
 
-    };
-
-    var merge  = function(arr1,arr2)
-    {
-        arr = []
-        if(arr1 !== undefined || arr2 || undefined)
-            var sort= sortArray(arr1,arr2);
-        console.log(sort);
-
-    };
-
-
-    megreSort(array);
+    mergesort1(array);
 
 
 </script>
+
+
+</body>
+</html>
