@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+
+    // antipattern
+    myname = "global"; // global variable
+    function func() {
+        alert(myname); // "undefined"
+        var myname = "local";
+        alert(myname); // "local"
+    }
+    func();
+
+
+</script>
+
+
+</body>
+</html>
