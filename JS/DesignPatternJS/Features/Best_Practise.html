@@ -9,6 +9,18 @@
 <script>
 
 
+
+
+    var zero = 0;  //Avoiding Implied Typecasting
+
+    if (zero === false) {
+        // not executing because zero is 0, not false
+    }
+    // antipattern
+    if (zero == false) {
+        // this block is executed...
+    }
+
     function func() {  //Single var Pattern
 
         var a = 1,

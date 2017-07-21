@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    // for-in loop
+    for (var i in man) {
+        if (man.hasOwnProperty(i)) { // filter
+            console.log(i, ":", man[i]);
+        }
+    }
+    /*
+     result in the console
+     hands : 2
+     legs : 2
+     heads : 1
+     */
+
+
+     // antipattern:
+     // for-in loop without checking hasOwnProperty()
+     for (var i in man) {
+     console.log(i, ":", man[i]);
+     }
+     /*
+     result in the console
+     hands : 2
+     legs : 2
+     heads : 1
+     clone: function()
+     */
+
+
+      for (var i in man) {
+      if (Object.prototype.hasOwnProperty.call(man, i)) { // filter
+      console.log(i, ":", man[i]);
+      }
+    }
+
+    var i,
+            hasOwn = Object.prototype.hasOwnProperty;
+    for (i in man) {
+        if (hasOwn.call(man, i)) { // filter
+            console.log(i, ":", man[i]);
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>
