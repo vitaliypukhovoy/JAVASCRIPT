@@ -18,6 +18,16 @@
     }
     func();
 
+    myname = "global"; // global variable
+    function func() {
+        var myname; // same as -> var myname = undefined;
+        alert(myname); // "undefined"
+        myname = "local";
+        alert(myname); // "local"
+    }
+    func();
+
+
 
 </script>
 
