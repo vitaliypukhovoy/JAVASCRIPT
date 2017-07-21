@@ -9,7 +9,7 @@
 
 <script>
 
-    var array  = [19,8,5,11,7,15,4,9,3,2,1,10];
+    var array  = [19,8,5,11,7,0,4,9,3,2,1,10];
 
     function mergesort1(array){
         var helper = new Array(array.length)
@@ -47,7 +47,6 @@
             }
             current++;
         }
-
 
         var remaining = middle - helperLeft;
         for (var i = 0; i <= remaining; i++)

@@ -8,6 +8,20 @@
 
 <script>
 
+    function func() {  //Single var Pattern
+
+        var a = 1,
+                b = 2,
+                sum = a + b,
+                myobject = {},
+                i,
+                j;
+        // function body...
+    }
+
+    var global = (function () {
+        return this;// global access not work in strict mode
+    }());
 
     (function() {
         var square;
