@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+
+    var FormField = function(type, displayText){
+        this.type = type || "text";
+        this.displayText = displayText || "";
+    };
+
+    FormField.prototype = {
+        createElement: function() {
+            this.element = document.createElement("input");
+            this.element.setAttribute("type", this.type);
+            this.element.setAttribute("placeholder", this.displayText);
+            return this.element;
+        },
+
+        isValid: function() {
+            return this.element.value !== "";
+        }
+    };
+
+    // The form field deocorator, which implements the same public methods as FormField
+    var FormFieldDecorator = function(formField) {
+        this.formField = formField;
+    };
+
+    FormFieldDecorator.prototype = {
+        createElement: function() {
+            this.formField.createElement();
+        },
+
+        isValid: function() {
+            return this.formField.isValid();
+        }
+    };
+
+    var MaxLengthFieldDecorator = function(formField, maxLength) {
+        FormFieldDecorator.call(this, formField);
+        this.maxLength = maxLength || 100;
+    };
+    MaxLengthFieldDecorator.prototype = new FormFieldDecorator();
+    MaxLengthFieldDecorator.prototype.createElement = function() {
+        var element = this.formField.createElement();
+        element.setAttribute("maxlength", this.maxLength);
+        return element;
+    };
+
+    var AutoCompleteFieldDecorator = function(formField, autocomplete) {
+        FormFieldDecorator.call(this, formField);
+        this.autocomplete = autocomplete || "on";
+    };
+    AutoCompleteFieldDecorator.prototype = new FormFieldDecorator();
+    AutoCompleteFieldDecorator.prototype.createElement = function() {
+        var element = this.formField.createElement();
+        element.setAttribute("autocomplete", this.autocomplete);
+        return element;
+    };
+
+    var form = document.createElement("form"),
+            formField = new FormField("search", "Enter your search term");
+
+    formField = new MaxLengthFieldDecorator(formField, 255);
+    formField = new AutoCompleteFieldDecorator(formField, "off");
+
+    // Create the HTML form field element and add it to the <form> element
+    form.appendChild(formField.createElement());
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
