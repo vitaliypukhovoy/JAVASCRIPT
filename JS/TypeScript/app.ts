@@ -1,5 +1,6 @@
  var   name :string = 'Max';
 
+
  var age : number = 30;
 console.log("eeee");
 
