@@ -1,7 +1,6 @@
- var   name :string = 'Max';
+let  myName :string  = 'Max88';
 
-
- var age : number = 30;
+var age : number = 30;
 console.log("eeee");
 
  var hasHobbies : boolean = true;
@@ -38,7 +37,7 @@ console.log("eeee");
 //function
  function returnMyName():string
  {
-   return name;
+   return myName;
  }
 
  console.log(returnMyName() );
@@ -67,6 +66,73 @@ var myMultiply :(a:number,b:number) => number;
 // myMultiply();
  myMultiply = multiply;
  console.log(multiply(2, 5));
+
+var userData :{name : string; age : number} =
+ {
+     name :"Max",
+     age: 27
+ };
+
+ // userData=
+ //{
+ // a: 'Max',
+ // b: 27
+ //};
+
+
+ var complex :{data: number[]; output :(all:boolean)=> number[]} = {
+ data : [100,.99,10],
+     output: function (all:boolean) : number [] {
+     return this.data;
+ }
+ };
+
+ //complex ={};
+
+ var complex2 :{data: number[]; output :(all:boolean)=> number[]} = {
+     data : [100,.99,10],
+     output: function (all:boolean) : number [] {
+         return this.data;
+     }
+ };
+
+ type Complex = {data: number[]; output :(all:boolean)=> number[]};
+
+ var complex3 :Complex = {
+     data : [100,.99,10],
+     output: function (all:boolean) : number [] {
+         return this.data;
+     }
+ };
+
+
+ //union type
+ var myRealAge: number | string = 27;
+ myRealAge = "27";
+// myRealAge = true;
+
+
+ //check types
+
+ var finalValue = 30;
+ if(typeof finalValue == 'number')
+ {
+     console.log("Final value is number");
+ };
+
+ ///never
+ //function neverReturn(): never {
+ //    throw  new Error ('An error');
+ //};
+
+ //Nullable types
+
+//var CanBeNull : number | null = 12;
+// CanBeNull = null;
+// var canAlsoBeNull;
+// canAlsoBeNull = null;
+// var canThisBeAny :any = null;
+// canThisBeAny = 12;
 
 
 
