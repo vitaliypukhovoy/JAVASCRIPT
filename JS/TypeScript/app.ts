@@ -135,4 +135,23 @@ let userData :{name : string; age : number} =
 // canThisBeAny = 12;
 
 
+//----------------------------------------------------------------------
 
+let myName1 :string = 'Max1';
+
+
+let age1 : number = 30;
+
+let anything ;
+
+anything = 12;
+
+
+
+
+
+//arrow function
+const addNumber = function (number1: number, number2: number) {
+
+
+}

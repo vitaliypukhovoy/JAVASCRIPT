@@ -91,3 +91,11 @@ if (typeof finalValue == 'number') {
 // canAlsoBeNull = null;
 // let canThisBeAny :any = null;
 // canThisBeAny = 12;
+//----------------------------------------------------------------------
+var myName1 = 'Max1';
+var age1 = 30;
+var anything;
+anything = 12;
+//arrow function
+var addNumber = function (number1, number2) {
+};

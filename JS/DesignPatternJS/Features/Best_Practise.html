@@ -186,7 +186,7 @@
     console.log(error instanceof MyError);      // true
 
     function Person(name) {
-        this.name;
+        this.name = name;
     }
     function Author(name) {
         Person.call(this, name);    // inherit constructor

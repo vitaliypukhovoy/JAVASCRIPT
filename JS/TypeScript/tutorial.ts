@@ -28,7 +28,7 @@ function speak2(food: Food): void{
     console.log("Our " + food.name + " has " + food.calories + " calories.");
 }
 
-var ice_cream = {
+let ice_cream = {
     name: "ice cream",
     calories: 200
 }
@@ -53,7 +53,7 @@ class Menu {
     //
     list(): void {
         console.log("Our menu for today:");
-        for(var i=0; i < this.items.length; i++) {
+        for(let i=0; i < this.items.length; i++) {
             console.log(this.items[i]);
         }
     }
@@ -61,7 +61,7 @@ class Menu {
 }
 
 // Menu.
-var sundayMenu = new Menu(["pancakes","waffles","orange juice"], 1);
+let sundayMenu = new Menu(["pancakes","waffles","orange juice"], 1);
 
 //list().
 sundayMenu.list();
@@ -80,7 +80,7 @@ class HappyMeal extends Menu {
 
     list(): void{
         console.log("Our special menu for children:");
-        for(var i=0; i < this.items.length; i++) {
+        for(let i=0; i < this.items.length; i++) {
             console.log(this.items[i]);
         }
 
@@ -88,7 +88,7 @@ class HappyMeal extends Menu {
 }
 
 //
-var menu_for_children = new HappyMeal(["candy","drink","toy"], 1);
+let menu_for_children = new HappyMeal(["candy","drink","toy"], 1);
 
 
 menu_for_children.list()
