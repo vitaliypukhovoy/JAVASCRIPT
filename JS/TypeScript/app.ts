@@ -1,9 +1,9 @@
-let  myName :string  = 'Max123';
+let  myName :string  = 'Max12345';
 
-var age : number = 30;
+let age : number = 30;
 console.log("eeee");
 
- var hasHobbies : boolean = true;
+ let hasHobbies : boolean = true;
 //Array
 //my_arr: number[]; �� my_arr: Array<number>
  var hobbies : any[]= ['sassa','ssss'];
@@ -12,7 +12,7 @@ console.log("eeee");
  //tuples
 
 
- var adress : [string, number ]  = ["saassssss", 88];
+ let adress : [string, number ]  = ["saassssss", 88];
 
 //enum
 
@@ -22,12 +22,12 @@ console.log("eeee");
      blue //2
  }
 
- var myColor :Color = Color.blue;
+ let myColor :Color = Color.blue;
  console.log(myColor);
 
 
  //any
- var car : any = 'BMW';
+ let car : any = 'BMW';
  console.log(car );
 
   car    = {brand:'BMW' , series :3};
@@ -61,13 +61,13 @@ console.log("eeee");
 
 console.log(multiply(2, 5));
 
-var myMultiply :(a:number,b:number) => number;
+let myMultiply :(a:number,b:number) => number;
 // myMultiply =sayHello;
 // myMultiply();
  myMultiply = multiply;
  console.log(multiply(2, 5));
 
-var userData :{name : string; age : number} =
+let userData :{name : string; age : number} =
  {
      name :"Max",
      age: 27
@@ -80,7 +80,7 @@ var userData :{name : string; age : number} =
  //};
 
 
- var complex :{data: number[]; output :(all:boolean)=> number[]} = {
+ let complex :{data: number[]; output :(all:boolean)=> number[]} = {
  data : [100,.99,10],
      output: function (all:boolean) : number [] {
      return this.data;
@@ -89,7 +89,7 @@ var userData :{name : string; age : number} =
 
  //complex ={};
 
- var complex2 :{data: number[]; output :(all:boolean)=> number[]} = {
+ let complex2 :{data: number[]; output :(all:boolean)=> number[]} = {
      data : [100,.99,10],
      output: function (all:boolean) : number [] {
          return this.data;
@@ -98,7 +98,7 @@ var userData :{name : string; age : number} =
 
  type Complex = {data: number[]; output :(all:boolean)=> number[]};
 
- var complex3 :Complex = {
+ let complex3 :Complex = {
      data : [100,.99,10],
      output: function (all:boolean) : number [] {
          return this.data;
@@ -107,14 +107,14 @@ var userData :{name : string; age : number} =
 
 
  //union type
- var myRealAge: number | string = 27;
+ let myRealAge: number | string = 27;
  myRealAge = "27";
 // myRealAge = true;
 
 
  //check types
 
- var finalValue = 30;
+ let finalValue = 30;
  if(typeof finalValue == 'number')
  {
      console.log("Final value is number");
@@ -127,11 +127,11 @@ var userData :{name : string; age : number} =
 
  //Nullable types
 
-//var CanBeNull : number | null = 12;
+//let CanBeNull : number | null = 12;
 // CanBeNull = null;
-// var canAlsoBeNull;
+// let canAlsoBeNull;
 // canAlsoBeNull = null;
-// var canThisBeAny :any = null;
+// let canThisBeAny :any = null;
 // canThisBeAny = 12;
 
 

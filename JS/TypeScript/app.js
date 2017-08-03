@@ -1,4 +1,4 @@
-let myName = 'Max123';
+var myName = 'Max12345';
 var age = 30;
 console.log("eeee");
 var hasHobbies = true;
@@ -85,9 +85,9 @@ if (typeof finalValue == 'number') {
 //    throw  new Error ('An error');
 //};
 //Nullable types
-//var CanBeNull : number | null = 12;
+//let CanBeNull : number | null = 12;
 // CanBeNull = null;
-// var canAlsoBeNull;
+// let canAlsoBeNull;
 // canAlsoBeNull = null;
-// var canThisBeAny :any = null;
+// let canThisBeAny :any = null;
 // canThisBeAny = 12;
