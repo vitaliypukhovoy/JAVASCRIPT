@@ -1,13 +1,13 @@
-let  myName :string  = 'Max12345';
+let myName: string = 'Max12345';
 
-let age : number = 30;
+let age: number = 30;
 console.log("eeee");
 
- let hasHobbies : boolean = true;
+let hasHobbies: boolean = true;
 //Array
 //my_arr: number[]; �� my_arr: Array<number>
- var hobbies : any[]= ['sassa','ssss'];
- console.log( typeof hobbies );
+let hobbies: any[] = ['sassa', 'ssss'];
+console.log(typeof hobbies);
 
  //tuples
 
