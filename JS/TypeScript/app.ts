@@ -1,11 +1,11 @@
-let  myName :string  = 'Max11121';
+let  myName :string  = 'Max123';
 
 var age : number = 30;
 console.log("eeee");
 
  var hasHobbies : boolean = true;
 //Array
-//my_arr: number[]; та my_arr: Array<number>
+//my_arr: number[]; пїЅпїЅ my_arr: Array<number>
  var hobbies : any[]= ['sassa','ssss'];
  console.log( typeof hobbies );
 

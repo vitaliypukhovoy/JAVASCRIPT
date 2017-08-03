@@ -1,4 +1,4 @@
-let myName = 'Max11121';
+let myName = 'Max123';
 var age = 30;
 console.log("eeee");
 var hasHobbies = true;
