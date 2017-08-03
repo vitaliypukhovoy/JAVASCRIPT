@@ -1,9 +1,9 @@
-var myName = 'Max88';
+let myName = 'Max11121';
 var age = 30;
 console.log("eeee");
 var hasHobbies = true;
 //Array
-//my_arr: number[]; та my_arr: Array<number>
+//my_arr: number[]; �� my_arr: Array<number>
 var hobbies = ['sassa', 'ssss'];
 console.log(typeof hobbies);
 //tuples
@@ -15,7 +15,7 @@ var Color;
     Color[Color["green"] = 100] = "green";
     Color[Color["blue"] = 101] = "blue"; //2
 })(Color || (Color = {}));
-var myColor = 101 /* blue */;
+var myColor = Color.blue;
 console.log(myColor);
 //any
 var car = 'BMW';
@@ -91,4 +91,3 @@ if (typeof finalValue == 'number') {
 // canAlsoBeNull = null;
 // var canThisBeAny :any = null;
 // canThisBeAny = 12;
-//# sourceMappingURL=app.js.map

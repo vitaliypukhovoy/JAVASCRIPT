@@ -1,4 +1,4 @@
-let  myName :string  = 'Max88';
+let  myName :string  = 'Max11121';
 
 var age : number = 30;
 console.log("eeee");
