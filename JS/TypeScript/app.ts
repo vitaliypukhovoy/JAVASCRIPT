@@ -11,7 +11,6 @@ console.log(typeof hobbies);
 
  //tuples
 
-
  let adress : [string, number ]  = ["saassssss", 88];
 
 //enum
@@ -228,4 +227,11 @@ console.log(greeting);
 
 
 
-//
+// Other features es6
+
+// Clases
+
+class  Person {
+
+
+}

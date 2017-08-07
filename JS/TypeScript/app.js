@@ -167,4 +167,10 @@ var userName = "Max";
 //const greeting = "Hello, I'm " + userName;
 var greeting = " This is a heading!\nI'm " + userName + "\nThis is cool";
 console.log(greeting);
-// 
+// Other features es6
+// Clases
+var Person = (function () {
+    function Person() {
+    }
+    return Person;
+}());
