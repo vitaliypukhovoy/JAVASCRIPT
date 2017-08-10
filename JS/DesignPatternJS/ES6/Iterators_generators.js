@@ -232,5 +232,226 @@ console.log(allNumbers.length);     // 7
 console.log(allNumbers);            // [0, 1, 2, 3, 100, 101, 102
 
 
+//Passing Arguments to Iterators
+function *createIterator() {
+    let first = yield 1;
+    let second = yield first + 2;       // 4 + 2
+    yield second + 3;                   // 5 + 3
+}
+let iterator = createIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next(4));          // "{ value: 6, done: false }"
+console.log(iterator.next(5));          // "{ value: 8, done: false }"
+console.log(iterator.next());           // "{ value: undefined, done: true }"
 
 
+//Throwing Errors in Iterators
+function *createIterator() {
+    let first = yield 1;
+    let second = yield first + 2;       // yield 4 + 2, then throw
+    yield second + 3;                   // never is executed
+}
+let iterator = createIterator();
+console.log(iterator.next());                   // "{ value: 1, done: false }"
+console.log(iterator.next(4));                  // "{ value: 6, done: false }"
+console.log(iterator.throw(new Error("Boom"))); // error thrown from generator
+
+
+//
+function *createIterator() {
+    let first = yield 1;
+    let second;
+    try {
+        second = yield first + 2;       // yield 4 + 2, then throw
+    } catch (ex) {
+        second = 6;                     // on error, assign a different value
+    }
+    yield second + 3;
+}
+let iterator = createIterator();
+console.log(iterator.next());                   // "{ value: 1, done: false }"
+console.log(iterator.next(4));                  // "{ value: 6, done: false }"
+console.log(iterator.throw(new Error("Boom"))); // "{ value: 9, done: false }"
+console.log(iterator.next());                   // "{ value: undefined, done: true }"
+
+
+
+//Generator Return Statements
+function *createIterator() {
+    yield 1;
+    return;
+    yield 2;
+    yield 3;
+}
+let iterator = createIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next());           // "{ value: undefined, done: tr
+
+//
+function *createIterator() {
+    yield 1;
+    return 42;
+}
+let iterator = createIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next());           // "{ value: 42, done: true }"
+console.log(iterator.next());           // "{ value: undefined, done: true }"
+
+
+//Delegating Generators
+function *createNumberIterator() {
+    yield 1;
+    yield 2;
+}
+function *createColorIterator() {
+    yield "red";
+    yield "green";
+}
+function *createCombinedIterator() {
+    yield *createNumberIterator();
+    yield *createColorIterator();
+    yield true;
+}
+var iterator = createCombinedIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next());           // "{ value: 2, done: false }"
+console.log(iterator.next());           // "{ value: "red", done: false }"
+console.log(iterator.next());           // "{ value: "green", done: false }"
+console.log(iterator.next());           // "{ value: true, done: false }"
+console.log(iterator.next());           // "{ value: undefined, done: true }"
+
+
+//
+function *createNumberIterator() {
+    yield 1;
+    yield 2;
+    return 3;
+}
+function *createRepeatingIterator(count) {
+    for (let i=0; i < count; i++) {
+        yield "repeat";
+    }
+}
+function *createCombinedIterator() {
+    let result = yield *createNumberIterator();
+    yield *createRepeatingIterator(result);
+}
+var iterator = createCombinedIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next());           // "{ value: 2, done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: undefined, done: true }"
+
+//
+function *createNumberIterator() {
+yield 1;
+yield 2;
+return 3;
+}
+function *createRepeatingIterator(count) {
+    for (let i=0; i < count; i++) {
+        yield "repeat";
+    }
+}
+function *createCombinedIterator() {
+    let result = yield *createNumberIterator();
+    yield *createRepeatingIterator(result);
+}
+var iterator = createCombinedIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next());           // "{ value: 2, done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: undefined, done: true }"
+
+//
+function *createNumberIterator() {
+    yield 1;
+    yield 2;
+    return 3;
+}
+function *createRepeatingIterator(count) {
+    for (let i=0; i < count; i++) {
+        yield "repeat";
+    }
+}
+function *createCombinedIterator() {
+    let result = yield *createNumberIterator();
+    yield result;
+    yield *createRepeatingIterator(result);
+}
+var iterator = createCombinedIterator();
+console.log(iterator.next());           // "{ value: 1, done: false }"
+console.log(iterator.next());           // "{ value: 2, done: false }"
+console.log(iterator.next());           // "{ value: 3, done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: "repeat", done: false }"
+console.log(iterator.next());           // "{ value: undefined, done: true }"
+
+
+//Asynchronous Task Running
+let fs = require("fs");
+fs.readFile("config.json", function(err, contents) {
+    if (err) {
+        throw err;
+    }
+    doSomethingWith(contents);
+    console.log("Done");
+});
+
+
+//A Simple Task Runner
+function run(taskDef) {
+    // create the iterator, make available elsewhere
+    let task = taskDef();
+    // start the task
+    let result = task.next();
+    // recursive function to keep calling next()
+    function step() {
+        // if there's more to do
+        if (!result.done) {
+            result = task.next();
+            step();
+        }
+    }
+    // start the process
+    step();
+}
+
+run(function*() {
+    console.log(1);
+    yield;
+    console.log(2);
+    yield;
+    console.log(3);
+});
+
+
+//Task Running with Data
+function run(taskDef) {
+    // create the iterator, make available elsewhere
+    let task = taskDef();
+    // start the task
+    let result = task.next();
+    // recursive function to keep calling next()
+    function step() {
+        // if there's more to do
+        if (!result.done) {
+            result = task.next(result.value);
+            step();
+        }
+    }
+    // start the process
+    step();
+}
+
+run(function*() {
+    let value = yield 1;
+    console.log(value);         // 1
+    value = yield value + 3;
+    console.log(value);         // 4
+});
