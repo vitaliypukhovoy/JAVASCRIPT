@@ -455,3 +455,62 @@ run(function*() {
     value = yield value + 3;
     console.log(value);         // 4
 });
+
+
+//An Asynchronous Task Runner
+function fetchData() {
+    return function(callback) {
+        callback(null, "Hi!");
+    };
+}
+
+function fetchData() {
+    return function(callback) {
+        setTimeout(function() {
+            callback(null, "Hi!");
+        }, 50);
+    };
+}
+
+//
+function run(taskDef) {
+    // create the iterator, make available elsewhere
+    let task = taskDef();
+    // start the task
+    let result = task.next();
+    // recursive function to keep calling next()
+    function step() {
+        // if there's more to do
+        if (!result.done) {
+            if (typeof result.value === "function") {
+                result.value(function(err, data) {
+                    if (err) {
+                        result = task.throw(err);
+                        return;
+                    }
+                    result = task.next(data);
+                    step();
+                });
+            } else {
+                result = task.next(result.value);
+                step();
+            }
+        }
+    }
+    // start the process
+    step();
+}
+
+//let fs = require("fs");
+function readFile(filename) {
+    return function(callback) {
+        fs.readFile(filename, callback);
+    };
+}
+
+//
+run(function*() {
+    let contents = yield readFile("config.json");
+    doSomethingWith(contents);
+    console.log("Done");
+});
