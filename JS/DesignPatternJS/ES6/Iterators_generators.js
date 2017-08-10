@@ -173,3 +173,64 @@ for (let key of tracking.keys()) {
 for (let key of data.keys()) {
     console.log(key);
 }
+
+//Default Iterators for Collection Types
+let colors = [ "red", "green", "blue" ];
+let tracking = new Set([1234, 5678, 9012]);
+let data = new Map();
+data.set("title", "Understanding ECMAScript 6");
+data.set("format", "print");
+// same as using colors.values()
+for (let value of colors) {
+    console.log(value);
+}
+// same as using tracking.values()
+for (let num of tracking) {
+    console.log(num);
+}
+// same as using data.entries()
+for (let entry of data) {
+    console.log(entry);
+}
+
+
+//destructurInG and for-of loops
+let data = new Map();
+data.set("title", "Understanding ECMAScript 6");
+data.set("format", "ebook");
+// same as using data.entries()
+for (let [key, value] of data) {
+    console.log(key + "=" + value);
+}
+
+//String Iterators
+var message = "A ž B";
+for (let c of message) {
+    console.log(c);
+}
+
+
+//NodeList Iterators
+var divs = document.getElementsByTagName("div");
+for (let div of divs) {
+    console.log(div.id);
+}
+
+//The Spread Operator and Nonarray Iterables
+let set = new Set([1, 2, 3, 3, 3, 4, 5]),
+    array = [...set];
+console.log(array);             // [1,2,3,4,5]
+
+let map = new Map([["name", "Nicholas"], ["age", 25]]),
+    array = [...map];
+console.log(array);             // [["name", "Nicholas"], ["age", 25]]
+
+let smallNumbers = [1, 2, 3],
+    bigNumbers = [100, 101, 102],
+    allNumbers = [0, ...smallNumbers, ...bigNumbers];
+console.log(allNumbers.length);     // 7
+console.log(allNumbers);            // [0, 1, 2, 3, 100, 101, 102
+
+
+
+
