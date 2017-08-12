@@ -31,10 +31,10 @@ function *createIterator() {
     yield 3;
 }
 // generators are called like regular functions but return an iterator
-let iterator = createIterator();
-console.log(iterator.next().value);     // 1
-console.log(iterator.next().value);     // 2
-console.log(iterator.next().value);     // 3
+let iterator2 = createIterator();
+console.log(iterator2.next().value);     // 1
+console.log(iterator2.next().value);     // 2
+console.log(iterator2.next().value);     // 3
 
 
 function *createIterator(items) {
@@ -42,24 +42,24 @@ function *createIterator(items) {
         yield items[i];
     }
 }
-let iterator = createIterator([1, 2, 3]);
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: 3, done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+let iterator3 = createIterator([1, 2, 3]);
+console.log(iterator3.next());           // "{ value: 1, done: false }"
+console.log(iterator3.next());           // "{ value: 2, done: false }"
+console.log(iterator3.next());           // "{ value: 3, done: false }"
+console.log(iterator3.next());           // "{ value: undefined, done: true }"
 // for all further calls
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+console.log(iterator3.next());           // "{ value: undefined, done: true }"
 
-let createIterator = function *(items) {
+let createIterator3 = function *(items) {
     for (let i = 0; i < items.length; i++) {
         yield items[i];
     }
 };
-let iterator = createIterator([1, 2, 3]);
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: 3, done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+let iterator4 = createIterator([1, 2, 3]);
+console.log(iterator4.next());           // "{ value: 1, done: false }"
+console.log(iterator4.next());           // "{ value: 2, done: false }"
+console.log(iterator4.next());           // "{ value: 3, done: false }"
+console.log(iterator4.next());           // "{ value: undefined, done: true }"
 // for all further calls
 console.log(iterator.next());           // "{ value: undefined, done: true }"
 
@@ -71,31 +71,31 @@ let o = {
         }
     }
 };
-let iterator = o.createIterator([1, 2, 3]);
+let iterator5 = o.createIterator([1, 2, 3]);
 
-let o = {
+let a = {
     *createIterator(items) {
         for (let i = 0; i < items.length; i++) {
             yield items[i];
         }
     }
 };
-let iterator = o.createIterator([1, 2, 3])
+let iterator6 = a.createIterator([1, 2, 3])
 
 
 //Iterables and for-of Loops
-let values = [1, 2, 3];
-for (let num of values) {
+let values1 = [1, 2, 3];
+for (let num of values1) {
     console.log(num);
 }
 
 //Accessing the Default Iterator
-let values = [1, 2, 3];
-let iterator = values[Symbol.iterator]();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: 3, done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }
+let values2 = [1, 2, 3];
+let iterator7 = values[Symbol.iterator]();
+console.log(iterator7.next());           // "{ value: 1, done: false }"
+console.log(iterator7.next());           // "{ value: 2, done: false }"
+console.log(iterator7.next());           // "{ value: 3, done: false }"
+console.log(iterator7.next());           // "{ value: undefined, done: true }
 
 
 function isIterable(object) {
@@ -126,42 +126,42 @@ for (let x of collection) {
 }
 
 //The entries() Iterator
-let colors = [ "red", "green", "blue" ];
-let tracking = new Set([1234, 5678, 9012]);
-let data = new Map();
+let colors1 = [ "red", "green", "blue" ];
+let tracking1 = new Set([1234, 5678, 9012]);
+let data1 = new Map();
 data.set("title", "Understanding ECMAScript 6");
 data.set("format", "ebook");
-for (let entry of colors.entries()) {
+for (let entry of colors1.entries()) {
     console.log(entry);
 }
-for (let entry of tracking.entries()) {
+for (let entry of tracking1.entries()) {
     console.log(entry);
 }
-for (let entry of data.entries()) {
+for (let entry of data1.entries()) {
     console.log(entry);
 }
 
 //The values() Iterator
-let colors = [ "red", "green", "blue" ];
-let tracking = new Set([1234, 5678, 9012]);
-let data = new Map();
+let colors2 = [ "red", "green", "blue" ];
+let tracking2 = new Set([1234, 5678, 9012]);
+let data2 = new Map();
 data.set("title", "Understanding ECMAScript 6");
 data.set("format", "ebook");
-for (let value of colors.values()) {
+for (let value of colors2.values()) {
     console.log(value);
 }
-for (let value of tracking.values()) {
+for (let value of tracking2.values()) {
     console.log(value);
 }
-for (let value of data.values()) {
+for (let value of data2.values()) {
     console.log(value);
 }
 
 
 //The keys() Iterator
-let colors = [ "red", "green", "blue" ];
+let colors3 = [ "red", "green", "blue" ];
 let tracking = new Set([1234, 5678, 9012]);
-let data = new Map();
+let data3 = new Map();
 data.set("title", "Understanding ECMAScript 6");
 data.set("format", "ebook");
 for (let key of colors.keys()) {
@@ -170,36 +170,36 @@ for (let key of colors.keys()) {
 for (let key of tracking.keys()) {
     console.log(key);
 }
-for (let key of data.keys()) {
+for (let key of data3.keys()) {
     console.log(key);
 }
 
 //Default Iterators for Collection Types
-let colors = [ "red", "green", "blue" ];
-let tracking = new Set([1234, 5678, 9012]);
-let data = new Map();
+let colors4 = [ "red", "green", "blue" ];
+let tracking4 = new Set([1234, 5678, 9012]);
+let data4 = new Map();
 data.set("title", "Understanding ECMAScript 6");
 data.set("format", "print");
 // same as using colors.values()
-for (let value of colors) {
+for (let value of colors4) {
     console.log(value);
 }
 // same as using tracking.values()
-for (let num of tracking) {
+for (let num of tracking4) {
     console.log(num);
 }
 // same as using data.entries()
-for (let entry of data) {
+for (let entry of data4) {
     console.log(entry);
 }
 
 
 //destructurInG and for-of loops
-let data = new Map();
+let data5 = new Map();
 data.set("title", "Understanding ECMAScript 6");
 data.set("format", "ebook");
 // same as using data.entries()
-for (let [key, value] of data) {
+for (let [key, value] of data5) {
     console.log(key + "=" + value);
 }
 
@@ -221,9 +221,10 @@ let set = new Set([1, 2, 3, 3, 3, 4, 5]),
     array = [...set];
 console.log(array);             // [1,2,3,4,5]
 
-let map = new Map([["name", "Nicholas"], ["age", 25]]),
-    array = [...map];
-console.log(array);             // [["name", "Nicholas"], ["age", 25]]
+// let map1 = new Map([["name", "Nicholas"], ["age", 25]]),
+//     array = [...map1];
+// console.log(array);             // [["name", "Nicholas"], ["age", 25]]
+
 
 let smallNumbers = [1, 2, 3],
     bigNumbers = [100, 101, 102],
@@ -238,11 +239,11 @@ function *createIterator() {
     let second = yield first + 2;       // 4 + 2
     yield second + 3;                   // 5 + 3
 }
-let iterator = createIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next(4));          // "{ value: 6, done: false }"
-console.log(iterator.next(5));          // "{ value: 8, done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+let iterator10 = createIterator();
+console.log(iterator10.next());           // "{ value: 1, done: false }"
+console.log(iterator10.next(4));          // "{ value: 6, done: false }"
+console.log(iterator10.next(5));          // "{ value: 8, done: false }"
+console.log(iterator10.next());           // "{ value: undefined, done: true }"
 
 
 //Throwing Errors in Iterators
@@ -251,10 +252,10 @@ function *createIterator() {
     let second = yield first + 2;       // yield 4 + 2, then throw
     yield second + 3;                   // never is executed
 }
-let iterator = createIterator();
-console.log(iterator.next());                   // "{ value: 1, done: false }"
-console.log(iterator.next(4));                  // "{ value: 6, done: false }"
-console.log(iterator.throw(new Error("Boom"))); // error thrown from generator
+let iterator11 = createIterator();
+console.log(iterator11.next());                   // "{ value: 1, done: false }"
+console.log(iterator11.next(4));                  // "{ value: 6, done: false }"
+console.log(iterator11.throw(new Error("Boom"))); // error thrown from generator
 
 
 //
@@ -268,11 +269,11 @@ function *createIterator() {
     }
     yield second + 3;
 }
-let iterator = createIterator();
-console.log(iterator.next());                   // "{ value: 1, done: false }"
-console.log(iterator.next(4));                  // "{ value: 6, done: false }"
-console.log(iterator.throw(new Error("Boom"))); // "{ value: 9, done: false }"
-console.log(iterator.next());                   // "{ value: undefined, done: true }"
+let iterator12 = createIterator();
+console.log(iterator12.next());                   // "{ value: 1, done: false }"
+console.log(iterator12.next(4));                  // "{ value: 6, done: false }"
+console.log(iterator12.throw(new Error("Boom"))); // "{ value: 9, done: false }"
+console.log(iterator12.next());                   // "{ value: undefined, done: true }"
 
 
 
@@ -283,19 +284,19 @@ function *createIterator() {
     yield 2;
     yield 3;
 }
-let iterator = createIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: tr
+let iterator13 = createIterator();
+console.log(iterator13.next());           // "{ value: 1, done: false }"
+console.log(iterator13.next());           // "{ value: undefined, done: tr
 
 //
 function *createIterator() {
     yield 1;
     return 42;
 }
-let iterator = createIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 42, done: true }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+let iterator14 = createIterator();
+console.log(iterator14.next());           // "{ value: 1, done: false }"
+console.log(iterator14.next());           // "{ value: 42, done: true }"
+console.log(iterator14.next());           // "{ value: undefined, done: true }"
 
 
 //Delegating Generators
@@ -312,13 +313,13 @@ function *createCombinedIterator() {
     yield *createColorIterator();
     yield true;
 }
-var iterator = createCombinedIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: "red", done: false }"
-console.log(iterator.next());           // "{ value: "green", done: false }"
-console.log(iterator.next());           // "{ value: true, done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+var _iterator = createCombinedIterator();
+console.log(_iterator.next());           // "{ value: 1, done: false }"
+console.log(_iterator.next());           // "{ value: 2, done: false }"
+console.log(_iterator.next());           // "{ value: "red", done: false }"
+console.log(_iterator.next());           // "{ value: "green", done: false }"
+console.log(_iterator.next());           // "{ value: true, done: false }"
+console.log(_iterator.next());           // "{ value: undefined, done: true }"
 
 
 //
@@ -336,13 +337,13 @@ function *createCombinedIterator() {
     let result = yield *createNumberIterator();
     yield *createRepeatingIterator(result);
 }
-var iterator = createCombinedIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+var iterator_ = createCombinedIterator();
+console.log(iterator_.next());           // "{ value: 1, done: false }"
+console.log(iterator_.next());           // "{ value: 2, done: false }"
+console.log(iterator_.next());           // "{ value: "repeat", done: false }"
+console.log(iterator_.next());           // "{ value: "repeat", done: false }"
+console.log(iterator_.next());           // "{ value: "repeat", done: false }"
+console.log(iterator_.next());           // "{ value: undefined, done: true }"
 
 //
 function *createNumberIterator() {
@@ -359,13 +360,13 @@ function *createCombinedIterator() {
     let result = yield *createNumberIterator();
     yield *createRepeatingIterator(result);
 }
-var iterator = createCombinedIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+var iterator_1 = createCombinedIterator();
+console.log(iterator_1.next());           // "{ value: 1, done: false }"
+console.log(iterator_1.next());           // "{ value: 2, done: false }"
+console.log(iterator_1.next());           // "{ value: "repeat", done: false }"
+console.log(iterator_1.next());           // "{ value: "repeat", done: false }"
+console.log(iterator_1.next());           // "{ value: "repeat", done: false }"
+console.log(iterator_1.next());           // "{ value: undefined, done: true }"
 
 //
 function *createNumberIterator() {
@@ -383,14 +384,14 @@ function *createCombinedIterator() {
     yield result;
     yield *createRepeatingIterator(result);
 }
-var iterator = createCombinedIterator();
-console.log(iterator.next());           // "{ value: 1, done: false }"
-console.log(iterator.next());           // "{ value: 2, done: false }"
-console.log(iterator.next());           // "{ value: 3, done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: "repeat", done: false }"
-console.log(iterator.next());           // "{ value: undefined, done: true }"
+var iterator_2 = createCombinedIterator();
+console.log(iterator_2 .next());           // "{ value: 1, done: false }"
+console.log(iterator_2 .next());           // "{ value: 2, done: false }"
+console.log(iterator_2 .next());           // "{ value: 3, done: false }"
+console.log(iterator_2 .next());           // "{ value: "repeat", done: false }"
+console.log(iterator_2 .next());           // "{ value: "repeat", done: false }"
+console.log(iterator_2 .next());           // "{ value: "repeat", done: false }"
+console.log(iterator_2 .next());           // "{ value: undefined, done: true }"
 
 
 //Asynchronous Task Running

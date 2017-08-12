@@ -1,0 +1,10 @@
+
+
+var gulp = require('gulp');
+var connect = require('gulp-connect'); // Runs a local Dev Server
+var open = require('gulp-open'); // Open a URL in a Web Browser
+var browserify = require('browserify'); // Bundles JS
+var reactify = require('reactify'); // Transforms React JSX to JS
+var source = require('vinyl-source-stream'); // Use Conventional text strams with Gulp
+var concat = require('gulp-concat'); // Concatenates files
+var lint = require('gulp-eslint'); // Lint JS files, including JSX
