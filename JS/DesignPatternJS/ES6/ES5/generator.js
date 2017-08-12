@@ -19,6 +19,10 @@ function createIterator() {
           return 3;
 
         case 6:
+          _context.next = 8;
+          return 4;
+
+        case 8:
         case "end":
           return _context.stop();
       }
@@ -30,3 +34,4 @@ var iterator = createIterator();
 console.log(iterator.next().value); // 1
 console.log(iterator.next().value); // 2
 console.log(iterator.next().value); // 3
+console.log(iterator.next().value); // 4
