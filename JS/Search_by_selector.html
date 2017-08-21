@@ -46,26 +46,45 @@
 //querySelectorAll(), getElementsByClassName(), getElementsByTagName(), document.getElementById()
 
     //dom.find(selector, context)
+   //div.class1.class2#id3
+   //div.class1 a.class2
+
+//#id1 div.class1.class2
+
+//[
+//    { tagName: null, id: 'id1', classes: [] },
+//    { tagName: 'div', id: null, classes: ['class1', 'class2']  },
+//    { tagName: 'a', id: null, classes: [] }
+//]
     let dom =
     {
      find : function(selector, context)
      {
-         if (selector == "div" ) {
-             console.log(document.querySelectorAll("div"));
-         }
-         else if(selector == ".some-class")
-         {
-             console.log( getElementsByClassName(".some-class"));
-         }
-          else if (selector == "#element")
-         {
-             console.log(document.getElementById('#element'))
-         }
+
+         var str = selector;
+         str.split(' ');
+
+
+         str[0].match(/#\w+/gi);
+
+         str.split(' ')[1].match(/\b(\w+)(\w+\d)?/g)
+
+//         if (selector == "div" ) {
+//             console.log(document.querySelectorAll("div"));
+//         }
+//         else if(selector == ".some-class")
+//         {
+//             console.log( getElementsByClassName(".some-class"));
+//         }
+//          else if (selector == "#element")
+//         {
+//             console.log(document.getElementById('#element'))
+//         }
      }
 
     };
 
-    dom.find("div")
+    dom.find("#id1 div.class1.class2")
 
 
  //var elements = document.querySelectorAll('ul < li:last-child');
