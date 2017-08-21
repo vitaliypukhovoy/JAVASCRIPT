@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+<table id="age-table">
+    <tr>
+        <td> Youe age:</td>
+
+        <td>
+            <label>
+                <input type="radio" name="age" value="young" checked> младше 18
+            </label>
+            <label>
+                <input type="radio" name="age" value="mature"> от 18 до 50
+            </label>
+            <label>
+                <input type="radio" name="age" value="senior"> старше 60
+            </label>
+        </td>
+    </tr>
+
+</table>
+
+
+<ul>
+    <li>Этот</li>
+    <li>тест</li>
+</ul>
+<ul>
+    <li>полностью</li>
+    <li>пройден</li>
+</ul>
+
+</div>
+
+<script>
+
+//    для поиска всех тегов с определенным именем: div
+//    для поиска по классу: .some-class
+//    для поиска по id: #element
+//querySelectorAll(), getElementsByClassName(), getElementsByTagName(), document.getElementById()
+
+    //dom.find(selector, context)
+    let dom =
+    {
+     find : function(selector, context)
+     {
+         if (selector == "div" ) {
+             console.log(document.querySelectorAll("div"));
+         }
+         else if(selector == ".some-class")
+         {
+             console.log( getElementsByClassName(".some-class"));
+         }
+          else if (selector == "#element")
+         {
+             console.log(document.getElementById('#element'))
+         }
+     }
+
+    };
+
+    dom.find("div")
+
+
+ //var elements = document.querySelectorAll('ul < li:last-child');
+</script>
+
+</body>
+</html>
