@@ -3,4 +3,6 @@
 var answer = 777;
 console.log(answer);
 
-var a = 77;
+var a = 7722;
+
+var b = 1555;

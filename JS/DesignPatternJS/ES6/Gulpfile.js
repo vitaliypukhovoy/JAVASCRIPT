@@ -53,7 +53,12 @@ gulp.task('html', function() {
 // });
 
 gulp.task('js', function() {
-    gulp.src('ES6/*.js')
+    // gulp.src('ES6/*.js')
+    //     .pipe(babel({
+    //         presets: ["es2015"],
+    //         plugins: ["transform-object-rest-spread"]
+    //     }))
+        gulp.src('ES6/**/*.js')
         .pipe(babel({
             presets: ["es2015"],
             plugins: ["transform-object-rest-spread"]
@@ -66,5 +71,7 @@ gulp.task('watch', function() {
    // gulp.watch('src/css/*.css', ['css']);
     gulp.watch('ES6/*.js', ['js']);
 });
+
+
 
 gulp.task('default', ['connectDist',  'js', 'watch']);
