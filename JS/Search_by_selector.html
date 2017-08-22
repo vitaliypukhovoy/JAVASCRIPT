@@ -61,13 +61,15 @@
      find : function(selector, context)
      {
 
-         var str = selector;
-         str.split(' ');
+         var str = selector.split(' ');
 
+         for(var i=0; i<str.length; i++) {
+             str[0].match(/#\w+/gi);
 
-         str[0].match(/#\w+/gi);
+             str[1].match(/\b(\w+)(\w+\d)?/g);
+             str[2];
+         }
 
-         str.split(' ')[1].match(/\b(\w+)(\w+\d)?/g)
 
 //         if (selector == "div" ) {
 //             console.log(document.querySelectorAll("div"));
@@ -80,11 +82,29 @@
 //         {
 //             console.log(document.getElementById('#element'))
 //         }
-     }
+     },
+        create: function (str) {
+
+         if(str.splice(0,1)=='#')
+         {
+
+         }
+         else if()
+         {
+
+         }
+         else if()
+         {
+
+
+         }
+
+
+        }
 
     };
 
-    dom.find("#id1 div.class1.class2")
+    dom.find("#id1 div.class1.class2 a")
 
 
  //var elements = document.querySelectorAll('ul < li:last-child');
