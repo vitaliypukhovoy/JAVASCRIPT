@@ -40,15 +40,6 @@
 
 <script>
 
-//    для поиска всех тегов с определенным именем: div
-//    для поиска по классу: .some-class
-//    для поиска по id: #element
-//querySelectorAll(), getElementsByClassName(), getElementsByTagName(), document.getElementById()
-
-    //dom.find(selector, context)
-   //div.class1.class2#id3
-   //div.class1 a.class2
-
     let dom =
     {
      find : function(selector, context)
@@ -66,7 +57,7 @@
      },
         create: function (item) {
 
-            var items = item.includes('.') ? item.match(/\w+(\w+\d\W)??/g): item;
+            var items = item.includes('.') ? item.match(/[a-z]+([a-z]+\d\W)??/g): item;
             var defineProp = function (obj, key, value) {
                 var config = {
                     value: value,
@@ -106,7 +97,6 @@
 //    { tagName: 'a', id: null, classes: [] }
 //]
 
- //var elements = document.querySelectorAll('ul < li:last-child');
 
 </script>
 
