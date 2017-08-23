@@ -49,7 +49,7 @@
    //div.class1.class2#id3
    //div.class1 a.class2
 
-//#id1 div.class1.class2
+//#id1 div.class1.class2 a
 
 //[
 //    { tagName: null, id: 'id1', classes: [] },
@@ -61,13 +61,16 @@
      find : function(selector, context)
      {
 
-         var str = selector.split(' ');
-
-         for(var i=0; i<str.length; i++) {
-             str[0].match(/#\w+/gi);
-
-             str[1].match(/\b(\w+)(\w+\d)?/g);
-             str[2];
+       //  var selector = '#id1 div.class1.class2 a';
+         var array =  selector.match(/(\w+)(\w+\d)?/g);
+         var arr =[];
+         for(var i=0; i< array.length; i++) {
+            if (i===0)
+              arr.push(this.create(array[i]));
+             else if ( i >0 && i < 4)
+                arr.push(this.create(array[i]));
+             else
+                arr.push(this.create(array[i]));
          }
 
 
@@ -83,22 +86,37 @@
 //             console.log(document.getElementById('#element'))
 //         }
      },
-        create: function (str) {
+        create: function (items) {
 
-         if(str.splice(0,1)=='#')
-         {
+            var defineProp = function (obj, key, value) {
+                var config = {
+                    value: value,
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                };
+                Object.defineProperty(obj, key, config);
+            };
+            var arr = Object.create(Object.prototype);
 
-         }
-         else if()
-         {
+            if (!items instanceof Array ) {
+                 defineProp(arr,'tagName', null);
+                 defineProp(arr,'id', items);
+                 defineProp(arr,'classes', []);
+                 return arr;
+            }
+            else if ((Array.isArray(items))) {
 
-         }
-         else if()
-         {
 
-
-         }
-
+                 return arr;
+            }
+            else if (items instanceof Element)
+            {
+                defineProp(arr,'tagName', items);
+                defineProp(arr,'id', null);
+                defineProp(arr,'classes', []);
+                return arr;
+            }
 
         }
 
@@ -108,6 +126,7 @@
 
 
  //var elements = document.querySelectorAll('ul < li:last-child');
+
 </script>
 
 </body>
