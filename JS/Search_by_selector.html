@@ -49,45 +49,24 @@
    //div.class1.class2#id3
    //div.class1 a.class2
 
-//#id1 div.class1.class2 a
-
-//[
-//    { tagName: null, id: 'id1', classes: [] },
-//    { tagName: 'div', id: null, classes: ['class1', 'class2']  },
-//    { tagName: 'a', id: null, classes: [] }
-//]
     let dom =
     {
      find : function(selector, context)
      {
-
-       //  var selector = '#id1 div.class1.class2 a';
-         var array =  selector.match(/(\w+)(\w+\d)?/g);
-         var arr =[];
-         for(var i=0; i< array.length; i++) {
-            if (i===0)
-              arr.push(this.create(array[i]));
-             else if ( i >0 && i < 4)
-                arr.push(this.create(array[i]));
+         var array =  selector.match(/([#,a-z]+)(\W\w+(\W\w+\d)\s)?([a-z]+)??/g);
+         arr =[];
+         array.forEach((match, i)=> {
+              if (i == 0)
+              arr.push(this.create(match));
+             else if ( i === 1)
+                arr.push(this.create(match));
              else
-                arr.push(this.create(array[i]));
-         }
-
-
-//         if (selector == "div" ) {
-//             console.log(document.querySelectorAll("div"));
-//         }
-//         else if(selector == ".some-class")
-//         {
-//             console.log( getElementsByClassName(".some-class"));
-//         }
-//          else if (selector == "#element")
-//         {
-//             console.log(document.getElementById('#element'))
-//         }
+                arr.push(this.create(match));
+          });
      },
-        create: function (items) {
+        create: function (item) {
 
+            var items = item.includes('.') ? item.match(/\w+(\w+\d\W)??/g): item;
             var defineProp = function (obj, key, value) {
                 var config = {
                     value: value,
@@ -99,31 +78,33 @@
             };
             var arr = Object.create(Object.prototype);
 
-            if (!items instanceof Array ) {
+            if ( item.slice(0,1) =='#') {
                  defineProp(arr,'tagName', null);
                  defineProp(arr,'id', items);
                  defineProp(arr,'classes', []);
                  return arr;
             }
-            else if ((Array.isArray(items))) {
-
-
+            else if (items instanceof  Array) {
                  return arr;
             }
-            else if (items instanceof Element)
+            else if (item)
             {
                 defineProp(arr,'tagName', items);
                 defineProp(arr,'id', null);
                 defineProp(arr,'classes', []);
                 return arr;
             }
-
         }
-
     };
 
     dom.find("#id1 div.class1.class2 a")
-
+    console.log(JSON.stringify(arr));
+ // outline
+//[
+//    { tagName: null, id: 'id1', classes: [] },
+//    { tagName: 'div', id: null, classes: ['class1', 'class2']  },
+//    { tagName: 'a', id: null, classes: [] }
+//]
 
  //var elements = document.querySelectorAll('ul < li:last-child');
 
