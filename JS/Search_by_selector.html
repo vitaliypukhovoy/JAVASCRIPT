@@ -6,97 +6,62 @@
 </head>
 <body>
 
-<div>
-<table id="age-table">
-    <tr>
-        <td> Youe age:</td>
-
-        <td>
-            <label>
-                <input type="radio" name="age" value="young" checked> младше 18
-            </label>
-            <label>
-                <input type="radio" name="age" value="mature"> от 18 до 50
-            </label>
-            <label>
-                <input type="radio" name="age" value="senior"> старше 60
-            </label>
-        </td>
-    </tr>
-
-</table>
-
-
-<ul>
-    <li>Этот</li>
-    <li>тест</li>
-</ul>
-<ul>
-    <li>полностью</li>
-    <li>пройден</li>
-</ul>
-
-</div>
-
 <script>
 
     let dom =
-    {
-     find : function(selector, context)
-     {
-         var array =  selector.match(/([#,a-z]+)(\W\w+(\W\w+\d)\s)?([a-z]+)??/g);
-         arr =[];
-         array.forEach((match, i)=> {
-              if (i == 0)
-              arr.push(this.create(match));
-             else if ( i === 1)
-                arr.push(this.create(match));
-             else
-                arr.push(this.create(match));
-          });
-     },
-        create: function (item) {
+        {
+            find: function (selector, context) {
+                var array = selector.match(/([#,a-z]+)(\W\w+(\W\w+\d)\s)?([a-z]+)??/g);
+                arr = [];
+                array.forEach((match, i) => {
+                    if (i == 0)
+                        arr.push(this.create(match));
+                    else if (i === 1)
+                        arr.push(this.create(match));
+                    else
+                        arr.push(this.create(match));
+                });
+            },
+            create: function (item) {
 
-            var items = item.includes('.') ? item.match(/[a-z]+([a-z]+\d\W)??/g): item;
-            var defineProp = function (obj, key, value) {
-                var config = {
-                    value: value,
-                    writable: true,
-                    enumerable: true,
-                    configurable: true
+                var items = item.includes('.') ? item.match(/[a-z]+([a-z]+\d\W)??/g) : item;
+                var defineProp = function (obj, key, value) {
+                    var config = {
+                        value: value,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    };
+                    Object.defineProperty(obj, key, config);
                 };
-                Object.defineProperty(obj, key, config);
-            };
-            var arr = Object.create(Object.prototype);
+                var arr = Object.create(Object.prototype);
 
-            if ( item.slice(0,1) =='#') {
-                 defineProp(arr,'tagName', null);
-                 defineProp(arr,'id', items);
-                 defineProp(arr,'classes', []);
-                 return arr;
+                if (item.slice(0, 1) == '#') {
+                    defineProp(arr, 'tagName', null);
+                    defineProp(arr, 'id', items);
+                    defineProp(arr, 'classes', []);
+                    return arr;
+                }
+                else if (items instanceof Array) {
+                    return arr;
+                }
+                else if (item) {
+                    defineProp(arr, 'tagName', items);
+                    defineProp(arr, 'id', null);
+                    defineProp(arr, 'classes', []);
+                    return arr;
+                }
             }
-            else if (items instanceof  Array) {
-                 return arr;
-            }
-            else if (item)
-            {
-                defineProp(arr,'tagName', items);
-                defineProp(arr,'id', null);
-                defineProp(arr,'classes', []);
-                return arr;
-            }
-        }
-    };
+        };
 
     dom.find("#id1 div.class1.class2 a")
     console.log(JSON.stringify(arr));
- // outline
-//[
-//    { tagName: null, id: 'id1', classes: [] },
-//    { tagName: 'div', id: null, classes: ['class1', 'class2']  },
-//    { tagName: 'a', id: null, classes: [] }
-//]
-
+    // outline
+    //[
+    //    { tagName: null, id: 'id1', classes: [] },
+    //    { tagName: 'div', id: null, classes: ['class1', 'class2']  },
+    //    { tagName: 'a', id: null, classes: [] }
+    //]
 
 </script>
 
