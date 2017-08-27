@@ -9,7 +9,7 @@
 <script>
 
    var a = function method() {
-        var a = 10;
+        var a = 10;   //every time this is repeated
         function nested() {
           return  a *= 2;
         }
@@ -20,15 +20,15 @@
     a();
     a();
    function method() {
-       var a = 10;
+       var a = 10;  ////every time this is updated  because a  is window
        function nested() {
            a *= 2;
            return a;
        }
        return nested;
    }
-   var a = method();
-   a(); // returns 20.
+   var a = method(); // a is window because "method"  have not already existed
+   a(); // returns 20. //console.log(window.a)
    a(); // returns 40.
    a(); // returns 80.
 
