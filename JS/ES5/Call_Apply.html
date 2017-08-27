@@ -8,32 +8,27 @@
 
 <script>
 
-    const  arr = [2,3,-5,15,7];
-    console.log(Math.min.apply(null,arr)); // -5
-    console.log(Math.max.apply(null,arr)); // 15
+    const arr = [2, 3, -5, 15, 7];
+    console.log(Math.min.apply(null, arr)); // -5
+    console.log(Math.max.apply(null, arr)); // 15
 
     Math.min(...arr);
     Math.max(...arr);
 
 
-    const  bruce = {name: "Bruce"}
-    const  madeline  = {name : "Madeline"};
+    const bruce = {name: "Bruce"}
+    const madeline = {name: "Madeline"};
 
-    function  update (birthYear, occupation)
-    {
+    function update(birthYear, occupation) {
         this.birthYear = birthYear;
         this.occupation = occupation;
     }
 
-    update.call(bruce,1949,'singer');
-    update.call(madeline,1942,'actress');
+    update.call(bruce, 1949, 'singer');
+    update.call(madeline, 1942, 'actress');
 
-    update.apply(bruce,[1955,'actor']);
-    update.apply(madeline,[1918,'writer']);
-
-
-
-
+    update.apply(bruce, [1955, 'actor']);
+    update.apply(madeline, [1918, 'writer']);
 
 
     var obj = {a: 'Custom'};

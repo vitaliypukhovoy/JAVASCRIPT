@@ -8,11 +8,10 @@
 
 <script>
 
-    const  bruce = {name: "Bruce"}
-    const  madeline  = {name : "Madeline"};
+    const bruce = {name: "Bruce"}
+    const madeline = {name: "Madeline"};
 
-    function  update (birthYear, occupation)
-    {
+    function update(birthYear, occupation) {
         this.birthYear = birthYear;
         this.occupation = occupation;
     }
@@ -26,17 +25,10 @@
     console.log(bruce);
 
 
-
     const updateBruce1949 = update.bind(bruce, 1949);
     updateBruce1949("singer, songwriter");
 
     console.log(bruce);
-
-
-
-
-
-
 
 
 </script>
