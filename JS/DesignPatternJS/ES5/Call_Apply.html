@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    const  arr = [2,3,-5,15,7];
+    console.log(Math.min.apply(null,arr)); // -5
+    console.log(Math.max.apply(null,arr)); // 15
+
+    Math.min(...arr);
+    Math.max(...arr);
+
+
+    const  bruce = {name: "Bruce"}
+    const  madeline  = {name : "Madeline"};
+
+    function  update (birthYear, occupation)
+    {
+        this.birthYear = birthYear;
+        this.occupation = occupation;
+    }
+
+    update.call(bruce,1949,'singer');
+    update.call(madeline,1942,'actress');
+
+    update.apply(bruce,[1955,'actor']);
+    update.apply(madeline,[1918,'writer']);
+
+
+
+
+
+
+    var obj = {a: 'Custom'};
+
+    // This property is set on the global object
+    var a = 'Global';
+
+    function whatsThis() {
+        return this.a;
+    }
+
+    console.log(whatsThis());          // Returns 'Global'
+    console.log(whatsThis.call(obj));
+    console.log(whatsThis.apply(obj));
+
+</script>
+
+</body>
+</html>

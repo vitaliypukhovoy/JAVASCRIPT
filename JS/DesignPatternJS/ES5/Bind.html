@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    const  bruce = {name: "Bruce"}
+    const  madeline  = {name : "Madeline"};
+
+    function  update (birthYear, occupation)
+    {
+        this.birthYear = birthYear;
+        this.occupation = occupation;
+    }
+
+    const updateBruce = update.bind(bruce);
+
+    updateBruce(1904, 'actor');
+    console.log(bruce);
+
+    updateBruce.call(madeline, 1274, "king");
+    console.log(bruce);
+
+
+
+    const updateBruce1949 = update.bind(bruce, 1949);
+    updateBruce1949("singer, songwriter");
+
+    console.log(bruce);
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
