@@ -3,5 +3,6 @@
   <component name="TypeScriptCompiler">
     <option name="isCompilerEnabled" value="true" />
     <option name="scopeName" value="Module 'JS'" />
+    <option name="generateSourceMap" value="false" />
   </component>
 </project>
