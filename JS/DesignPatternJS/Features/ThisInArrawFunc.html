@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    (function(x, f = () => x) {
+        var x;
+        var y = x;
+        x = 2;
+        return [x, y, f()];
+    })(1)
+
+//We can not change " this " inside arrow function, which had assigned in parameters before.
+
+</script>
+
+</body>
+</html>
