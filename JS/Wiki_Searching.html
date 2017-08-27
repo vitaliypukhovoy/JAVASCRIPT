@@ -32,7 +32,6 @@
 <script>
 
     (function () {
-
         var input = document.querySelector('.ipt');
         var result = document.createElement('div');
         result.setAttribute("class", "result");
@@ -60,7 +59,7 @@
                         addList(el);
                     });
                 }
-            }
+            };
             xhr.send(body);
         });
 
@@ -84,6 +83,7 @@
             }
             ;
 
+
             for (var i = 0; i < options.length; i++) {
                 if (options[i].value === val) {
                     load(val);
@@ -92,6 +92,7 @@
             }
             ;
         });
+
         var load = function (val) {
             var wiki = {
                 action: 'opensearch',
@@ -99,7 +100,6 @@
                 format: 'json',
                 search: val
             };
-
             var body = Object.keys(wiki).map(function (el) {
                 return el + '=' + wiki[el]
             }).join('&');
