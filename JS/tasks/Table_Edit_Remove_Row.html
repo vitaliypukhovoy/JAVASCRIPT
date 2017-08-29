@@ -47,7 +47,7 @@
         var bn = document.getElementById('add')
         bn.addEventListener('click', function () {
             // var text= document.createTextNode('new ');
-            // cell1.appendChild('text1');
+            // cell1.appendChild(text);
             if (firstName.value && lastName.value) {
                 let row = table.insertRow(1);
                 let cell1 = row.insertCell(0);
@@ -56,6 +56,7 @@
                 cell1.innerHTML = firstName.value;
                 cell2.innerHTML = lastName.value;
                 cell3.innerHTML = '<button class="rem">rem</button>';
+                firstName.value = ""; lastName.value = "";
             }
             else
                 alert('Enter first and last name ')
