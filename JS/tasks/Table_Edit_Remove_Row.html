@@ -41,6 +41,7 @@
 </div>
 
 <script>
+
     (function () {
         var firstName = document.querySelector('#firstName');
         var lastName = document.querySelector('#lastName');
@@ -56,14 +57,16 @@
                 cell1.innerHTML = firstName.value;
                 cell2.innerHTML = lastName.value;
                 cell3.innerHTML = '<button class="rem">rem</button>';
-                firstName.value = ""; lastName.value = "";
+                firstName.value = "";
+                lastName.value = "";
             }
             else
                 alert('Enter first and last name ')
         });
+
         table.addEventListener('click', function (event) {
             if (event.target.localName == 'button') {
-               // event.target.closest('tr').remove();
+                // event.target.closest('tr').remove();
                 table.deleteRow(event.target.closest('tr').rowIndex);
             }
             else if (event.target.localName === 'td') {
@@ -78,7 +81,6 @@
                 event.target.innerHTML = data;
             }
         });
-
     })();
 
 </script>
