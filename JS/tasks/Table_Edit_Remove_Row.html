@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #row {
+         visibility: hidden;
+        }
+        #input
+        {
+            margin-top: 20px;
+        }
+        input:focus {
+            background: #0074D9;
+            outline: none;  /* убрать рамку */
+        }
+
+    </style>
+</head>
+<body>
+
+<!--Дана таблица с колонками 'имя', 'фамилия', 'удалить'. Сделайте под ней 2 инпута и кнопку.-->
+<!--Если ввести в эти инпуты имя и фамилию и нажать на кнопку - в таблицу должен добавиться новый ряд.-->
+<!--В каждом ряду должна быть кнопочка 'удалить'(третий столбец), по нажатию на которую этот ряд удалится.-->
+
+<!--Также сделайте так, чтобы можно было поредактировать любую ячейку с именем и фамилией - по клику на ячейку-->
+<!--в ней должен появиться инпут с текстом этой ячейки, этот текст можно поменять, нажать Enter - и инпут исчезнет,-->
+<!--а информация в ячейке обновится.-->
+
+<table id = "table">
+
+    <tr>
+        <th>First name</th>
+        <th>last Name</th>
+        <th> </th>
+
+    </tr>
+
+</table>
+
+<div id = 'input'>
+<input id="firstName" type=""> <input id="lastName" type="text">
+<button  id = "add">Add</button>
+</div>
+
+<script>
+    (function () {
+        var firstName = document.querySelector('#firstName');
+        var lastName = document.querySelector('#lastName');
+        var bn = document.getElementById('add')
+        bn.addEventListener('click', function () {
+            // var text= document.createTextNode('new ');
+            // cell1.appendChild('text1');
+            if (firstName.value && lastName.value) {
+                let row = table.insertRow(1);
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+                cell1.innerHTML = firstName.value;
+                cell2.innerHTML = lastName.value;
+                cell3.innerHTML = '<button class="rem">rem</button>';
+            }
+            else
+                alert('Enter first and last name ')
+        });
+        table.addEventListener('click', function (event) {
+            if (event.target.localName == 'button') {
+                event.target.closest('tr').remove();
+                //table.deleteRow(2);
+            }
+            else if (event.target.localName === 'td') {
+                event.target.innerHTML = '<input type="text" autofocus value="' + event.target.innerText + '">';
+            }
+        });
+
+        table.addEventListener('keypress', function (event) {
+            if (event.keyCode == 13) {
+                var data = event.target.value;
+                event.target.replaceWith(data)
+                event.target.innerHTML = data;
+            }
+        });
+
+    })();
+
+</script>
+
+</body>
+</html>
