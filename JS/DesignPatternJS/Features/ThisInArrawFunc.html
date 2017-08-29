@@ -42,14 +42,13 @@
 
     //We can not change " this " inside arrow function, which had assigned in parameters before.
 
+    var methodCallback = (param) => console.log(param);
 
     (function method(x, callback) {   //var x=5;   // 5
         callback(x);
         var x = 5;    //4
 
     })(4, methodCallback);
-
-    var methodCallback = (param) => console.log(param);
 
 
 </script>
