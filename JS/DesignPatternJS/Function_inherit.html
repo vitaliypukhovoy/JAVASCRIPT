@@ -24,6 +24,10 @@
     };
 
     Superhero.prototype = Object.create(Person.prototype);
+    //Superhero.prototype = new Person(); // use Object.create(Person.prototype);
+    Superhero.prototype.constructor = Superhero;
+
+
     var superman = new Superhero("Clark", "Kent", ["flight", "heat-vision"]);
     console.log(superman);
 

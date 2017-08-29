@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    function maxDigits (arr) {
+       this.array = arr;
+       this.sort = function(){
+          //return  Array.prototype.sort.call(this.array, this.compare);
+           return this.array.sort(this.compare)
+          // return this.array.sort((a,b)=> a-b)
+       }
+    }
+    maxDigits.prototype.compare = function(a,b)
+    {
+        return a-b;
+    }
+    var arr = [626,20,9,1,88,166]
+    console.log(new maxDigits(arr).sort());
+
+function maxDigits(arr) {
+    this.array = arr;
+    this.longestNumber = function () {
+        this.array.sort(this.compare)
+        let self = this.array
+        return function () {
+            return self.filter(function(el){
+                return Math.max(self).toString().length== el.toString().length;
+            });
+        }();
+    };
+};
+
+maxDigits.prototype.compare = function (a, b) {
+    if (a.toString().length > b.toString().length)
+        return 1;
+    else if (a.toString().length < b.toString().length)
+        return -1;
+    else
+        return 0;
+}
+
+
+function maxDigits(arr) {
+    this.array = arr;
+    this.longestNumber = function () {
+        let self = this.array
+        return function () {
+            return self.filter(function(el){
+                return Math.max(self).toString().length== el.toString().length;
+            });
+        }();
+    };
+};
+
+
+// You will be given an array of integer values.
+// The task is to return item(s) from that array
+// that has the biggest number of digits in them
+// (i.e. the "longest" number).
+// For example "123" has more digits than "84"
+// that is why "123" has to be picked.
+
+var arr = [626, 20, 9, 1, 88, 166]
+console.log(new maxDigits(arr).longestNumber());
+
+function maxDigits(arr) {
+    var array = arr;
+    return function()
+    {
+        var data = array.filter(function (el) {
+            return Math.max(...array).toString().length == el.toString().length;
+        });
+        return Math.min(...data);
+        // data.map(function(item){return item})
+    }();
+};
+
+var arr = [626, 20, 9, 1, 88, 166]
+console.log(maxDigits(arr));
+
+
+
+// There are pigs and chickens on a farm.
+// Someone has counted the legs and heads
+// of all the pigs and chickens.
+// The task is to calculate the number
+// of pigs and chickens on the farm
+// knowing number of heads and legs.
+function headsAndLegs(heads, legs) {
+    var pigs = 0, chickens = 0;
+
+    var middle = ((heads * 4 - heads * 2) / 2) + heads * 2;
+
+    var chickenMax = (heads * 2);
+    var pigsMax = (heads * 4);
+
+    if(chickenMax == legs)
+        return [0,heads]
+    else if (pigsMax == legs)
+        return [heads, 0]
+
+    while (chickenMax != legs) {
+        var chickenMax = chickenMax + 2;
+        pigs++;
+        if (chickenMax == legs) {
+            chickens = heads - pigs;
+            break;
+        }
+    }
+
+    return [pigs, chickens]
+}
+
+console.log(headsAndLegs(10, 22))
+console.log(headsAndLegs(10, 24))
+console.log(headsAndLegs(10, 28))
+console.log(headsAndLegs(10, 36))
+console.log(headsAndLegs(10, 38))
+
+
+
+//    10  = 5*2   +   5 * 4 //= 30
+//    10 =  2*2   +   8 * 4 //= 36
+//    10 =  1*2   +   9 * 4 //=38
+//    10  = 5*2   +   5*  4 //= 30
+//    10 =  6*2   +   4 * 4 //= 28
+//    10 =  7*2   +   3 * 4 //= 26
+//    10 =  8*2   +   2 * 4 //= 24
+//    10 =  9*2   +   1 * 4 //= 22
+
+
+// You will be given a person's name: [first name]
+// [middle name] [last name]. Your task is
+// to abbreviate the first and middle names,
+// for example: "Arnold Alois Schwarzenegger"
+// will become "A. A. Schwarzenegger."
+
+function abbreviate (name) {
+var array = name.split(' ');
+var newName = '';
+array.forEach(function(el,i, arr){
+if (i==0 || i ==1) {
+    newName += el.split('')[0] + '. ';
+    return;
+}
+    newName +=el;
+});
+return newName
+}
+
+var name = 'Arnold Alois Schwarzenegger'
+
+console.log(abbreviate(name));
+
+//    function maxDigits (arr) {
+
+</script>
+
+</body>
+</html>

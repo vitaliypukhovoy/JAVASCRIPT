@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<ul id="ul">
+    <li> italics <i>topic 1</i></li>
+    <li> italics <i>topic 2</i></li>
+    <li> italics <i>topic 3</i></li>
+    <li> italics <i>topic 4</i></li>
+    <li> italics <i>topic 5</i></li>
+</ul>
+<button id="button"> Add li </button>
+
+<script>
+
+
+    (function() {
+        var ul = document.getElementById('ul');
+        ul.addEventListener('click', someMethod);
+
+        function someMethod() {
+            var li = event.target.closest('li');
+            if (li)
+                li.innerHTML = li.innerHTML + "!";
+        }
+
+        var bt = document.getElementById('button');
+        bt.addEventListener('click', addLi);
+        var n = 5
+
+        function addLi() {
+            var li = document.createElement('li');
+            li.innerHTML = 'topic ' + (++n);
+            ul.appendChild(li);
+        }
+    })();
+
+
+</script>
+
+</body>
+</html>
