@@ -62,8 +62,8 @@
         });
         table.addEventListener('click', function (event) {
             if (event.target.localName == 'button') {
-                event.target.closest('tr').remove();
-                //table.deleteRow(2);
+               // event.target.closest('tr').remove();
+                table.deleteRow(event.target.closest('tr').rowIndex);
             }
             else if (event.target.localName === 'td') {
                 event.target.innerHTML = '<input type="text" autofocus value="' + event.target.innerText + '">';
