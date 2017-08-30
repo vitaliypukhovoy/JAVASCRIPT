@@ -31,67 +31,68 @@
 
 <script>
 
+    var input = document.querySelector('.ipt');
+    var result = document.createElement('div');
+    result.setAttribute("class", "result");
+    document.body.appendChild(result);
+
     (function () {
-        var input = document.querySelector('.ipt');
-        var result = document.createElement('div');
-        result.setAttribute("class", "result");
-        document.body.appendChild(result);
 
-        var search = '';
-        input.addEventListener('keydown', function () {
-            var url = 'https://en.wikipedia.org/w/api.php';
-            var wiki = {
-                action: 'opensearch',
-                origin: '*',
-                format: 'json',
-                search: input.value
-            };
+        var searchFunc = function () {
+            input.addEventListener('keydown', function () {
+                var url = 'https://en.wikipedia.org/w/api.php';
+                var wiki = {
+                    action: 'opensearch',
+                    origin: '*',
+                    format: 'json',
+                    search: input.value
+                };
 
-            var body = Object.keys(wiki).map(function (el) {
-                return el + '=' + wiki[el]
-            }).join('&');
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', url);
-            xhr.onload = function () {
-                if (xhr.status >= 200 && xhr.status < 400) {
-                    var response = JSON.parse(xhr.responseText)[1];
-                    response.forEach(function (el, i) {
-                        addList(el);
-                    });
+                var body = Object.keys(wiki).map(function (el) {
+                    return el + '=' + wiki[el]
+                }).join('&');
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                xhr.onload = function () {
+                    if (xhr.status >= 200 && xhr.status < 400) {
+                        var response = JSON.parse(xhr.responseText)[1];
+                        response.forEach(function (el, i) {
+                            addList(el);
+                        });
+                    }
+                };
+                xhr.send(body);
+            });
+
+            input.addEventListener('input', function (e) {
+
+                var val = e.target.value;
+                var list = input.getAttribute('list');
+                var options = document.getElementById(list).childNodes;
+
+                if (result.childNodes.length > 0 && result.parentNode != null) {
+                    while (result.hasChildNodes()) {
+                        result.removeChild(result.firstChild);
+                        //result.normalize();
+                    }
                 }
-            };
-            xhr.send(body);
-        });
+                ;
 
-        function addList(item) {
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].value === val) {
+                        load(val);
+                        break;
+                    }
+                }
+                ;
+            });
+        };
+
+        var addList = function (item) {
             var option = document.createElement('option');
             option.value = item;
             document.getElementById("list_letter").appendChild(option);
         }
-
-        input.addEventListener('input', function (e) {
-
-            var val = e.target.value;
-            var list = input.getAttribute('list');
-            var options = document.getElementById(list).childNodes;
-
-            if (result.childNodes.length > 0 && result.parentNode != null) {
-                while (result.hasChildNodes()) {
-                    result.removeChild(result.firstChild);
-                    //result.normalize();
-                }
-            }
-            ;
-
-
-            for (var i = 0; i < options.length; i++) {
-                if (options[i].value === val) {
-                    load(val);
-                    break;
-                }
-            }
-            ;
-        });
 
         var load = function (val) {
             var wiki = {
@@ -131,6 +132,8 @@
             });
             xhr.send(body);
         };
+
+        searchFunc();
     })();
 
 </script>
