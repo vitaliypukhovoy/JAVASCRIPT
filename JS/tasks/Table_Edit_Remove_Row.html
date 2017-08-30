@@ -25,7 +25,7 @@
 
 <!--Также сделайте так, чтобы можно было поредактировать любую ячейку с именем и фамилией - по клику на ячейку-->
 <!--в ней должен появиться инпут с текстом этой ячейки, этот текст можно поменять, нажать Enter - и инпут исчезнет,-->
-<!--а информация в ячейке обновится.-->
+<!--а информация в ячейке обновится, а также esc или blur (увсти фокус с элемента)-->
 
 <table id = "table">
     <tr>
@@ -41,7 +41,7 @@
 </div>
 
 <script>
-    var inp;
+
     (function () {
         var blur = false;
         var firstName = document.querySelector('#firstName');
@@ -74,39 +74,38 @@
                 //input.focus();
             }
 
-       else if( document.activeElement.closest('td')) {
+            else if (document.activeElement.closest('td')) {
                 document.activeElement.addEventListener('keypress', function (event) {
-               if (event.keyCode == 13 && !event.which == 0) {
-                   blur = true;
-                   var data = event.target.value;
-                   event.target.replaceWith(data);
-               }
+                    if (event.keyCode == 13 && !event.which == 0) {
+                        blur = true;
+                        var data = event.target.value;
+                        event.target.replaceWith(data);
+                    }
                     blur = false;
-           }, false);
-
+                });
 
                 document.activeElement.addEventListener('keydown', function (event) {
-               if (event.keyCode == 27 && !event.which == 0) {
-                   blur = true;
-                   var data = event.target.value;
-                   event.target.replaceWith(data);
-                   //event.target.parentNode.removeChild(event.target);
-                   //event.target.parentNode.replaceChild(data, event.target);
-                   //event.target.innerHTML = data;
-               }
+                    if (event.keyCode == 27 && !event.which == 0) {
+                        blur = true;
+                        var data = event.target.value;
+                        event.target.replaceWith(data);
+                        //event.target.parentNode.removeChild(event.target);
+                        //event.target.parentNode.replaceChild(data, event.target);
+                        //event.target.innerHTML = data;
+                    }
                     blur = false;
-           });
-          }
+                });
+            }
         });
         table.addEventListener('blur', function (event) {
-               if (!blur && event.which == 0) {
-                   var data = event.target.value;
-                   event.target.replaceWith(data)
-                   event.target.innerHTML = data;
-                   blur = false;
-               }
+            if (!blur && event.which == 0) {
+                var data = event.target.value;
+                event.target.replaceWith(data)
+                event.target.innerHTML = data;
+                blur = false;
+            }
             blur = false;
-           }, true);
+        }, true);
     })();
 
 </script>
