@@ -85,11 +85,27 @@
 
 <script>
 
+
+    var input = document.getElementsByTagName('input')[0];
+    //  var array = ['name1','name2','name3','name4'];
+    var arr = [].slice.call(document.getElementsByTagName('div')).splice(1, 5);
+
     (function () {
-        /*============================= LocalStore ==========================================================*/
-        var input = document.getElementsByTagName('input')[0];
-        //  var array = ['name1','name2','name3','name4'];
-        arr = [].slice.call(document.getElementsByTagName('div')).splice(1, 5);
+
+       var _Onclick = function () {
+           input.addEventListener('click', function () {
+               var i, len = localStorage.length;
+               var excl = ['name1', 'name2', 'name3', 'name4'];
+               for (i = 0; i <= len; i++) {
+                   var item = localStorage.key(i);
+                   if (excl.indexOf(item) == 1) {
+                       localStorage.removeItem(item);
+                   }
+               }
+               saveOption();
+           });
+       };
+
         var array = arr.map(function (item) {
             return item.className
         });
@@ -110,9 +126,7 @@
 
         var etablishOption = function () {
             array.map(function (name) {
-
                 changedOption(name);
-
             });
         };
 
@@ -122,22 +136,7 @@
             opt.setAttribute('selected', 'selected');
         };
 
-        input.addEventListener('click', function () {
-            var i, len = localStorage.length;
-            var excl = ['name1', 'name2', 'name3', 'name4'];
-            for (i = 0; i <= len; i++) {
-                var item = localStorage.key(i);
-                if (excl.indexOf(item) == 1) {
-                    localStorage.removeItem(item);
-                }
-            }
-            saveOption();
-        });
-
-        etablishOption();
-
-        /*============================= Promise ==========================================================*/
-        function delay(ms) {
+      var delay =  function (ms) {
             var result = new Promise(function (resolve, reject) {
                 try {
                     if (typeof ms === "undefined") {
@@ -158,29 +157,29 @@
                         reject("Duration is required to be a number");
                     }
                 }
-            })
+            });
             return result;
         };
 
-        function NotPassNumberError(message) {
+       var NotPassNumberError = function (message) {
             this.name = 'NotPassNumberError';
             this.message = message || 'Default Message';
             this.stack = (new Error()).stack;
-        }
 
-        NotPassNumberError.prototype = Object.create(IsNotNumberError.prototype);
-        NotPassNumberError.prototype.constructor = NotPassNumberError;
+            NotPassNumberError.prototype = Object.create(IsNotNumberError.prototype);
+            NotPassNumberError.prototype.constructor = NotPassNumberError;
+        };
 
-        function IsNotNumberError(message) {
+       var IsNotNumberError = function (message) {
             this.name = 'IsNotNumberError';
             this.message = message || 'Default Message';
             this.stack = (new Error()).stack;
-        }
 
-        IsNotNumberError.prototype = Object.create(IsNotNumberError.prototype);
-        IsNotNumberError.prototype.constructor = IsNotNumberError;
+            IsNotNumberError.prototype = Object.create(IsNotNumberError.prototype);
+            IsNotNumberError.prototype.constructor = IsNotNumberError;
+        };
 
-        function doStuff() {
+      var doStuff =  function () {
             console.log('I will arrive in 3 second');
         };
 
@@ -192,7 +191,9 @@
         })
         delay("www").then(doStuff).catch(function (error) {
             console.log(error);
-        })
+        });
+        _Onclick();
+        etablishOption();
     })();
 
 </script>
