@@ -131,9 +131,11 @@
         };
 
         var changedOption = function (name) {
-            var key = localStorage.getItem(name);
-            var opt = document.querySelector('.' + name).getElementsByTagName('option')[key - 1];
-            opt.setAttribute('selected', 'selected');
+            if(name) {
+                var key = localStorage.getItem(name);
+                var opt = document.querySelector('.' + name).getElementsByTagName('option')[key - 1];
+                opt.setAttribute('selected', 'selected');
+            };
         };
 
       var delay =  function (ms) {
@@ -165,19 +167,20 @@
             this.name = 'NotPassNumberError';
             this.message = message || 'Default Message';
             this.stack = (new Error()).stack;
-
-            NotPassNumberError.prototype = Object.create(IsNotNumberError.prototype);
-            NotPassNumberError.prototype.constructor = NotPassNumberError;
         };
+
 
        var IsNotNumberError = function (message) {
             this.name = 'IsNotNumberError';
             this.message = message || 'Default Message';
             this.stack = (new Error()).stack;
-
-            IsNotNumberError.prototype = Object.create(IsNotNumberError.prototype);
-            IsNotNumberError.prototype.constructor = IsNotNumberError;
         };
+
+        NotPassNumberError.prototype = Object.create(IsNotNumberError.prototype);
+        NotPassNumberError.prototype.constructor = NotPassNumberError;
+
+        IsNotNumberError.prototype = Object.create(IsNotNumberError.prototype);
+        IsNotNumberError.prototype.constructor = IsNotNumberError;
 
       var doStuff =  function () {
             console.log('I will arrive in 3 second');
@@ -185,10 +188,10 @@
 
         delay(3000).then(doStuff).catch(function (error) {
             console.log(error);
-        })
+        });
         delay().then(doStuff).catch(function (error) {
             console.log(error);
-        })
+        });
         delay("www").then(doStuff).catch(function (error) {
             console.log(error);
         });
