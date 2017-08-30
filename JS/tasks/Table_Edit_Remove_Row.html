@@ -41,14 +41,13 @@
 </div>
 
 <script>
-
+    var inp;
     (function () {
+        var blur = false;
         var firstName = document.querySelector('#firstName');
         var lastName = document.querySelector('#lastName');
         var bn = document.getElementById('add')
         bn.addEventListener('click', function () {
-            // var text= document.createTextNode('new ');
-            // cell1.appendChild(text);
             if (firstName.value && lastName.value) {
                 let row = table.insertRow(1);
                 let cell1 = row.insertCell(0);
@@ -71,16 +70,43 @@
             }
             else if (event.target.localName === 'td') {
                 event.target.innerHTML = '<input type="text" autofocus value="' + event.target.innerText + '">';
+                inp = event.target;
+                //input.focus();
             }
-        });
 
-        table.addEventListener('keypress', function (event) {
-            if (event.keyCode == 13) {
-                var data = event.target.value;
-                event.target.replaceWith(data)
-                event.target.innerHTML = data;
-            }
+       else if( document.activeElement.closest('td')) {
+                document.activeElement.addEventListener('keypress', function (event) {
+               if (event.keyCode == 13 && !event.which == 0) {
+                   blur = true;
+                   var data = event.target.value;
+                   event.target.replaceWith(data);
+               }
+                    blur = false;
+           }, false);
+
+
+                document.activeElement.addEventListener('keydown', function (event) {
+               if (event.keyCode == 27 && !event.which == 0) {
+                   blur = true;
+                   var data = event.target.value;
+                   event.target.replaceWith(data);
+                   //event.target.parentNode.removeChild(event.target);
+                   //event.target.parentNode.replaceChild(data, event.target);
+                   //event.target.innerHTML = data;
+               }
+                    blur = false;
+           });
+          }
         });
+        table.addEventListener('blur', function (event) {
+               if (!blur && event.which == 0) {
+                   var data = event.target.value;
+                   event.target.replaceWith(data)
+                   event.target.innerHTML = data;
+                   blur = false;
+               }
+            blur = false;
+           }, true);
     })();
 
 </script>
