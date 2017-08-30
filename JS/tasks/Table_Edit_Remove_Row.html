@@ -46,57 +46,59 @@
         var blur = false;
         var firstName = document.querySelector('#firstName');
         var lastName = document.querySelector('#lastName');
-        var bn = document.getElementById('add')
-        bn.addEventListener('click', function () {
-            if (firstName.value && lastName.value) {
-                let row = table.insertRow(1);
-                let cell1 = row.insertCell(0);
-                let cell2 = row.insertCell(1);
-                let cell3 = row.insertCell(2);
-                cell1.innerHTML = firstName.value;
-                cell2.innerHTML = lastName.value;
-                cell3.innerHTML = '<button class="rem">rem</button>';
-                firstName.value = "";
-                lastName.value = "";
-            }
-            else
-                alert('Enter first and last name ')
-        });
+        var bn = document.getElementById('add');
+        _Onclick = function () {
+            bn.addEventListener('click', function () {
+                if (firstName.value && lastName.value) {
+                    let row = table.insertRow(1);
+                    let cell1 = row.insertCell(0);
+                    let cell2 = row.insertCell(1);
+                    let cell3 = row.insertCell(2);
+                    cell1.innerHTML = firstName.value;
+                    cell2.innerHTML = lastName.value;
+                    cell3.innerHTML = '<button class="rem">rem</button>';
+                    firstName.value = "";
+                    lastName.value = "";
+                }
+                else
+                    alert('Enter first and last name ')
+            });
 
-        table.addEventListener('click', function (event) {
-            if (event.target.localName == 'button') {
-                // event.target.closest('tr').remove();
-                table.deleteRow(event.target.closest('tr').rowIndex);
-            }
-            else if (event.target.localName === 'td') {
-                event.target.innerHTML = '<input type="text" autofocus value="' + event.target.innerText + '">';
-                inp = event.target;
-                //input.focus();
-            }
+            table.addEventListener('click', function (event) {
+                if (event.target.localName == 'button') {
+                    // event.target.closest('tr').remove();
+                    table.deleteRow(event.target.closest('tr').rowIndex);
+                }
+                else if (event.target.localName === 'td') {
+                    event.target.innerHTML = '<input type="text" autofocus value="' + event.target.innerText + '">';
+                    inp = event.target;
+                    //input.focus();
+                }
 
-            else if (document.activeElement.closest('td')) {
-                document.activeElement.addEventListener('keypress', function (event) {
-                    if (event.keyCode == 13 && !event.which == 0) {
-                        blur = true;
-                        var data = event.target.value;
-                        event.target.replaceWith(data);
-                    }
-                    blur = false;
-                });
+                else if (document.activeElement.closest('td')) {
+                    document.activeElement.addEventListener('keypress', function (event) {
+                        if (event.keyCode == 13 && !event.which == 0) {
+                            blur = true;
+                            var data = event.target.value;
+                            event.target.replaceWith(data);
+                        }
+                        blur = false;
+                    });
 
-                document.activeElement.addEventListener('keydown', function (event) {
-                    if (event.keyCode == 27 && !event.which == 0) {
-                        blur = true;
-                        var data = event.target.value;
-                        event.target.replaceWith(data);
-                        //event.target.parentNode.removeChild(event.target);
-                        //event.target.parentNode.replaceChild(data, event.target);
-                        //event.target.innerHTML = data;
-                    }
-                    blur = false;
-                });
-            }
-        });
+                    document.activeElement.addEventListener('keydown', function (event) {
+                        if (event.keyCode == 27 && !event.which == 0) {
+                            blur = true;
+                            var data = event.target.value;
+                            event.target.replaceWith(data);
+                            //event.target.parentNode.removeChild(event.target);
+                            //event.target.parentNode.replaceChild(data, event.target);
+                            //event.target.innerHTML = data;
+                        }
+                        blur = false;
+                    });
+                }
+            });
+        };
         table.addEventListener('blur', function (event) {
             if (!blur && event.which == 0) {
                 var data = event.target.value;
@@ -106,7 +108,8 @@
             }
             blur = false;
         }, true);
-    })();
+        _Onclick()
+    })(this);
 
 </script>
 
