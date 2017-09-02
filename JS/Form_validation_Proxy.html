@@ -33,7 +33,6 @@
         </div>
     </fieldset>
     <div id="buttons">
-        <input id="overallBtn" type="button" value="Check overall validity">
         <input id ="submitBtn" type="submit" value="Submit">
         <input id ="resetBtn" type="reset" value =" Reset" >
     </div>
@@ -41,30 +40,62 @@
 
 <script>
 
-
+    let form = document.forms[0];
+    let btn = document.querySelector('#submitBtn');
     (function() {
+      //  document.addEventListener('DOMContentLoaded', function() {
+        //    if (form.addEventListener) {
+           //     let proxy;
+                let per = Object.create(Object.prototype);
+                let arr = Array.prototype.slice.call(document.querySelectorAll('#fields > input'));
+                let defineProp = function (obj, key, value) {
+                    var config = {
+                        value: value,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    };
+                    Object.defineProperty(obj, key, config);
+                };
+                let person = function () {
+                    arr.forEach((el) =>
+                        defineProp(per, el.name, el.value)
+                    );
+                };
+                person();
+               // let proxyFunc = function () {
+        //var validator =
 
-        let person = Object.create(Object.prototype);
 
-      // let proxy  = new Proxy(person, validator);
-        var defineProp = function (obj, key, value) {
-            var config = {
-                value: value,
-                writable: true,
-                enumerable: true,
-                configurable: true
-            };
-            Object.defineProperty(obj, key, config);
-        };
+                   var  proxy = new Proxy(per,
+                       {
+                           set(target, key, value)
+                           {
+                               if (key == 'firstName' || key == 'lastName') {
+                                   if (typeof value == 'number')
+                                       console.log('You should enter only letters');
+                                   if (!Number.isNaN(value) && value.length < 5)
+                                       console.log('You should enter  letters more 5');
+                               }
+                               return true;
+                           }
+                       }
+                   );
 
-        let arr =Array.prototype.slice.call(document.querySelectorAll('#fields > input'))
+                //   return proxy;
+              // };
+                  // var proxy =   proxyFunc();
+                    proxy.firstName = 0;
 
-    arr.forEach((el)=>
-    defineProp(person,el.name, el.value)
-    );
-
-
-    })();
+                //var self = this;
+//                btn.addEventListener('click', function(event){
+//                    var proxy =   proxyFunc();
+//                    proxy.firstName = 0;
+//
+//                });
+          //  };
+       // });
+    })(window);
 
 </script>
 
