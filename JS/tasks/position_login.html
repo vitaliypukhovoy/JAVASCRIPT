@@ -4,58 +4,6 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <style type="text/css">
-        #modal {
-            width: 300px;
-            height: 100px;
-            border-radius: 5px;
-            border: 1px #000 solid;
-            background: #fff;
-            z-index: 5;
-            padding: 20px 10px;
-        }
-
-        #email, #emai1, #emai2, #emai3 {
-            display: inline-block;
-            margin: 10px 2px 5px 22px;
-            padding: 9px;
-        }
-
-        #password {
-            display: inline-block;
-            margin: 3px;
-            padding: 10px;
-        }
-
-        button {
-            border: 0px;
-            background: white;
-            text-decoration: underline;
-        }
-
-        #btn {
-            position: absolute;
-
-        }
-
-        [data-popup]:after {
-            content: attr(data-popup);
-            cursor: help;
-            background-color: gainsboro;
-            border: 2px;
-            border-radius: 8px;
-            padding: 5px 0;
-            opacity: 0;
-        }
-
-        [data-popup]:hover:after {
-            opacity: 1;
-        }
-
-        .cl1, .cl2, .cl3 {
-            display: table-cell;
-        }
-    </style>
 </head>
 <body>
 
@@ -117,4 +65,57 @@
 </script>
 
 </body>
+
+<style type="text/css">
+    #modal {
+        width: 300px;
+        height: 100px;
+        border-radius: 5px;
+        border: 1px #000 solid;
+        background: #fff;
+        z-index: 5;
+        padding: 20px 10px;
+    }
+
+    #email, #emai1, #emai2, #emai3 {
+        display: inline-block;
+        margin: 10px 2px 5px 22px;
+        padding: 9px;
+    }
+
+    #password {
+        display: inline-block;
+        margin: 3px;
+        padding: 10px;
+    }
+
+    button {
+        border: 0px;
+        background: white;
+        text-decoration: underline;
+    }
+
+    #btn {
+        position: absolute;
+
+    }
+
+    [data-popup]:after {
+        content: attr(data-popup);
+        cursor: help;
+        background-color: gainsboro;
+        border: 2px;
+        border-radius: 8px;
+        padding: 5px 0;
+        opacity: 0;
+    }
+
+    [data-popup]:hover:after {
+        opacity: 1;
+    }
+
+    .cl1, .cl2, .cl3 {
+        display: table-cell;
+    }
+</style>
 </html>

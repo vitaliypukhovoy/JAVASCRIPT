@@ -34,7 +34,7 @@ gulp.task('connectDist', function () {
     connect.server({
         name: 'ES5 App',
         root: 'ES5',
-        port: 8001,
+        port: 8000,
         livereload: true
     });
 });
