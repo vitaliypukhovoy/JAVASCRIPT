@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Chapter 11 - History API</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<p>
+    <a href=" cat.html" >Cats</a> |
+    <a href=" dog.html" >Dogs</a> |
+    <a href=" bird.html" >Birds</a>
+</p>
+<div id="output"></div><!
+
+<!--js-->
+
+
+<script>
+    // anonymous function to contain the variables
+    (function(){
+        var links = document.getElementsByTagName('a'),
+            linkCount = links.length,
+            output = document.getElementById("output"),
+            i;
+        if(linkCount > 0) {
+            // loop through all the links on the page
+            for (i = 0; i < linkCount; i = i + 1) {
+                var obj = links[i];
+                // attached a click event to each link
+                obj.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // store the href and text of the link you clicked
+                    var href = this.getAttribute("href"),
+                        title = this.innerHTML;
+                    // push the new URL in to the address bar
+                    history.pushState(href, title, href);
+                }, false);
+            } // end loop
+        } // end   counter check
+    })();
+
+
+</script>
+</body>
+</html>
+
+
+
