@@ -190,23 +190,23 @@ var b;
 var message = 'oh hai ' + name + "!";
 
 // хорошо
-var message = 'oh hai ' + name + '!';
+var message2 = 'oh hai ' + name + '!';
 
 str = "a" + "b";
-str += "c";
-str = str.concat("d", "e");
+str2 += "c";
+str3 = str.concat("d", "e");
 
-str = ["a", "b", "c", "d", "e"].join("");
+str4 = ["a", "b", "c", "d", "e"].join("");
 
 // standard string append
-var str = "";
+var str5 = "";
 for (var i = 30000; i > 0; i--) {
-    str += "String concatenation. ";
+    str5 += "String concatenation. ";
 }
 
 // array join faster
-var str = "", sArr = [];
+var str6 = "", sArr = [];
 for (var i = 30000; i > 0; i--) {
     sArr[i] = "String concatenation. ";
 }
-str = sArr.join("");
+str6 = sArr.join("");

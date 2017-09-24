@@ -5,12 +5,12 @@ let admin = { isAdmin: true };
 Object.assign(user, visitor, admin);
 
 // user <- visitor <- admin
-alert( JSON.stringify(user) );
+console.log(JSON.stringify(user));
 
-let user = { name: "Вася", isAdmin: false };
+let user2 = { name: "Вася", isAdmin: false };
 
 // clone = пустой объект + все свойства user
-let clone = Object.assign({}, user);
+let clone = Object.assign({}, user2);
 
 
 

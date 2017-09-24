@@ -4,7 +4,7 @@ function bar() {
     if (!foo) {
         foo = 10;
     }
-    alert(foo);
+    console.log(foo);
 }
 bar();
 
@@ -16,4 +16,4 @@ function b() {
     function a() {}
 }
 b();
-alert(a);
+console.log(a);
