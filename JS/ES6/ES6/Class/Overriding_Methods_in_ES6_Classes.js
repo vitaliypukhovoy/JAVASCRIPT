@@ -26,6 +26,14 @@
            }
      };
 
+ const conan = new Barbarian('Conan');
+
+ console.log(`Conan is a barbarian: ` +
+     `${conan instanceof Barbarian}`);
+ // => Conan is a barbarian: true
+
+ //conan.equipsWeapon('steel sword');
+
 class Shaman extends Barbarian {
     constructor(name) {
         super(name);
