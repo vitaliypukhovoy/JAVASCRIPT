@@ -11,3 +11,6 @@ let user = { name: "Вася", isAdmin: false };
 
 // clone = пустой объект + все свойства user
 let clone = Object.assign({}, user);
+
+
+
