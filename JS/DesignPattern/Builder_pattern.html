@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+   // Westeros	=	{};
+
+  //  Westeros	=	Westeros	||	{};
+
+    let	Westeros	=		{};
+
+    let	Event	=	(function	()	{
+        function	Event(name)	{
+            this.name	=	name;
+        }
+        return	Event;
+    })();
+    Westeros.Event	=	Event;
+
+    let	Prize	=	(function	()	{
+        function	Prize(name)	{
+            this.name	=	name;
+        }
+        return	Prize;
+    })();
+
+    Westeros.Prize	=	Prize;
+    let	Attendee	=	(function	()	{
+        function	Attendee(name)	{
+            this.name	=	name;
+        }
+        return	Attendee;
+    })();
+
+    Westeros.Attendee	=	Attendee;
+
+
+    let	Tournament	=	(function	()	{
+        function	Tournament()	{
+            this.events	=	[];
+            this.attendees = [];
+            this.prize   = [];
+        }
+        return	Tournament;
+    })();
+    Westeros.Tournament	=	Tournament;
+
+
+    //1 buider
+    let	LannisterTournamentBuilder	=	(function	()	{
+        function	LannisterTournamentBuilder()	{
+        }
+        LannisterTournamentBuilder.prototype.build	=	function	()	{
+            var	tournament	=	new	Tournament();
+            tournament.events.push(new	Event("Joust"));
+            tournament.events.push(new	Event("Melee"));
+            tournament.attendees.push(new	Attendee("Jamie"));
+            tournament.prizes.push(new	Prize("Gold"));
+            tournament.prizes.push(new	Prize("More	Gold"));
+            return	tournament;
+        };
+        return	LannisterTournamentBuilder;
+    })();
+    Westeros.LannisterTournamentBuilder	=	LannisterTournamentBuilder;
+
+    // 2 builder
+    let	BaratheonTournamentBuilder	=	(function	()	{
+        function	BaratheonTournamentBuilder()	{
+        }
+        BaratheonTournamentBuilder.prototype.build	=	function	()	{
+            let	tournament	=	new	Tournament();
+            tournament.events.push(new	Event("Joust"));
+            tournament.events.push(new	Event("Melee"));
+            tournament.attendees.push(new	Attendee("Stannis"));
+            tournament.attendees.push(new	Attendee("Robert"));
+            return	tournament;
+        };
+        return	BaratheonTournamentBuilder;
+    })();
+    Westeros.BaratheonTournamentBuilder	=	BaratheonTournamentBuilder;
+
+
+    //Director
+
+    let	TournamentBuilder	=	(function	()	{
+        function	TournamentBuilder()	{
+        }
+        TournamentBuilder.prototype.build	=	function	(builder)	{
+            return	builder.build();
+        };
+        return	TournamentBuilder;
+    })();
+    Westeros.TournamentBuilder	=	TournamentBuilder;
+
+   console.log(new Westeros.TournamentBuilder().build(new Westeros.BaratheonTournamentBuilder()));
+
+
+
+
+
+</script>
+
+</body>
+</html>
