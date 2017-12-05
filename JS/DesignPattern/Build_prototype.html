@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let	Castle	=	function(name){
+        this.name	=	name;
+        this.build	=	function()	{
+            console.log(this.name);
+        };
+    }
+    let	instance1	=	new	Castle("Winterfell");
+    let	instance2	=	new	Castle("Harrenhall");
+    instance1.build	=	function(){	console.log("Moat	Cailin");}
+    instance1.build();	//prints	"Moat	Cailin"
+    instance2.build();	//prints	"Harrenhall"	to	the	consol
+
+    //==========================================
+
+    let	thing	=	{	a:	7};
+    console.log(thing["a"]);
+    //==========================================
+
+    let	Castle	=	function(name){
+        this.name	=	name;
+    }
+    Castle.prototype.build	=	function(){	console.log(this.name);}
+    let	instance1	=	new	Castle("Winterfell");
+    instance1.build();
+
+    //==========================================
+
+    let	Castle	=	function(name){
+        this.name	=	name;
+    }
+    Castle.prototype.build	=	function(){
+        console.log(this.name);
+    }
+    let	instance1	=	new	Castle("Winterfell");
+    Castle.prototype.build	=	function(){
+        console.log(this.name.replace("Winterfell",	"Moat	Cailin"));
+    }
+    instance1.build();//prints	"Moat	Cailin"	to	the	console
+
+    //==========================================
+
+    let	instance3	=	Object.create(Castle.prototype,	{name:	{	value:
+        "Winterfell",	writable:	false}});
+    instance3.build();
+    instance3.name="Highgarden";
+    instance3.build();
+
+    //==========================================
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

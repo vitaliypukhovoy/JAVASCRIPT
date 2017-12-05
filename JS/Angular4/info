@@ -26,3 +26,18 @@ ng help
 ng new PROJECT-NAME
 cd PROJECT-NAME
 ng serve
+
+
+//---------------------------------------------
+Clean up
+
+remove node_modules from your project
+remove any angular-cli and @angular/cli references from package.json if it's there
+Uninstall angular-cli and @angular/cli globally: npm uninstall -g angular-cli @angular/cli
+Reinstall
+
+Install @angular/cli globally: npm install -g @angular/cli
+Install @angular/cli in your project: npm install --save-dev @angular/cli
+
+
+//----------------------------------------------

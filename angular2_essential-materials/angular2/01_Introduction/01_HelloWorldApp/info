@@ -1,0 +1,8 @@
+Установка: npm install lite-server –g
+Запуск: lite-server (запуск сервера для текущей директории, порт 3000)
+
+
+npm install --global lite-server
+
+I was facing same issue while running npm install and adding typeings version
+in devdependencies section of Package.json file resolved the issue.

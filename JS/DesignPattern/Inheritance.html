@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+
+    let	Castle	=	function(){};
+    Castle.prototype.build	=	function(){console.log("Castle	built");}
+    let	Winterfell	=	function(){};
+    Winterfell.prototype.build	=	Castle.prototype.build;
+    Winterfell.prototype.addGodsWood	=	function(){}
+    let	winterfell	=	new	Winterfell();
+    winterfell.build();	//prints	"Castle	built"	to	the	consol
+
+    //=================================================
+
+    function	clone(source,	destination)	{
+        for(var	attr	in	source.prototype){	destination.prototype[attr]	=
+            source.prototype[attr];}
+    }
+
+    let	Castle	=	function(){};
+    Castle.prototype.build	=	function(){console.log("Castle	built");}
+    let	Winterfell	=	function(){};
+    clone(Castle,	Winterfell);
+    let	winterfell	=	new	Winterfell();
+    winterfell.build();
+
+
+    //=================================================
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
