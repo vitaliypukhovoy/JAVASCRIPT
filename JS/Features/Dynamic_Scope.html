@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    var nopeThis   = _.bind(globalThis, 'nope');
+    nopeThis.call('wat');
+
+   //  _.bindAll UnderScore
+    var target = {name: 'the right value',
+        aux: function() { return this.name; },
+        act: function() { return this.aux(); }};
+    target.act.call('wat');
+    // TypeError: Object [object String] has no method 'aux'
+    _.bindAll(target, 'aux', 'act');
+    target.act.call('wat');
+
+
+</script>
+
+</body>
+</html>

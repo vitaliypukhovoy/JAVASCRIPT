@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var param = '777';
+
+    function method(callback)
+    {
+        callback(param)
+
+    };
+
+    // pass anonymous function  first way
+    method(function(param)
+            {
+                console.log('ha - ha -ha');
+                console.log(param);
+            }
+    );
+
+    method(methodCallback);
+
+    // pass via  usual function  second way
+    function methodCallback(param)
+    {
+        console.log('ha - ha -ha');
+        console.log(param);
+    };
+
+</script>
+
+</body>
+</html>

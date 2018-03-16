@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    function Animals(height, weight) {
+        this.height = height;
+        this.weight = weight;
+    }
+    Animals.prototype.Sleep = function () {
+        return 'Sleep';
+    }
+    Animals.prototype.Run = function () {
+        return 'Run';
+    }
+
+    function Vegan(name) {
+        Animals.call(this);
+        this.name = name;
+    }
+    Vegan.prototype = new Animals();
+    Vegan.prototype.constructor = Vegan
+    Vegan.prototype.TryEat = function () {
+        if (this.food instanceof Cow || this.food instanceof Mouse) {
+            return " Animals don't eat it";
+        }
+        else if (this.food == 'grass' || this.food == 'vegetables') {
+            return " Animals  eat it";
+        }
+    }
+
+    function Predator(name) {
+        Animals.call(this);
+        this.name = name;
+    }
+    Predator.prototype = new Animals();
+    Predator.prototype.constructor = Predator;
+    Predator.prototype.TryEat = function () {
+        if (this.food instanceof Cow || this.food instanceof Mouse) {
+            return " Predator eat it";
+        }
+        else if (this.food == 'grass' || this.food == 'vegetables') {
+            return "Predator don't eat it";
+        }
+    }
+
+    function Cat(food) {
+        Predator.call(this, name);
+        this.food = food;
+    }
+
+
+    function Dog(food) {
+        Predator.call(this, name);
+        this.food = food;
+    }
+
+
+    function Cow(food) {
+        Vegan.call(this, name);
+        this.food = food;
+    }
+
+    function Mouse(food) {
+        Vegan.call(this, name);
+        this.food = food;
+    }
+
+    Cat.prototype = new Predator();
+    Cat.prototype.constructor = Cat
+
+    Dog.prototype = new Predator();
+    Dog.prototype.constructor = Dog;
+
+    Cow.prototype = new Vegan();
+    Cow.prototype.constructor = Cow
+
+    Mouse.prototype = new Vegan();
+    Mouse.prototype.constructor = Mouse;
+
+    var instansCow = new Cow();
+    var instansMouse = new Mouse();
+
+    var instansCat = new Cat(instansCow);
+    instansCat.name = "Myao";
+    console.log(instansCat.TryEat())
+
+    var instansDog = new Dog(instansMouse);
+    instansDog.name = "Guv-Guv";
+    console.log(instansDog.TryEat())
+
+</script>
+
+</body>
+</html>
+

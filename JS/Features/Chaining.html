@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    function createPerson() {
+        var firstName = "";
+        var lastName = "";
+        var age = 0;
+        return {
+            setFirstName: function (fn) {
+                firstName = fn;
+                return this;
+            },
+            setLastName: function (ln) {
+                lastName = ln;
+                return this;
+            },
+            setAge: function (a) {
+                age = a;
+                return this;
+            },
+            toString: function () {
+                return [firstName, lastName, age].join(' ');
+            }
+        };
+    }
+    createPerson()
+            .setFirstName("Mike")
+            .setLastName("Fogus")
+            .setAge(108)
+            .toString();
+    //=> "Mike Fogus 108
+
+</script>
+
+</body>
+</html>

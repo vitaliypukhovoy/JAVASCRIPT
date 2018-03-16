@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    (function (x, f = () => x) {
+        var x;
+        var y = x;
+        x = 2;
+        return [x, y, f()];
+    })(1)
+
+
+    (function (x, f = function () {
+        return x
+    }) {
+        var x;
+        var y = x;
+        x = 2;
+        return [x, y, f()];
+    })(1)
+  // solve problem
+    (function (x, f) {
+        var x;
+        var y = x;
+        x = 2;
+        return [x, y, f(x)];
+    })(1, (n) => n)
+
+    (function (x, f ){
+        var x;
+        var y = x;
+        x = 2;
+        return [x, y, f(x)];
+    })(1,n) ;  var n = (n) => n;
+
+
+    //We can not change " this " inside arrow function, which had assigned in parameters before.
+
+    var methodCallback = (param) => console.log(param);
+
+    (function method(x, callback) {   //var x=5;   // 5
+        callback(x);
+        var x = 5;    //4
+
+    })(4, methodCallback);
+
+
+</script>
+
+</body>
+</html>
