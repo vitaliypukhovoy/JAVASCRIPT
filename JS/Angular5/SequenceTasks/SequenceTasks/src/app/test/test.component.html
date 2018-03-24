@@ -1,0 +1,32 @@
+
+<div> {{inputValue}}</div>
+
+<input type="text" [(ngModel)]="xValue">
+<br>
+<br>
+<input type="text" [(ngModel)]="yValue">
+<br>
+<br>
+<button (click)="calculate()"> Calculate </button>
+<br>
+<button (click)="reset()"> Reset </button>
+<br>
+<div>{{result}}</div>
+
+<br>
+<br>
+<input
+  [ngModel]="CurrentValue"
+  (ngModelChange) = "CurrentValue = $event "
+ >
+<p>{{CurrentValue}}</p>
+
+<br>
+<br>
+
+<li *ngFor="let item of items">
+  {{item}}
+</li>
+
+
+
