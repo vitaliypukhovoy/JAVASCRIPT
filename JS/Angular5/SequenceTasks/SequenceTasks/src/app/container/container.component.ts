@@ -57,19 +57,6 @@ export class ContainerComponent implements OnInit {
     console.log("delete");
   }
 
-  eDiscussion(event: any){
-    // on click this will set 'contentEditable' to true
-    // and add 'editable' class for styling.
-    this.editable = true;
-  }
-
-  uDiscussion(event: any){
-    // on blur set 'contentEditable' to false
-    // and remove class 'editable' and log new values
-    this.editable = false;
-    console.log("this.discussion");
-    console.log(this.discussion);
-  }
 
   public onHandleEvent(event: number) {
     this._number = event;
@@ -97,9 +84,7 @@ export class ContainerComponent implements OnInit {
     }
     else if(event == "p")
       {
-        console.log(this.tasks);
-     //   this.renderer.invokeElementMethod(
-     //     this.el.nativeElement.ownerDocument.activeElement, 'focus');
+        console.log(this.tasks);     
         this.tasks.findIndex(x=> {if (x.number == this._number)
           x.isEditable = true;
         });
@@ -134,32 +119,7 @@ export class ContainerComponent implements OnInit {
 
   }
 
-  ngAfterViewInit() {
-    // let inputField: HTMLElement = <HTMLElement>document.querySelectorAll('.focus')[0];
-    // alert(inputField);
-    // inputField.contentEditable = "true";
-    // //inputField &&
-    // inputField.focus();
-  }
 
-
-  ngOnChanges() {
-    //if (changes['model'] && changes['model'].currentValue !== this.lastViewModel) {
-     // this.lastViewModel = this.model;
-      this.refreshView();
-    }
- // }
-
-  /** This should probably be debounced. */
-  onKeyup() {
-    // var value = this.elRef.nativeElement.innerText;
-    // this.lastViewModel = value;
-    // this.update.emit(value);
-  }
-
-  private refreshView() {
-   // this.elRef.nativeElement.innerText = this.model
-  }
 
   onSubmit(form: FormGroup){
    // alert(form);
