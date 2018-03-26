@@ -1,6 +1,6 @@
 import { Component, OnInit , Directive, ElementRef, HostListener, Input, Renderer } from '@angular/core';
-import { Service } from './../Service';
-import {Task} from './../app.task'
+import { Service } from './../serv/serv.service';
+import {Task} from './../serv/serv.task';
 import { FormGroup, FormControl, FormControlName, Validators } from '@angular/forms'
 
 @Component({
